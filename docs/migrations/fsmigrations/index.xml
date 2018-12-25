@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Filescript Migrator on KittyORM: Fast and reliable ORM for SQLite\Android</title>
+    <link>/migrations/fsmigrations/</link>
+    <description>Recent content in Filescript Migrator on KittyORM: Fast and reliable ORM for SQLite\Android</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 15 Dec 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/migrations/fsmigrations/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>DB schema</title>
+      <link>/migrations/fsmigrations/l5t4_schema/</link>
+      <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/migrations/fsmigrations/l5t4_schema/</guid>
+      <description>Create schema script for database mig version 4 CREATE TABLE IF NOT EXISTS mig_four (id INTEGER NOT NULL PRIMARY KEY ASC, mig_three_reference INTEGER NOT NULL REFERENCES mig_three (id) ON UPDATE NO ACTION ON DELETE NO ACTION, mig_two_reference INTEGER NOT NULL REFERENCES mig_two (id) ON UPDATE NO ACTION ON DELETE NO ACTION, creation_date INTEGER NOT NULL DEFAULT CURRENT_DATE ); CREATE TABLE IF NOT EXISTS mig_three (id INTEGER NOT NULL PRIMARY KEY ASC, new_sv_name TEXT NOT NULL DEFAULT &amp;#39;Something random&amp;#39;, random_long INTEGER DEFAULT 22); CREATE INDEX IF NOT EXISTS m3_rnd_long ON mig_three (random_long); CREATE TABLE IF NOT EXISTS mig_two (id INTEGER NOT NULL PRIMARY KEY ASC, mig_one_reference INTEGER, some_animal TEXT, some_animal_sound TEXT); Drop schema script for database mig version 4 DROP TABLE IF EXISTS mig_four; DROP TABLE IF EXISTS mig_three; DROP TABLE IF EXISTS mig_two; Migration script for database mig from version 3 to version 4 (Filescript migrator) -- minus FK M2.</description>
+    </item>
+    
+    <item>
+      <title>Source code</title>
+      <link>/migrations/fsmigrations/l5t4_code/</link>
+      <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/migrations/fsmigrations/l5t4_code/</guid>
+      <description>KittyORM mig v.4 implementation sources   Click to view MigrationDBv4.class:  1@KITTY_DATABASE( 2 isLoggingOn = false, 3 isProductionOn = true, 4 isKittyDexUtilLoggingEnabled = false, 5 databaseName = &amp;#34;mig&amp;#34;, 6 domainPackageNames = {&amp;#34;net.akaish.kittyormdemo.sqlite.migrations.migv4&amp;#34;}, 7 databaseVersion = 4, 8 logTag = MigrationDBv4.LTAG 9) 10@KITTY_DATABASE_REGISTRY( 11 domainModels = { 12 net.akaish.kittyormdemo.sqlite.migrations.migv4.MigTwoModel.class, 13 net.akaish.kittyormdemo.sqlite.migrations.migv4.MigThreeModel.class, 14 net.akaish.kittyormdemo.sqlite.migrations.migv4.MigFourModel.class 15 } 16) 17@KITTY_DATABASE_HELPER( 18 onUpgradeBehavior = KITTY_DATABASE_HELPER.UpgradeBehavior.USE_FILE_MIGRATIONS 19) 20public class MigrationDBv4 extends KittyDatabase { 21 22 public static final String LTAG = &amp;#34;MIGv4&amp;#34;; 23 24 /** 25* KittyORM main database class that represents bootstrap and holder for all related with database 26* components.</description>
+    </item>
+    
+  </channel>
+</rss>

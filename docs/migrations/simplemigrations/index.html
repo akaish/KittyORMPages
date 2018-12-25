@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>KittyORM: Fast and reliable ORM for SQLite\Android</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2018-12-25T19:01:22 MSK">
+<title>Simple Migration Script Generator Migrator :: KittyORM: Fast and reliable ORM for SQLite\Android</title>
+<link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/theme-flex/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "\/";
+</script>
+<meta name="description" content="">
+
+
+
+    
+  </head>
+  <body data-url="/migrations/simplemigrations/">
+    
+      <header>
+  <div class="logo">
+    
+	
+  
+    <a class="baselink" href="/">KittyORM: Fast and reliable ORM for SQLite\Android</a>
+  
+
+
+  </div>
+  <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
+    <nav class="shortcuts">
+            <li class="" role="">
+                <a href="https://github.com/akaish/KittyORM"  rel="noopener">
+                  <i class='fa fa-github'></i> <label>Github repo</label>
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="https://twitter.com/OrmKitty"  rel="noopener">
+                  <i class='fa fa-twitter'></i> <label>@OrmKitty</label>
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="https://t.me/kittyorm"  rel="noopener">
+                  <i class='fa fa-telegram'></i> <label>KittyORM channel</label>
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="/kittydoc/"  rel="noopener">
+                  <i class='fa fa-at'></i> <label>Javadoc</label>
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="/hidden/android"  rel="noopener">
+                  <i class='fa fa-android'></i> <label>KittyORM Demo at PlayMarket</label>
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="/contacts"  rel="noopener">
+                  <i class='fa fa-envelope'></i> <label>Contacts</label>
+                </a>
+            </li>
+    </nav>
+</header>
+<article>
+  <aside>
+    <ul class="menu">
+          <li data-nav-id="/" class="dd-item">
+          <a href="/">
+            <i class="fa fa-fw fa-home"></i>
+          </a>
+          </li>
+    <li data-nav-id="/getting_started/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/getting_started/">Getting started with KittyORM</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/getting_started/l1_schema/" class="dd-item">
+        <div>
+          <a href="/getting_started/l1_schema/">
+            <i class='fa fa-database'>&nbsp;</i> DB schema
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/getting_started/l1_code/" class="dd-item">
+        <div>
+          <a href="/getting_started/l1_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/crud_operations/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/crud_operations/">CRUD operations</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/crud_operations/save/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/crud_operations/save/">Saving new entity</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/crud_operations/save/l2_schema/" class="dd-item">
+        <div>
+          <a href="/crud_operations/save/l2_schema/">
+            <i class='fa fa-database'>&nbsp;</i> DB schema
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/crud_operations/save/l2t1_code/" class="dd-item">
+        <div>
+          <a href="/crud_operations/save/l2t1_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/crud_operations/update/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/crud_operations/update/">Updating existing entity</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/crud_operations/update/l2_schema/" class="dd-item">
+        <div>
+          <a href="/crud_operations/update/l2_schema/">
+            <i class='fa fa-database'>&nbsp;</i> DB schema
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/crud_operations/update/l2t2_code/" class="dd-item">
+        <div>
+          <a href="/crud_operations/update/l2t2_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/crud_operations/delete/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/crud_operations/delete/">Deleting entities</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/crud_operations/delete/l2_schema/" class="dd-item">
+        <div>
+          <a href="/crud_operations/delete/l2_schema/">
+            <i class='fa fa-database'>&nbsp;</i> DB schema
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/crud_operations/delete/l2t3_code/" class="dd-item">
+        <div>
+          <a href="/crud_operations/delete/l2t3_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/crud_operations/find/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/crud_operations/find/">Finding entities</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/crud_operations/find/l2_schema/" class="dd-item">
+        <div>
+          <a href="/crud_operations/find/l2_schema/">
+            <i class='fa fa-database'>&nbsp;</i> DB schema
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/crud_operations/find/l2t4_code/" class="dd-item">
+        <div>
+          <a href="/crud_operations/find/l2t4_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/crud_operations/bulk/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/crud_operations/bulk/">KittyORM and bulk operations</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/crud_operations/bulk/l2_schema/" class="dd-item">
+        <div>
+          <a href="/crud_operations/bulk/l2_schema/">
+            <i class='fa fa-database'>&nbsp;</i> DB schema
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/crud_operations/bulk/l2t5_code/" class="dd-item">
+        <div>
+          <a href="/crud_operations/bulk/l2t5_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/datatype_mapping/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/datatype_mapping/">KittyORM datatypes mapping</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/datatype_mapping/l3_schema/" class="dd-item">
+        <div>
+          <a href="/datatype_mapping/l3_schema/">
+            <i class='fa fa-database'>&nbsp;</i> DB schema
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/datatype_mapping/l3t1_code/" class="dd-item">
+        <div>
+          <a href="/datatype_mapping/l3t1_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/constraints/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/constraints/">Constraints and indexes declarations</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/constraints/l3_schema/" class="dd-item">
+        <div>
+          <a href="/constraints/l3_schema/">
+            <i class='fa fa-database'>&nbsp;</i> DB schema
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/constraints/l3t2_code/" class="dd-item">
+        <div>
+          <a href="/constraints/l3t2_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/migrations/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/migrations/">Migrations between different DB versions</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/migrations/overview/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/migrations/overview/">Migrations overview</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/migrations/overview/l5t1_schema/" class="dd-item">
+        <div>
+          <a href="/migrations/overview/l5t1_schema/">
+            <i class='fa fa-database'>&nbsp;</i> DB schema
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/migrations/overview/l5t1_code/" class="dd-item">
+        <div>
+          <a href="/migrations/overview/l5t1_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/migrations/dropcreate/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/migrations/dropcreate/">DropCreate Migrator</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/migrations/dropcreate/l5t2_schema/" class="dd-item">
+        <div>
+          <a href="/migrations/dropcreate/l5t2_schema/">
+            <i class='fa fa-database'>&nbsp;</i> DB schema
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/migrations/dropcreate/l5t2_code/" class="dd-item">
+        <div>
+          <a href="/migrations/dropcreate/l5t2_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/migrations/simplemigrations/" class="dd-item parent active haschildren
+        ">
+      <div>
+      <a href="/migrations/simplemigrations/">Simple Migration Script Generator Migrator</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/migrations/simplemigrations/l5t3_schema/" class="dd-item">
+        <div>
+          <a href="/migrations/simplemigrations/l5t3_schema/">
+            <i class='fa fa-database'>&nbsp;</i> DB schema
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/migrations/simplemigrations/l5t3_code/" class="dd-item">
+        <div>
+          <a href="/migrations/simplemigrations/l5t3_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/migrations/fsmigrations/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/migrations/fsmigrations/">Filescript Migrator</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/migrations/fsmigrations/l5t4_schema/" class="dd-item">
+        <div>
+          <a href="/migrations/fsmigrations/l5t4_schema/">
+            <i class='fa fa-database'>&nbsp;</i> DB schema
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/migrations/fsmigrations/l5t4_code/" class="dd-item">
+        <div>
+          <a href="/migrations/fsmigrations/l5t4_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/speedup/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/speedup/">Speed up your KittyORM</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/speedup/l4t1_code/" class="dd-item">
+        <div>
+          <a href="/speedup/l4t1_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/debug/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/debug/">Debugging KittyORM</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/debug/l4t2_code/" class="dd-item">
+        <div>
+          <a href="/debug/l4t2_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/encrypt/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/encrypt/">Database encryption</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/encrypt/l4t3_code/" class="dd-item">
+        <div>
+          <a href="/encrypt/l4t3_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/makekittygreater/" class="dd-item alwaysopen haschildren
+        ">
+      <div>
+      <a href="/makekittygreater/">Make KittyORM greater</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/makekittygreater/l6t1/" class="dd-item">
+        <div>
+          <a href="/makekittygreater/l6t1/">
+            <i class='fa fa-edit'>&nbsp;</i> Use KittyORM
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/makekittygreater/l6t2/" class="dd-item">
+        <div>
+          <a href="/makekittygreater/l6t2/">
+            <i class='fa fa-share'>&nbsp;</i> Share KittyORM
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/makekittygreater/l6t3/" class="dd-item">
+        <div>
+          <a href="/makekittygreater/l6t3/">
+            <i class='fa fa-github'>&nbsp;</i> Contribute to KittyORM
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/makekittygreater/l6t4/" class="dd-item">
+        <div>
+          <a href="/makekittygreater/l6t4/">
+            <i class='fa fa-usd'>&nbsp;</i> Sponsor KittyORM development
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/contacts/" class="dd-item
+        ">
+      <div>
+      <a href="/contacts/"><i class='fa fa-envelope'>&nbsp;</i> Contacts</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/license/" class="dd-item
+        ">
+      <div>
+      <a href="/license/">Legal information</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+
+
+
+
+    </ul>
+    <section>
+    </section>
+  </aside>
+  <section class="page">
+    
+    <div class="nav-select">
+      <center>Navigation : 
+        <select onchange="javascript:location.href = this.value;">
+          
+    <option value="/getting_started/" >
+   Getting started with KittyORM</option>
+    <option value="/crud_operations/" >
+   CRUD operations</option>
+    <option value="/datatype_mapping/" >
+   KittyORM datatypes mapping</option>
+    <option value="/constraints/" >
+   Constraints and indexes declarations</option>
+    <option value="/migrations/" >
+   Migrations between different DB versions</option> 
+    <option value="/migrations/overview/" >
+  - 
+   Migrations overview</option>
+    <option value="/migrations/dropcreate/" >
+  - 
+   DropCreate Migrator</option>
+    <option value="/migrations/simplemigrations/"  selected>
+  - 
+   Simple Migration Script Generator Migrator</option> 
+      <option value="/migrations/simplemigrations/l5t3_schema/" >-- DB schema</option>
+      <option value="/migrations/simplemigrations/l5t3_code/" >-- Source code</option>
+  
+    <option value="/migrations/fsmigrations/" >
+  - 
+   Filescript Migrator</option>
+  
+    <option value="/speedup/" >
+   Speed up your KittyORM</option>
+    <option value="/debug/" >
+   Debugging KittyORM</option>
+    <option value="/encrypt/" >
+   Database encryption</option>
+    <option value="/makekittygreater/" >
+   Make KittyORM greater</option> 
+      <option value="/makekittygreater/l6t1/" >- Use KittyORM</option>
+      <option value="/makekittygreater/l6t2/" >- Share KittyORM</option>
+      <option value="/makekittygreater/l6t3/" >- Contribute to KittyORM</option>
+      <option value="/makekittygreater/l6t4/" >- Sponsor KittyORM development</option>
+  
+    <option value="/contacts/" >
+   Contacts</option>
+    <option value="/license/" >
+   Legal information</option>
+    <option value="/hidden/" >
+   Hidden</option>
+
+
+
+        </select>
+      </center>
+    </div>
+      <div>
+        <div class="searchbox">
+          <input data-search-input id="search-by" type="text" placeholder="Search...">
+        </div>
+        <script type="text/javascript" src="/js/lunr.min.js"></script>
+        <script type="text/javascript" src="/js/auto-complete.js"></script>
+        <link href="/css/auto-complete.css" rel="stylesheet">
+        <script type="text/javascript">
+          
+              var baseurl = "\/";
+          
+        </script>
+        <script type="text/javascript" src="/js/search.js"></script>
+      </div>
+    
+
+    <h1>Simple Migration Script Generator Migrator</h1>
+    
+    
+    
+
+<p><div class="panel panel-primary">
+	
+	<div class="panel-body"><p><center><img src="src/1.png?height=150px&amp;classes=border,inline" alt="alt text" />  <img src="src/2.png?height=150px&amp;classes=border,inline" alt="alt text" />  <img src="src/3.png?height=150px&amp;classes=border,inline" alt="alt text" /></center></p>
+</div>
+	<div class="panel-footer">Demo application screenshots for this article</div>
+</div>
+
+SimpleMigrationScriptGenerator Migrator is a simple migration utility that tries to generate migration script based on differences between current and new schema and save as many data as possible. It is implemented by <code>KittySimpleMigrator.class</code> that uses <code>net.akaish.kitty.orm.util.KittySimpleMigrationScriptGenerator</code> for generating migration script. <code>KittySimpleMigrationScriptGenerator</code> is capable only to delete and create new indexes and table as well as adding or deleting columns in existing tables, so use it only when you&rsquo;re sure that there are no constraints defined that can be violated with script created by this utility class. <code>KittySimpleMigrationScriptGenerator</code> gets list of existing tables, table columns and indexes of current database and compares it to new schema tables, table columns and indexes list, then generates statements to drop redundant tables, indexes and table columns, statements to alter existing tables and statements to create new tables and indexes. Due to SQLite <code>ALTER</code> restrictions, a lot of operations, for example, operation of deleting redundant column in existing table would be not <code>ALTER</code> statement but list of statements: renaming old table, creating new version of table from new schema, inserting values from old table to new one.</p>
+
+<p>To use SimpleMigrationScriptGenerator Migrator you should set <code>onUpgradeBehavior</code> property value of <code>@KITTY_DATABASE_HELPER</code> to <code>KITTY_DATABASE_HELPER.UpgradeBehavior.USE_SIMPLE_MIGRATIONS</code>:
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>@KITTY_DATABASE<span style="font-weight:bold">(</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>        isLoggingOn <span style="font-weight:bold">=</span> <span style="font-weight:bold">true</span><span style="font-weight:bold">,</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>        isProductionOn <span style="font-weight:bold">=</span> <span style="font-weight:bold">false</span><span style="font-weight:bold">,</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>        isKittyDexUtilLoggingEnabled <span style="font-weight:bold">=</span> <span style="font-weight:bold">false</span><span style="font-weight:bold">,</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>        logTag <span style="font-weight:bold">=</span> MigrationDBv3<span style="font-weight:bold">.</span><span style="color:#008080">LTAG</span><span style="font-weight:bold">,</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>        databaseName <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;mig&#34;</span><span style="font-weight:bold">,</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>        databaseVersion <span style="font-weight:bold">=</span> 3<span style="font-weight:bold">,</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>        domainPackageNames <span style="font-weight:bold">=</span> <span style="font-weight:bold">{</span><span style="color:#b84">&#34;net.akaish.kittyormdemo.sqlite.migrations.migv3&#34;</span><span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>@KITTY_DATABASE_REGISTRY<span style="font-weight:bold">(</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>        domainModels <span style="font-weight:bold">=</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>                net<span style="font-weight:bold">.</span><span style="color:#008080">akaish</span><span style="font-weight:bold">.</span><span style="color:#008080">kittyormdemo</span><span style="font-weight:bold">.</span><span style="color:#008080">sqlite</span><span style="font-weight:bold">.</span><span style="color:#008080">migrations</span><span style="font-weight:bold">.</span><span style="color:#008080">migv3</span><span style="font-weight:bold">.</span><span style="color:#008080">MigOneModel</span><span style="font-weight:bold">.</span><span style="color:#008080">class</span><span style="font-weight:bold">,</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>                net<span style="font-weight:bold">.</span><span style="color:#008080">akaish</span><span style="font-weight:bold">.</span><span style="color:#008080">kittyormdemo</span><span style="font-weight:bold">.</span><span style="color:#008080">sqlite</span><span style="font-weight:bold">.</span><span style="color:#008080">migrations</span><span style="font-weight:bold">.</span><span style="color:#008080">migv3</span><span style="font-weight:bold">.</span><span style="color:#008080">MigTwoModel</span><span style="font-weight:bold">.</span><span style="color:#008080">class</span><span style="font-weight:bold">,</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>                net<span style="font-weight:bold">.</span><span style="color:#008080">akaish</span><span style="font-weight:bold">.</span><span style="color:#008080">kittyormdemo</span><span style="font-weight:bold">.</span><span style="color:#008080">sqlite</span><span style="font-weight:bold">.</span><span style="color:#008080">migrations</span><span style="font-weight:bold">.</span><span style="color:#008080">migv3</span><span style="font-weight:bold">.</span><span style="color:#008080">MigThreeModel</span><span style="font-weight:bold">.</span><span style="color:#008080">class</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>        <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>@KITTY_DATABASE_HELPER<span style="font-weight:bold">(</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>        onUpgradeBehavior <span style="font-weight:bold">=</span> KITTY_DATABASE_HELPER<span style="font-weight:bold">.</span><span style="color:#008080">UpgradeBehavior</span><span style="font-weight:bold">.</span><span style="color:#008080">USE_SIMPLE_MIGRATIONS</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="color:#458;font-weight:bold">MigrationDBv3</span> <span style="font-weight:bold">extends</span> KittyDatabase <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>    <span style="font-weight:bold">...</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span style="font-weight:bold">}</span></code></pre></div></p>
+
+<p><strong>Mig v.3</strong></p>
+
+<p><strong>MigOneModel (mig_one)</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Java type</th>
+<th>Name</th>
+<th>SQLite name</th>
+<th>Constraints</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>Long</code></td>
+<td>id</td>
+<td>id</td>
+<td>PRIMARY KEY</td>
+</tr>
+
+<tr>
+<td><code>String</code></td>
+<td>creationDate</td>
+<td>creation_date</td>
+<td>NOT_NULL DEFAULT(CURRENT_DATE)</td>
+</tr>
+
+<tr>
+<td><code>Integer</code></td>
+<td>defaultInteger</td>
+<td>default_integer</td>
+<td>DEFAULT(228)</td>
+</tr>
+</tbody>
+</table>
+
+<p>Index on <code>default_integer</code>.</p>
+
+<p><strong>MigTwoModel (mig_two)</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Java type</th>
+<th>Name</th>
+<th>SQLite name</th>
+<th>Constraints</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>Long</code></td>
+<td>id</td>
+<td>id</td>
+<td>PRIMARY KEY</td>
+</tr>
+
+<tr>
+<td><code>Long</code></td>
+<td>migOneReference</td>
+<td>mig_one_reference</td>
+<td>FOREIGN KEY reference on mig_one.id</td>
+</tr>
+
+<tr>
+<td><code>Animals</code></td>
+<td>someAnimal</td>
+<td>some_animal</td>
+<td>-</td>
+</tr>
+
+<tr>
+<td><code>AnimalSounds</code></td>
+<td>someAnimalSound</td>
+<td>some_animal_sound</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>MigThreeModel (mig_three)</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Java type</th>
+<th>Name</th>
+<th>SQLite name</th>
+<th>Constraints</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>Long</code></td>
+<td>id</td>
+<td>id</td>
+<td>PRIMARY KEY</td>
+</tr>
+
+<tr>
+<td><code>String</code></td>
+<td>someValue</td>
+<td>some_value</td>
+<td>DEFAULT(&ldquo;Something random&rdquo;)</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>v.2 -&gt; v.3 diffs</strong></p>
+
+<ol>
+<li>- column mig_one.current_timestamp</li>
+<li>+ column mig_two.someAnimalSound</li>
+<li>+ table mig_three</li>
+<li>- index on mig_two (some_animal)</li>
+</ol>
+
+<p><strong>Create schema script generated by KittyORM for database <code>mig</code> version <code>3</code></strong>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">CREATE</span> <span style="font-weight:bold">TABLE</span> <span style="font-weight:bold">IF</span> <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">EXISTS</span> mig_three (id <span style="color:#999">INTEGER</span> <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span> <span style="font-weight:bold">PRIMARY</span> <span style="font-weight:bold">KEY</span> <span style="font-weight:bold">ASC</span>, some_value <span style="color:#999">TEXT</span> <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span> <span style="font-weight:bold">DEFAULT</span> <span style="color:#b84">&#39;Something random&#39;</span>);
+
+<span style="font-weight:bold">CREATE</span> <span style="font-weight:bold">TABLE</span> <span style="font-weight:bold">IF</span> <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">EXISTS</span> mig_one (id <span style="color:#999">INTEGER</span> <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span> <span style="font-weight:bold">PRIMARY</span> <span style="font-weight:bold">KEY</span> <span style="font-weight:bold">ASC</span>, creation_date <span style="color:#999">TEXT</span> <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span> <span style="font-weight:bold">DEFAULT</span>  <span style="font-weight:bold">CURRENT_DATE</span> , default_integer <span style="color:#999">INTEGER</span> <span style="font-weight:bold">DEFAULT</span> <span style="color:#099">228</span>);
+
+<span style="font-weight:bold">CREATE</span> <span style="font-weight:bold">INDEX</span> <span style="font-weight:bold">IF</span> <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">EXISTS</span> m1_di_index <span style="font-weight:bold">ON</span> mig_one (default_integer);
+
+<span style="font-weight:bold">CREATE</span> <span style="font-weight:bold">TABLE</span> <span style="font-weight:bold">IF</span> <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">EXISTS</span> mig_two (id <span style="color:#999">INTEGER</span> <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span> <span style="font-weight:bold">PRIMARY</span> <span style="font-weight:bold">KEY</span> <span style="font-weight:bold">ASC</span>, mig_one_reference <span style="color:#999">INTEGER</span> <span style="font-weight:bold">REFERENCES</span> mig_one (id) <span style="font-weight:bold">ON</span> <span style="font-weight:bold">UPDATE</span> <span style="font-weight:bold">CASCADE</span> <span style="font-weight:bold">ON</span> <span style="font-weight:bold">DELETE</span> <span style="font-weight:bold">CASCADE</span>, some_animal <span style="color:#999">TEXT</span>, some_animal_sound <span style="color:#999">TEXT</span>);</code></pre></div>
+<strong>Drop schema script generated by KittyORM for database <code>mig</code> version <code>3</code></strong>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">DROP</span> <span style="font-weight:bold">TABLE</span> <span style="font-weight:bold">IF</span> <span style="font-weight:bold">EXISTS</span> mig_one;
+
+<span style="font-weight:bold">DROP</span> <span style="font-weight:bold">TABLE</span> <span style="font-weight:bold">IF</span> <span style="font-weight:bold">EXISTS</span> mig_two;
+
+<span style="font-weight:bold">DROP</span> <span style="font-weight:bold">TABLE</span> <span style="font-weight:bold">IF</span> <span style="font-weight:bold">EXISTS</span> mig_three;</code></pre></div>
+<strong>Migration script generated by KittyORM for database <code>mig</code> from version <code>2</code> to version <code>3</code> (SimpleMigrationScriptGenerator migrator)</strong>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">ALTER</span> <span style="font-weight:bold">TABLE</span> mig_one <span style="font-weight:bold">RENAME</span> <span style="font-weight:bold">TO</span> mig_one_t_old;
+
+<span style="font-weight:bold">CREATE</span> <span style="font-weight:bold">TABLE</span> <span style="font-weight:bold">IF</span> <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">EXISTS</span> mig_one (id <span style="color:#999">INTEGER</span> <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span> <span style="font-weight:bold">PRIMARY</span> <span style="font-weight:bold">KEY</span> <span style="font-weight:bold">ASC</span>, creation_date <span style="color:#999">TEXT</span> <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span> <span style="font-weight:bold">DEFAULT</span>  <span style="font-weight:bold">CURRENT_DATE</span> , default_integer <span style="color:#999">INTEGER</span> <span style="font-weight:bold">DEFAULT</span> <span style="color:#099">228</span>);
+
+<span style="font-weight:bold">INSERT</span> <span style="font-weight:bold">INTO</span> mig_one (id, creation_date, default_integer) <span style="font-weight:bold">SELECT</span> id, creation_date, default_integer <span style="font-weight:bold">FROM</span> mig_one_t_old;
+
+<span style="font-weight:bold">DROP</span> <span style="font-weight:bold">TABLE</span> <span style="font-weight:bold">IF</span> <span style="font-weight:bold">EXISTS</span> mig_one_t_old;
+
+<span style="font-weight:bold">CREATE</span> <span style="font-weight:bold">INDEX</span> <span style="font-weight:bold">IF</span> <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">EXISTS</span> m1_di_index <span style="font-weight:bold">ON</span> mig_one (default_integer);
+
+<span style="font-weight:bold">ALTER</span> <span style="font-weight:bold">TABLE</span> mig_two <span style="font-weight:bold">ADD</span> <span style="font-weight:bold">COLUMN</span> some_animal_sound;
+
+<span style="font-weight:bold">CREATE</span> <span style="font-weight:bold">TABLE</span> <span style="font-weight:bold">IF</span> <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">EXISTS</span> mig_three (id <span style="color:#999">INTEGER</span> <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span> <span style="font-weight:bold">PRIMARY</span> <span style="font-weight:bold">KEY</span> <span style="font-weight:bold">ASC</span>, some_value <span style="color:#999">TEXT</span> <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span> <span style="font-weight:bold">DEFAULT</span> <span style="color:#b84">&#39;Something random&#39;</span>);
+
+<span style="font-weight:bold">DROP</span> <span style="font-weight:bold">INDEX</span> <span style="font-weight:bold">IF</span> <span style="font-weight:bold">EXISTS</span> mig.m2_sa_index;</code></pre></div>
+<strong>Migration script generated by KittyORM for database <code>mig</code> from version <code>1</code> to version <code>3</code> (SimpleMigrationScriptGenerator migrator)</strong>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="font-weight:bold">ALTER</span> <span style="font-weight:bold">TABLE</span> mig_one <span style="font-weight:bold">RENAME</span> <span style="font-weight:bold">TO</span> mig_one_t_old;
+
+<span style="font-weight:bold">CREATE</span> <span style="font-weight:bold">TABLE</span> <span style="font-weight:bold">IF</span> <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">EXISTS</span> mig_one (id <span style="color:#999">INTEGER</span> <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span> <span style="font-weight:bold">PRIMARY</span> <span style="font-weight:bold">KEY</span> <span style="font-weight:bold">ASC</span>, creation_date <span style="color:#999">TEXT</span> <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span> <span style="font-weight:bold">DEFAULT</span>  <span style="font-weight:bold">CURRENT_DATE</span> , default_integer <span style="color:#999">INTEGER</span> <span style="font-weight:bold">DEFAULT</span> <span style="color:#099">228</span>);
+
+<span style="font-weight:bold">INSERT</span> <span style="font-weight:bold">INTO</span> mig_one (id, creation_date) <span style="font-weight:bold">SELECT</span> id, creation_date <span style="font-weight:bold">FROM</span> mig_one_t_old;
+
+<span style="font-weight:bold">DROP</span> <span style="font-weight:bold">TABLE</span> <span style="font-weight:bold">IF</span> <span style="font-weight:bold">EXISTS</span> mig_one_t_old;
+
+<span style="font-weight:bold">CREATE</span> <span style="font-weight:bold">INDEX</span> <span style="font-weight:bold">IF</span> <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">EXISTS</span> m1_di_index <span style="font-weight:bold">ON</span> mig_one (default_integer);
+
+<span style="font-weight:bold">CREATE</span> <span style="font-weight:bold">TABLE</span> <span style="font-weight:bold">IF</span> <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">EXISTS</span> mig_two (id <span style="color:#999">INTEGER</span> <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span> <span style="font-weight:bold">PRIMARY</span> <span style="font-weight:bold">KEY</span> <span style="font-weight:bold">ASC</span>, mig_one_reference <span style="color:#999">INTEGER</span> <span style="font-weight:bold">REFERENCES</span> mig_one (id) <span style="font-weight:bold">ON</span> <span style="font-weight:bold">UPDATE</span> <span style="font-weight:bold">CASCADE</span> <span style="font-weight:bold">ON</span> <span style="font-weight:bold">DELETE</span> <span style="font-weight:bold">CASCADE</span>, some_animal <span style="color:#999">TEXT</span>, some_animal_sound <span style="color:#999">TEXT</span>);
+
+<span style="font-weight:bold">CREATE</span> <span style="font-weight:bold">TABLE</span> <span style="font-weight:bold">IF</span> <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">EXISTS</span> mig_three (id <span style="color:#999">INTEGER</span> <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span> <span style="font-weight:bold">PRIMARY</span> <span style="font-weight:bold">KEY</span> <span style="font-weight:bold">ASC</span>, some_value <span style="color:#999">TEXT</span> <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span> <span style="font-weight:bold">DEFAULT</span> <span style="color:#b84">&#39;Something random&#39;</span>);</code></pre></div></p>
+
+
+
+    
+    
+        <div class="chevrons">
+    <div id="navigation">
+<a class="nav nav-prev" href="/migrations/dropcreate/l5t2_code/" title="Source code"> <i class="fa fa-chevron-left"></i><label>Source code</label></a>
+    <a class="nav nav-next" href="/migrations/simplemigrations/l5t3_schema/" title="DB schema" style="margin-right: 0px;"><label>DB schema</label><i class="fa fa-chevron-right"></i></a></div>
+  </div>
+
+  </section>
+</article>
+
+<footer>
+
+<div class="footline">
+    
+
+    
+
+    
+    <div class="date">
+        <i class='fa fa-calendar'></i> Last update on 15/12/2018
+    </div>
+    
+
+    
+    <div class="github-link">
+      <a href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/migrations/simplemigrations/_index.md" target="blank"><i class="fa fa-code-fork"></i>
+        Improve this page</a>
+    </div>
+    
+  </div>
+
+
+	<div>
+
+
+  
+    <p><a href="/license/"><em>KittyORM project. Copyright © 2018 Denis Bogomolov. Some rights reserved.</em></a></p>
+
+<p><em>KittyORM documentation site powered by <a href="https://gohugo.io"><strong>Hugo</strong></a> with <a href="https://github.com/vjeantet/hugo-theme-docdock"><strong>DocDock</strong></a> theme.</em></p>
+
+<p><center></p>
+
+<p><a href="https://github.com/akaish/KittyORM" title="Visit KittyORM Github repo">
+
+<span class="fa fa-github"  style="font-size:large" aria-hidden="true"></span>
+
+</a>&nbsp;&nbsp;
+<a href="https://twitter.com/OrmKitty" title="Follow KittyORM at twitter">
+
+<span class="fa fa-twitter"  style="font-size:large" aria-hidden="true"></span>
+
+</a>&nbsp;&nbsp;
+<a href="https://t.me/kittyorm" title="Subscribe to KittyORM telegram channel">
+
+<span class="fa fa-telegram"  style="font-size:large" aria-hidden="true"></span>
+
+</a>&nbsp;&nbsp;
+<a href="https://stackoverflow.com/users/10656176/kittyorm" title="Ask questions related with KittyORM at StackOverflow">
+
+<span class="fa fa-stack-overflow"  style="font-size:large" aria-hidden="true"></span>
+
+</a>&nbsp;&nbsp;
+<a href="/hidden/android" title="Check out KittyORM Demo at Play Market">
+
+<span class="fa fa-android"  style="font-size:large" aria-hidden="true"></span>
+
+</a>&nbsp;&nbsp;
+<a href="/contacts" title="Contact us">
+
+<span class="fa fa-envelope"  style="font-size:large" aria-hidden="true"></span>
+
+</a>&nbsp;&nbsp;
+<a href="/makekittygreater/l6t4" title="Sponsor KittyORM development">
+
+<span class="fa fa-usd"  style="font-size:large" aria-hidden="true"></span>
+
+</a>&nbsp;&nbsp;</p>
+
+<p></center></p>
+
+  
+
+
+
+	</div>
+</footer>
+
+<script src="/js/clipboard.min.js"></script>
+
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<script src="/js/featherlight.min.js"></script>
+
+
+
+<script src="/theme-flex/script.js"></script>
+
+
+    
+
+    
+    
+
+    
+  </body>
+</html>

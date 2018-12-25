@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>KittyORM: Fast and reliable ORM for SQLite\Android</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2018-12-25T19:01:21 MSK">
+<title>Source code :: KittyORM: Fast and reliable ORM for SQLite\Android</title>
+<link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/theme-flex/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "\/";
+</script>
+<meta name="description" content="">
+
+
+
+    
+  </head>
+  <body data-url="/getting_started/l1_code/">
+    
+      <header>
+  <div class="logo">
+    
+	
+  
+    <a class="baselink" href="/">KittyORM: Fast and reliable ORM for SQLite\Android</a>
+  
+
+
+  </div>
+  <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
+    <nav class="shortcuts">
+            <li class="" role="">
+                <a href="https://github.com/akaish/KittyORM"  rel="noopener">
+                  <i class='fa fa-github'></i> <label>Github repo</label>
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="https://twitter.com/OrmKitty"  rel="noopener">
+                  <i class='fa fa-twitter'></i> <label>@OrmKitty</label>
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="https://t.me/kittyorm"  rel="noopener">
+                  <i class='fa fa-telegram'></i> <label>KittyORM channel</label>
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="/kittydoc/"  rel="noopener">
+                  <i class='fa fa-at'></i> <label>Javadoc</label>
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="/hidden/android"  rel="noopener">
+                  <i class='fa fa-android'></i> <label>KittyORM Demo at PlayMarket</label>
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="/contacts"  rel="noopener">
+                  <i class='fa fa-envelope'></i> <label>Contacts</label>
+                </a>
+            </li>
+    </nav>
+</header>
+<article>
+  <aside>
+    <ul class="menu">
+          <li data-nav-id="/" class="dd-item">
+          <a href="/">
+            <i class="fa fa-fw fa-home"></i>
+          </a>
+          </li>
+    <li data-nav-id="/getting_started/" class="dd-item parent haschildren
+        ">
+      <div>
+      <a href="/getting_started/">Getting started with KittyORM</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/getting_started/l1_schema/" class="dd-item">
+        <div>
+          <a href="/getting_started/l1_schema/">
+            <i class='fa fa-database'>&nbsp;</i> DB schema
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/getting_started/l1_code/" class="dd-item active">
+        <div>
+          <a href="/getting_started/l1_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/crud_operations/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/crud_operations/">CRUD operations</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/crud_operations/save/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/crud_operations/save/">Saving new entity</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/crud_operations/save/l2_schema/" class="dd-item">
+        <div>
+          <a href="/crud_operations/save/l2_schema/">
+            <i class='fa fa-database'>&nbsp;</i> DB schema
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/crud_operations/save/l2t1_code/" class="dd-item">
+        <div>
+          <a href="/crud_operations/save/l2t1_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/crud_operations/update/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/crud_operations/update/">Updating existing entity</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/crud_operations/update/l2_schema/" class="dd-item">
+        <div>
+          <a href="/crud_operations/update/l2_schema/">
+            <i class='fa fa-database'>&nbsp;</i> DB schema
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/crud_operations/update/l2t2_code/" class="dd-item">
+        <div>
+          <a href="/crud_operations/update/l2t2_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/crud_operations/delete/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/crud_operations/delete/">Deleting entities</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/crud_operations/delete/l2_schema/" class="dd-item">
+        <div>
+          <a href="/crud_operations/delete/l2_schema/">
+            <i class='fa fa-database'>&nbsp;</i> DB schema
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/crud_operations/delete/l2t3_code/" class="dd-item">
+        <div>
+          <a href="/crud_operations/delete/l2t3_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/crud_operations/find/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/crud_operations/find/">Finding entities</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/crud_operations/find/l2_schema/" class="dd-item">
+        <div>
+          <a href="/crud_operations/find/l2_schema/">
+            <i class='fa fa-database'>&nbsp;</i> DB schema
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/crud_operations/find/l2t4_code/" class="dd-item">
+        <div>
+          <a href="/crud_operations/find/l2t4_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/crud_operations/bulk/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/crud_operations/bulk/">KittyORM and bulk operations</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/crud_operations/bulk/l2_schema/" class="dd-item">
+        <div>
+          <a href="/crud_operations/bulk/l2_schema/">
+            <i class='fa fa-database'>&nbsp;</i> DB schema
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/crud_operations/bulk/l2t5_code/" class="dd-item">
+        <div>
+          <a href="/crud_operations/bulk/l2t5_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/datatype_mapping/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/datatype_mapping/">KittyORM datatypes mapping</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/datatype_mapping/l3_schema/" class="dd-item">
+        <div>
+          <a href="/datatype_mapping/l3_schema/">
+            <i class='fa fa-database'>&nbsp;</i> DB schema
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/datatype_mapping/l3t1_code/" class="dd-item">
+        <div>
+          <a href="/datatype_mapping/l3t1_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/constraints/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/constraints/">Constraints and indexes declarations</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/constraints/l3_schema/" class="dd-item">
+        <div>
+          <a href="/constraints/l3_schema/">
+            <i class='fa fa-database'>&nbsp;</i> DB schema
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/constraints/l3t2_code/" class="dd-item">
+        <div>
+          <a href="/constraints/l3t2_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/migrations/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/migrations/">Migrations between different DB versions</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/migrations/overview/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/migrations/overview/">Migrations overview</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/migrations/overview/l5t1_schema/" class="dd-item">
+        <div>
+          <a href="/migrations/overview/l5t1_schema/">
+            <i class='fa fa-database'>&nbsp;</i> DB schema
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/migrations/overview/l5t1_code/" class="dd-item">
+        <div>
+          <a href="/migrations/overview/l5t1_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/migrations/dropcreate/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/migrations/dropcreate/">DropCreate Migrator</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/migrations/dropcreate/l5t2_schema/" class="dd-item">
+        <div>
+          <a href="/migrations/dropcreate/l5t2_schema/">
+            <i class='fa fa-database'>&nbsp;</i> DB schema
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/migrations/dropcreate/l5t2_code/" class="dd-item">
+        <div>
+          <a href="/migrations/dropcreate/l5t2_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/migrations/simplemigrations/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/migrations/simplemigrations/">Simple Migration Script Generator Migrator</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/migrations/simplemigrations/l5t3_schema/" class="dd-item">
+        <div>
+          <a href="/migrations/simplemigrations/l5t3_schema/">
+            <i class='fa fa-database'>&nbsp;</i> DB schema
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/migrations/simplemigrations/l5t3_code/" class="dd-item">
+        <div>
+          <a href="/migrations/simplemigrations/l5t3_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/migrations/fsmigrations/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/migrations/fsmigrations/">Filescript Migrator</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/migrations/fsmigrations/l5t4_schema/" class="dd-item">
+        <div>
+          <a href="/migrations/fsmigrations/l5t4_schema/">
+            <i class='fa fa-database'>&nbsp;</i> DB schema
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/migrations/fsmigrations/l5t4_code/" class="dd-item">
+        <div>
+          <a href="/migrations/fsmigrations/l5t4_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/speedup/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/speedup/">Speed up your KittyORM</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/speedup/l4t1_code/" class="dd-item">
+        <div>
+          <a href="/speedup/l4t1_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/debug/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/debug/">Debugging KittyORM</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/debug/l4t2_code/" class="dd-item">
+        <div>
+          <a href="/debug/l4t2_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/encrypt/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/encrypt/">Database encryption</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/encrypt/l4t3_code/" class="dd-item">
+        <div>
+          <a href="/encrypt/l4t3_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/makekittygreater/" class="dd-item alwaysopen haschildren
+        ">
+      <div>
+      <a href="/makekittygreater/">Make KittyORM greater</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/makekittygreater/l6t1/" class="dd-item">
+        <div>
+          <a href="/makekittygreater/l6t1/">
+            <i class='fa fa-edit'>&nbsp;</i> Use KittyORM
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/makekittygreater/l6t2/" class="dd-item">
+        <div>
+          <a href="/makekittygreater/l6t2/">
+            <i class='fa fa-share'>&nbsp;</i> Share KittyORM
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/makekittygreater/l6t3/" class="dd-item">
+        <div>
+          <a href="/makekittygreater/l6t3/">
+            <i class='fa fa-github'>&nbsp;</i> Contribute to KittyORM
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/makekittygreater/l6t4/" class="dd-item">
+        <div>
+          <a href="/makekittygreater/l6t4/">
+            <i class='fa fa-usd'>&nbsp;</i> Sponsor KittyORM development
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/contacts/" class="dd-item
+        ">
+      <div>
+      <a href="/contacts/"><i class='fa fa-envelope'>&nbsp;</i> Contacts</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/license/" class="dd-item
+        ">
+      <div>
+      <a href="/license/">Legal information</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+
+
+
+
+    </ul>
+    <section>
+    </section>
+  </aside>
+  <section class="page">
+    
+    <div class="nav-select">
+      <center>Navigation : 
+        <select onchange="javascript:location.href = this.value;">
+          
+    <option value="/getting_started/" >
+   Getting started with KittyORM</option> 
+      <option value="/getting_started/l1_schema/" >- DB schema</option>
+      <option value="/getting_started/l1_code/"  selected>- Source code</option>
+  
+    <option value="/crud_operations/" >
+   CRUD operations</option>
+    <option value="/datatype_mapping/" >
+   KittyORM datatypes mapping</option>
+    <option value="/constraints/" >
+   Constraints and indexes declarations</option>
+    <option value="/migrations/" >
+   Migrations between different DB versions</option>
+    <option value="/speedup/" >
+   Speed up your KittyORM</option>
+    <option value="/debug/" >
+   Debugging KittyORM</option>
+    <option value="/encrypt/" >
+   Database encryption</option>
+    <option value="/makekittygreater/" >
+   Make KittyORM greater</option> 
+      <option value="/makekittygreater/l6t1/" >- Use KittyORM</option>
+      <option value="/makekittygreater/l6t2/" >- Share KittyORM</option>
+      <option value="/makekittygreater/l6t3/" >- Contribute to KittyORM</option>
+      <option value="/makekittygreater/l6t4/" >- Sponsor KittyORM development</option>
+  
+    <option value="/contacts/" >
+   Contacts</option>
+    <option value="/license/" >
+   Legal information</option>
+    <option value="/hidden/" >
+   Hidden</option>
+
+
+
+        </select>
+      </center>
+    </div>
+      <div>
+        <div class="searchbox">
+          <input data-search-input id="search-by" type="text" placeholder="Search...">
+        </div>
+        <script type="text/javascript" src="/js/lunr.min.js"></script>
+        <script type="text/javascript" src="/js/auto-complete.js"></script>
+        <link href="/css/auto-complete.css" rel="stylesheet">
+        <script type="text/javascript">
+          
+              var baseurl = "\/";
+          
+        </script>
+        <script type="text/javascript" src="/js/search.js"></script>
+      </div>
+    
+
+    <h1>Source code</h1>
+    
+    
+    
+    
+
+<h5 id="database-model-supporting-classes">Database, model, supporting classes</h5>
+
+<p><details>
+  <summary>Click to view <code>SimpleDatabase.class</code></summary>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="font-weight:bold">package</span> <span style="color:#555">net.akaish.kittyormdemo.sqlite.introductiondb</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="font-weight:bold">import</span> <span style="color:#555">android.content.Context</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="font-weight:bold">import</span> <span style="color:#555">net.akaish.kitty.orm.KittyDatabase</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="font-weight:bold">import</span> <span style="color:#555">net.akaish.kitty.orm.annotations.KITTY_DATABASE</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#998;font-style:italic">/**
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#998;font-style:italic"> * Created by akaish on 09.08.18.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#998;font-style:italic"> */</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>@KITTY_DATABASE<span style="font-weight:bold">(</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>        isLoggingOn <span style="font-weight:bold">=</span> <span style="font-weight:bold">true</span><span style="font-weight:bold">,</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>        isProductionOn <span style="font-weight:bold">=</span> <span style="font-weight:bold">false</span><span style="font-weight:bold">,</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>        domainPackageNames <span style="font-weight:bold">=</span> <span style="font-weight:bold">{</span><span style="color:#b84">&#34;net.akaish.kittyormdemo.sqlite.introductiondb&#34;</span><span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="color:#458;font-weight:bold">SimpleDatabase</span> <span style="font-weight:bold">extends</span> KittyDatabase <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>    <span style="color:#998;font-style:italic">/**
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span style="color:#998;font-style:italic">     * KittyORM main database class that represents bootstrap and holder for all related with database
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span style="color:#998;font-style:italic">     * components.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span style="color:#998;font-style:italic">     * &lt;br&gt; See {@link KittyDatabase#KittyDatabase(Context, String)} for more info.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span style="color:#998;font-style:italic">     *
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span style="color:#998;font-style:italic">     * @param ctx
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span style="color:#998;font-style:italic">     */</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>    <span style="font-weight:bold">public</span> <span style="color:#900;font-weight:bold">SimpleDatabase</span><span style="font-weight:bold">(</span>Context ctx<span style="font-weight:bold">)</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>        <span style="font-weight:bold">super</span><span style="font-weight:bold">(</span>ctx<span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>    <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span style="font-weight:bold">}</span></code></pre></div>
+</details></p>
+
+<p><details>
+  <summary>Click to view <code>SimpleExampleModel.class</code></summary>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="font-weight:bold">package</span> <span style="color:#555">net.akaish.kittyormdemo.sqlite.introductiondb</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="font-weight:bold">import</span> <span style="color:#555">net.akaish.kitty.orm.KittyModel</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="font-weight:bold">import</span> <span style="color:#555">net.akaish.kitty.orm.annotations.column.KITTY_COLUMN</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="font-weight:bold">import</span> <span style="color:#555">net.akaish.kitty.orm.annotations.table.KITTY_TABLE</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>@KITTY_TABLE
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="color:#458;font-weight:bold">SimpleExampleModel</span> <span style="font-weight:bold">extends</span> KittyModel <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    <span style="font-weight:bold">public</span> <span style="color:#900;font-weight:bold">SimpleExampleModel</span><span style="font-weight:bold">()</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>        <span style="font-weight:bold">super</span><span style="font-weight:bold">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    @KITTY_COLUMN<span style="font-weight:bold">(</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>            isIPK <span style="font-weight:bold">=</span> <span style="font-weight:bold">true</span><span style="font-weight:bold">,</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>            columnOrder <span style="font-weight:bold">=</span> 0
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>    <span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>    <span style="font-weight:bold">public</span> Long id<span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>    @KITTY_COLUMN<span style="font-weight:bold">(</span>columnOrder <span style="font-weight:bold">=</span> 1<span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>    <span style="font-weight:bold">public</span> <span style="color:#458;font-weight:bold">int</span> randomInteger<span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>    @KITTY_COLUMN<span style="font-weight:bold">(</span>columnOrder <span style="font-weight:bold">=</span> 2<span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>    <span style="font-weight:bold">public</span> String firstName<span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>    @Override
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>    <span style="font-weight:bold">public</span> String <span style="color:#900;font-weight:bold">toString</span><span style="font-weight:bold">()</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>        StringBuilder sb <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> StringBuilder<span style="font-weight:bold">(</span>64<span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>        <span style="font-weight:bold">return</span> sb<span style="font-weight:bold">.</span><span style="color:#008080">append</span><span style="font-weight:bold">(</span><span style="color:#b84">&#34;[ rowid = &#34;</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>                    <span style="font-weight:bold">.</span><span style="color:#008080">append</span><span style="font-weight:bold">(</span>getRowID<span style="font-weight:bold">())</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>                    <span style="font-weight:bold">.</span><span style="color:#008080">append</span><span style="font-weight:bold">(</span><span style="color:#b84">&#34; ; id = &#34;</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>                    <span style="font-weight:bold">.</span><span style="color:#008080">append</span><span style="font-weight:bold">(</span>id<span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>                    <span style="font-weight:bold">.</span><span style="color:#008080">append</span><span style="font-weight:bold">(</span><span style="color:#b84">&#34; ; randomInteger = &#34;</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>                    <span style="font-weight:bold">.</span><span style="color:#008080">append</span><span style="font-weight:bold">(</span>randomInteger<span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>                    <span style="font-weight:bold">.</span><span style="color:#008080">append</span><span style="font-weight:bold">(</span><span style="color:#b84">&#34; ; firstName = &#34;</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>                    <span style="font-weight:bold">.</span><span style="color:#008080">append</span><span style="font-weight:bold">(</span>firstName<span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>                    <span style="font-weight:bold">.</span><span style="color:#008080">append</span><span style="font-weight:bold">(</span><span style="color:#b84">&#34; ]&#34;</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>                    <span style="font-weight:bold">.</span><span style="color:#008080">toString</span><span style="font-weight:bold">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>    <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span><span style="font-weight:bold">}</span></code></pre></div>
+</details></p>
+
+<p><details>
+  <summary>Click to view <code>RandomSimpleExampleModelUtil.class</code></summary>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="font-weight:bold">package</span> <span style="color:#555">net.akaish.kittyormdemo.sqlite.introductiondb.util</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="font-weight:bold">import</span> <span style="color:#555">net.akaish.kittyormdemo.sqlite.introductiondb.SimpleExampleModel</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="font-weight:bold">import</span> <span style="color:#555">java.util.Random</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#998;font-style:italic">/**
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#998;font-style:italic"> * Created by akaish on 21.08.18.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#998;font-style:italic"> */</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="color:#458;font-weight:bold">RandomSimpleExampleModelUtil</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    <span style="font-weight:bold">private</span> <span style="font-weight:bold">static</span> String NAMES<span style="font-weight:bold">[]</span> <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> String<span style="font-weight:bold">[]</span> <span style="font-weight:bold">{</span><span style="color:#b84">&#34;Adam&#34;</span><span style="font-weight:bold">,</span> <span style="color:#b84">&#34;Ada&#34;</span><span style="font-weight:bold">,</span> <span style="color:#b84">&#34;Joseph&#34;</span><span style="font-weight:bold">,</span> <span style="color:#b84">&#34;Michel&#34;</span><span style="font-weight:bold">,</span> <span style="color:#b84">&#34;Mickie&#34;</span><span style="font-weight:bold">,</span> <span style="color:#b84">&#34;Boris&#34;</span><span style="font-weight:bold">,</span> <span style="color:#b84">&#34;Denis&#34;</span><span style="font-weight:bold">,</span> <span style="color:#b84">&#34;Denise&#34;</span><span style="font-weight:bold">,</span> <span style="color:#b84">&#34;Alexander&#34;</span><span style="font-weight:bold">,</span> <span style="color:#b84">&#34;Irina&#34;</span><span style="font-weight:bold">};</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>    <span style="font-weight:bold">public</span> <span style="font-weight:bold">static</span> SimpleExampleModel <span style="color:#900;font-weight:bold">randomSEModel</span><span style="font-weight:bold">()</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>        SimpleExampleModel m <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> SimpleExampleModel<span style="font-weight:bold">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>        Random rnd <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> Random<span style="font-weight:bold">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>        m<span style="font-weight:bold">.</span><span style="color:#008080">randomInteger</span> <span style="font-weight:bold">=</span> rnd<span style="font-weight:bold">.</span><span style="color:#008080">nextInt</span><span style="font-weight:bold">(</span>1000<span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>        m<span style="font-weight:bold">.</span><span style="color:#008080">firstName</span> <span style="font-weight:bold">=</span> NAMES<span style="font-weight:bold">[</span>rnd<span style="font-weight:bold">.</span><span style="color:#008080">nextInt</span><span style="font-weight:bold">(</span>10<span style="font-weight:bold">)];</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>        <span style="font-weight:bold">return</span> m<span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>    <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span style="font-weight:bold">}</span></code></pre></div>
+</details></p>
+
+<h5 id="run-crud-operations-code">&ldquo;RUN CRUD OPERATIONS&rdquo; code</h5>
+
+<p><details>
+  <summary>Click to view <code>GettingStartedTutorialCode.allInOne()</code></summary>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1</span><span style="color:#998;font-style:italic">// Creating new instance of SimpleDatabase
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2</span><span style="color:#998;font-style:italic"></span>SimpleDatabase simpleDatabase <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> SimpleDatabase<span style="font-weight:bold">(</span>ctx<span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4</span>KittyMapper mapper <span style="font-weight:bold">=</span> simpleDatabase<span style="font-weight:bold">.</span><span style="color:#008080">getMapper</span><span style="font-weight:bold">(</span>SimpleExampleModel<span style="font-weight:bold">.</span><span style="color:#008080">class</span><span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6</span><span style="color:#998;font-style:italic">// Counting records in db table and deleting them if table not empty
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7</span><span style="color:#998;font-style:italic"></span><span style="font-weight:bold">if</span><span style="font-weight:bold">(</span>mapper<span style="font-weight:bold">.</span><span style="color:#008080">countAll</span><span style="font-weight:bold">()</span> <span style="font-weight:bold">&gt;</span> 0<span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8</span>    mapper<span style="font-weight:bold">.</span><span style="color:#008080">deleteAll</span><span style="font-weight:bold">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10</span><span style="color:#998;font-style:italic">// Insert new model example
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11</span><span style="color:#998;font-style:italic">// Creating and setting three new models
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12</span><span style="color:#998;font-style:italic"></span>SimpleExampleModel alex <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> SimpleExampleModel<span style="font-weight:bold">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14</span>alex<span style="font-weight:bold">.</span><span style="color:#008080">randomInteger</span> <span style="font-weight:bold">=</span> 545141<span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15</span>alex<span style="font-weight:bold">.</span><span style="color:#008080">firstName</span> <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;Alex&#34;</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17</span>SimpleExampleModel marina <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> SimpleExampleModel<span style="font-weight:bold">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19</span>marina<span style="font-weight:bold">.</span><span style="color:#008080">randomInteger</span> <span style="font-weight:bold">=</span> 228<span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20</span>marina<span style="font-weight:bold">.</span><span style="color:#008080">firstName</span> <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;Marina&#34;</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22</span>SimpleExampleModel marina2 <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> SimpleExampleModel<span style="font-weight:bold">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24</span>marina2<span style="font-weight:bold">.</span><span style="color:#008080">randomInteger</span> <span style="font-weight:bold">=</span> 445555<span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25</span>marina2<span style="font-weight:bold">.</span><span style="color:#008080">firstName</span> <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;Marina&#34;</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27</span><span style="color:#998;font-style:italic">// Saving those models
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28</span><span style="color:#998;font-style:italic">// Saving model with mapper.save(M model)
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29</span><span style="color:#998;font-style:italic"></span>mapper<span style="font-weight:bold">.</span><span style="color:#008080">save</span><span style="font-weight:bold">(</span>alex<span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30</span>mapper<span style="font-weight:bold">.</span><span style="color:#008080">save</span><span style="font-weight:bold">(</span>marina2<span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32</span><span style="color:#998;font-style:italic">// Saving model with mapper.insert(M model)
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33</span><span style="color:#998;font-style:italic">// Better to use insert(M model) for new DB records cause it is little bit faster
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34</span><span style="color:#998;font-style:italic"></span><span style="color:#458;font-weight:bold">long</span> marinaRowid <span style="font-weight:bold">=</span> mapper<span style="font-weight:bold">.</span><span style="color:#008080">insert</span><span style="font-weight:bold">(</span>marina<span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37</span><span style="color:#998;font-style:italic">// Finding existing records in DB and mapping them to entities
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38</span><span style="color:#998;font-style:italic"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39</span><span style="color:#998;font-style:italic">// find with condition
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40</span><span style="color:#998;font-style:italic"></span>SQLiteConditionBuilder builder <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> SQLiteConditionBuilder<span style="font-weight:bold">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41</span>builder<span style="font-weight:bold">.</span><span style="color:#008080">addField</span><span style="font-weight:bold">(</span><span style="color:#b84">&#34;first_name&#34;</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42</span>    <span style="font-weight:bold">.</span><span style="color:#008080">addSQLOperator</span><span style="font-weight:bold">(</span>SQLiteOperator<span style="font-weight:bold">.</span><span style="color:#008080">EQUAL</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43</span>    <span style="font-weight:bold">.</span><span style="color:#008080">addValue</span><span style="font-weight:bold">(</span><span style="color:#b84">&#34;Marina&#34;</span><span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44</span>List<span style="font-weight:bold">&lt;</span>SimpleExampleModel<span style="font-weight:bold">&gt;</span> marinas <span style="font-weight:bold">=</span> mapper<span style="font-weight:bold">.</span><span style="color:#008080">findWhere</span><span style="font-weight:bold">(</span>builder<span style="font-weight:bold">.</span><span style="color:#008080">build</span><span style="font-weight:bold">());</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46</span><span style="color:#998;font-style:italic">// find with RowID
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47</span><span style="color:#998;font-style:italic"></span>SimpleExampleModel marinaFromTableRowid <span style="font-weight:bold">=</span> mapper<span style="font-weight:bold">.</span><span style="color:#008080">findByRowID</span><span style="font-weight:bold">(</span>marinaRowid<span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49</span><span style="color:#998;font-style:italic">// find with IPK
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50</span><span style="color:#998;font-style:italic"></span>SimpleExampleModel marinaFromTableIPK <span style="font-weight:bold">=</span> mapper<span style="font-weight:bold">.</span><span style="color:#008080">findByIPK</span><span style="font-weight:bold">(</span>marinaFromTableRowid<span style="font-weight:bold">.</span><span style="color:#008080">id</span><span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52</span>findOperationId<span style="font-weight:bold">++;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53</span><span style="color:#998;font-style:italic">// find with KittyPrimaryKey
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54</span><span style="color:#998;font-style:italic"></span>KittyPrimaryKey pk <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> KittyPrimaryKeyBuilder<span style="font-weight:bold">()</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55</span>    <span style="font-weight:bold">.</span><span style="color:#008080">addKeyColumnValue</span><span style="font-weight:bold">(</span><span style="color:#b84">&#34;id&#34;</span><span style="font-weight:bold">,</span> marinaFromTableRowid<span style="font-weight:bold">.</span><span style="color:#008080">id</span><span style="font-weight:bold">.</span><span style="color:#008080">toString</span><span style="font-weight:bold">())</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56</span>    <span style="font-weight:bold">.</span><span style="color:#008080">build</span><span style="font-weight:bold">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57</span>SimpleExampleModel marinaFromTableKPK <span style="font-weight:bold">=</span> mapper<span style="font-weight:bold">.</span><span style="color:#008080">findByPK</span><span style="font-weight:bold">(</span>pk<span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59</span><span style="color:#998;font-style:italic">// Generating and inserting list of 10 random models
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60</span><span style="color:#998;font-style:italic"></span>List<span style="font-weight:bold">&lt;</span>SimpleExampleModel<span style="font-weight:bold">&gt;</span> randomModels <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> LinkedList<span style="font-weight:bold">&lt;&gt;();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61</span><span style="font-weight:bold">for</span><span style="font-weight:bold">(</span><span style="color:#458;font-weight:bold">int</span> i <span style="font-weight:bold">=</span> 0<span style="font-weight:bold">;</span> i <span style="font-weight:bold">&lt;</span> 10<span style="font-weight:bold">;</span> i<span style="font-weight:bold">++)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62</span>    randomModels<span style="font-weight:bold">.</span><span style="color:#008080">add</span><span style="font-weight:bold">(</span>RandomSimpleExampleModelUtil<span style="font-weight:bold">.</span><span style="color:#008080">randomSEModel</span><span style="font-weight:bold">());</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63</span>    mapper<span style="font-weight:bold">.</span><span style="color:#008080">save</span><span style="font-weight:bold">(</span>randomModels<span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65</span><span style="color:#998;font-style:italic">// Deleting some models
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66</span><span style="color:#998;font-style:italic">// Deleting by entity, make sure that entity has RowID\IPK\PK set
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67</span><span style="color:#998;font-style:italic"></span>SQLiteCondition alexCondition <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> SQLiteConditionBuilder<span style="font-weight:bold">()</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68</span>    <span style="font-weight:bold">.</span><span style="color:#008080">addField</span><span style="font-weight:bold">(</span><span style="color:#b84">&#34;first_name&#34;</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69</span>    <span style="font-weight:bold">.</span><span style="color:#008080">addSQLOperator</span><span style="font-weight:bold">(</span>SQLiteOperator<span style="font-weight:bold">.</span><span style="color:#008080">EQUAL</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70</span>    <span style="font-weight:bold">.</span><span style="color:#008080">addValue</span><span style="font-weight:bold">(</span><span style="color:#b84">&#34;Alex&#34;</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71</span>    <span style="font-weight:bold">.</span><span style="color:#008080">build</span><span style="font-weight:bold">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72</span>SimpleExampleModel alexToDelete <span style="font-weight:bold">=</span> mapper<span style="font-weight:bold">.</span><span style="color:#008080">findFirst</span><span style="font-weight:bold">(</span>alexCondition<span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73</span>mapper<span style="font-weight:bold">.</span><span style="color:#008080">delete</span><span style="font-weight:bold">(</span>alexToDelete<span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75</span><span style="color:#998;font-style:italic">// Deleting with condition
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76</span><span style="color:#998;font-style:italic"></span>SQLiteCondition marina445555Condition <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> SQLiteConditionBuilder<span style="font-weight:bold">()</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77</span>    <span style="font-weight:bold">.</span><span style="color:#008080">addField</span><span style="font-weight:bold">(</span><span style="color:#b84">&#34;random_integer&#34;</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78</span>    <span style="font-weight:bold">.</span><span style="color:#008080">addSQLOperator</span><span style="font-weight:bold">(</span>SQLiteOperator<span style="font-weight:bold">.</span><span style="color:#008080">EQUAL</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79</span>    <span style="font-weight:bold">.</span><span style="color:#008080">addValue</span><span style="font-weight:bold">(</span>marina2<span style="font-weight:bold">.</span><span style="color:#008080">randomInteger</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80</span>    <span style="font-weight:bold">.</span><span style="color:#008080">build</span><span style="font-weight:bold">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81</span>mapper<span style="font-weight:bold">.</span><span style="color:#008080">deleteByWhere</span><span style="font-weight:bold">(</span>marina445555Condition<span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83</span><span style="color:#998;font-style:italic">// Updating models
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84</span><span style="color:#998;font-style:italic">// updating current model
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85</span><span style="color:#998;font-style:italic">// if model has RowId or IPK or PrimaryKey values set (3-rd is slowest) just
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86</span><span style="color:#998;font-style:italic"></span>SimpleExampleModel newMarina <span style="font-weight:bold">=</span> marinaFromTableIPK<span style="font-weight:bold">.</span><span style="color:#008080">clone</span><span style="font-weight:bold">(</span>SimpleExampleModel<span style="font-weight:bold">.</span><span style="color:#008080">class</span><span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87</span>newMarina<span style="font-weight:bold">.</span><span style="color:#008080">randomInteger</span> <span style="font-weight:bold">=</span> 1337<span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88</span><span style="font-weight:bold">if</span><span style="font-weight:bold">(</span>mapper<span style="font-weight:bold">.</span><span style="color:#008080">update</span><span style="font-weight:bold">(</span>newMarina<span style="font-weight:bold">)</span> <span style="font-weight:bold">&gt;</span> 0<span style="font-weight:bold">)</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89</span>    SimpleExampleModel marinaFromTableIPK2 <span style="font-weight:bold">=</span> mapper<span style="font-weight:bold">.</span><span style="color:#008080">findByIPK</span><span style="font-weight:bold">(</span>marinaFromTableRowid<span style="font-weight:bold">.</span><span style="color:#008080">id</span><span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90</span><span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92</span><span style="color:#998;font-style:italic">// another option is updating with generating query
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93</span><span style="color:#998;font-style:italic"></span>SimpleExampleModel updateMarina <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> SimpleExampleModel<span style="font-weight:bold">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94</span>updateMarina<span style="font-weight:bold">.</span><span style="color:#008080">randomInteger</span> <span style="font-weight:bold">=</span> 121212<span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95</span>builder <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> SQLiteConditionBuilder<span style="font-weight:bold">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96</span>builder<span style="font-weight:bold">.</span><span style="color:#008080">addField</span><span style="font-weight:bold">(</span><span style="color:#b84">&#34;first_name&#34;</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97</span>    <span style="font-weight:bold">.</span><span style="color:#008080">addSQLOperator</span><span style="font-weight:bold">(</span>SQLiteOperator<span style="font-weight:bold">.</span><span style="color:#008080">EQUAL</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98</span>    <span style="font-weight:bold">.</span><span style="color:#008080">addValue</span><span style="font-weight:bold">(</span><span style="color:#b84">&#34;Marina&#34;</span><span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99</span><span style="font-weight:bold">if</span><span style="font-weight:bold">(</span>mapper<span style="font-weight:bold">.</span><span style="color:#008080">update</span><span style="font-weight:bold">(</span>updateMarina<span style="font-weight:bold">,</span> builder<span style="font-weight:bold">.</span><span style="color:#008080">build</span><span style="font-weight:bold">(),</span> <span style="font-weight:bold">new</span> String<span style="font-weight:bold">[]{</span><span style="color:#b84">&#34;randomInteger&#34;</span><span style="font-weight:bold">},</span> CVUtils<span style="font-weight:bold">.</span><span style="color:#008080">INCLUDE_ONLY_SELECTED_FIELDS</span><span style="font-weight:bold">)</span> <span style="font-weight:bold">&gt;</span> 0<span style="font-weight:bold">)</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100</span>    <span style="color:#998;font-style:italic">// find with IPK
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101</span><span style="color:#998;font-style:italic"></span>    SimpleExampleModel marinaFromTableIPK2 <span style="font-weight:bold">=</span> mapper<span style="font-weight:bold">.</span><span style="color:#008080">findByIPK</span><span style="font-weight:bold">(</span>marinaFromTableRowid<span style="font-weight:bold">.</span><span style="color:#008080">id</span><span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102</span><span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104</span><span style="color:#998;font-style:italic">// bulk operations in TX mode
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105</span><span style="color:#998;font-style:italic"></span>LinkedList<span style="font-weight:bold">&lt;</span>SimpleExampleModel<span style="font-weight:bold">&gt;</span> randModels <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> LinkedList<span style="font-weight:bold">&lt;&gt;();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106</span><span style="font-weight:bold">for</span><span style="font-weight:bold">(</span><span style="color:#458;font-weight:bold">int</span> i <span style="font-weight:bold">=</span> 0<span style="font-weight:bold">;</span> i <span style="font-weight:bold">&lt;</span> 10<span style="font-weight:bold">;</span> i<span style="font-weight:bold">++)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107</span>    randModels<span style="font-weight:bold">.</span><span style="color:#008080">add</span><span style="font-weight:bold">(</span>RandomSimpleExampleModelUtil<span style="font-weight:bold">.</span><span style="color:#008080">randomSEModel</span><span style="font-weight:bold">());</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108</span>mapper<span style="font-weight:bold">.</span><span style="color:#008080">saveInTransaction</span><span style="font-weight:bold">(</span>randModels<span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110</span><span style="color:#998;font-style:italic">// closing mapper
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111</span><span style="color:#998;font-style:italic"></span>mapper<span style="font-weight:bold">.</span><span style="color:#008080">close</span><span style="font-weight:bold">();</span></code></pre></div>
+</details></p>
+
+<h5 id="lesson-s-activity-fragment">Lesson&rsquo;s activity fragment</h5>
+
+<p><details>
+  <summary>Click to view <code>SimpleDatabase.class</code></summary>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1</span><span style="font-weight:bold">package</span> <span style="color:#555">net.akaish.kittyormdemo.lessons.one</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3</span><span style="font-weight:bold">import</span> <span style="color:#555">android.os.Bundle</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4</span><span style="font-weight:bold">import</span> <span style="color:#555">android.view.LayoutInflater</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5</span><span style="font-weight:bold">import</span> <span style="color:#555">android.view.MotionEvent</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6</span><span style="font-weight:bold">import</span> <span style="color:#555">android.view.View</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7</span><span style="font-weight:bold">import</span> <span style="color:#555">android.view.ViewGroup</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8</span><span style="font-weight:bold">import</span> <span style="color:#555">android.widget.Button</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9</span><span style="font-weight:bold">import</span> <span style="color:#555">android.widget.ListView</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10</span><span style="font-weight:bold">import</span> <span style="color:#555">android.widget.TextView</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12</span><span style="font-weight:bold">import</span> <span style="color:#555">net.akaish.kitty.orm.CVUtils</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13</span><span style="font-weight:bold">import</span> <span style="color:#555">net.akaish.kitty.orm.KittyMapper</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14</span><span style="font-weight:bold">import</span> <span style="color:#555">net.akaish.kitty.orm.pkey.KittyPrimaryKey</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15</span><span style="font-weight:bold">import</span> <span style="color:#555">net.akaish.kitty.orm.pkey.KittyPrimaryKeyBuilder</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16</span><span style="font-weight:bold">import</span> <span style="color:#555">net.akaish.kitty.orm.query.condtitions.SQLiteCondition</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17</span><span style="font-weight:bold">import</span> <span style="color:#555">net.akaish.kitty.orm.query.condtitions.SQLiteConditionBuilder</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18</span><span style="font-weight:bold">import</span> <span style="color:#555">net.akaish.kitty.orm.query.condtitions.SQLiteOperator</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19</span><span style="font-weight:bold">import</span> <span style="color:#555">net.akaish.kitty.orm.util.KittyLog</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20</span><span style="font-weight:bold">import</span> <span style="color:#555">net.akaish.kittyormdemo.LessonDetailActivity</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21</span><span style="font-weight:bold">import</span> <span style="color:#555">net.akaish.kittyormdemo.R</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22</span><span style="font-weight:bold">import</span> <span style="color:#555">net.akaish.kittyormdemo.lessons.BasicArrayAdapter</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23</span><span style="font-weight:bold">import</span> <span style="color:#555">net.akaish.kittyormdemo.lessons.LessonBaseFragment</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24</span><span style="font-weight:bold">import</span> <span style="color:#555">net.akaish.kittyormdemo.sqlite.introductiondb.SimpleDatabase</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25</span><span style="font-weight:bold">import</span> <span style="color:#555">net.akaish.kittyormdemo.sqlite.introductiondb.SimpleExampleModel</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26</span><span style="font-weight:bold">import</span> <span style="color:#555">net.akaish.kittyormdemo.sqlite.introductiondb.util.RandomSimpleExampleModelUtil</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28</span><span style="font-weight:bold">import</span> <span style="color:#555">java.util.Iterator</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29</span><span style="font-weight:bold">import</span> <span style="color:#555">java.util.LinkedList</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30</span><span style="font-weight:bold">import</span> <span style="color:#555">java.util.List</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32</span><span style="font-weight:bold">import static</span> <span style="color:#555">java.text.MessageFormat.format</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34</span><span style="color:#998;font-style:italic">/**
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35</span><span style="color:#998;font-style:italic"> * Created by akaish on 21.08.18.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36</span><span style="color:#998;font-style:italic"> */</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38</span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="color:#458;font-weight:bold">Lesson1Tab2GettingStarted</span> <span style="font-weight:bold">extends</span> LessonBaseFragment <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40</span>    <span style="font-weight:bold">private</span> <span style="font-weight:bold">static</span> <span style="font-weight:bold">final</span> String tutorialPageName <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;l1t2&#34;</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41</span>    <span style="font-weight:bold">private</span> <span style="font-weight:bold">static</span> <span style="font-weight:bold">final</span> String tutorialSchemaLocation <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;l1_schema&#34;</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42</span>    <span style="font-weight:bold">private</span> <span style="font-weight:bold">static</span> <span style="font-weight:bold">final</span> String tutorialSourceCodeLocation <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;l1_code&#34;</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44</span>    <span style="font-weight:bold">private</span> ListView actionsLW<span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45</span>    <span style="font-weight:bold">private</span> Button goButton<span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47</span>    <span style="font-weight:bold">private</span> ListView expandedLW<span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48</span>    <span style="font-weight:bold">private</span> TextView expandedText<span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49</span>    <span style="font-weight:bold">private</span> String expandedTextPattern<span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51</span>    <span style="font-weight:bold">public</span> <span style="color:#900;font-weight:bold">Lesson1Tab2GettingStarted</span><span style="font-weight:bold">()</span> <span style="font-weight:bold">{}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53</span>    @Override
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54</span>    <span style="font-weight:bold">public</span> View <span style="color:#900;font-weight:bold">onCreateView</span><span style="font-weight:bold">(</span>LayoutInflater inflater<span style="font-weight:bold">,</span> ViewGroup container<span style="font-weight:bold">,</span> Bundle savedInstanceState<span style="font-weight:bold">)</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55</span>        View rootView <span style="font-weight:bold">=</span> inflater<span style="font-weight:bold">.</span><span style="color:#008080">inflate</span><span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">layout</span><span style="font-weight:bold">.</span><span style="color:#008080">lesson1_tab2_getting_started</span><span style="font-weight:bold">,</span> container<span style="font-weight:bold">,</span> <span style="font-weight:bold">false</span><span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56</span>        actionsLW <span style="font-weight:bold">=</span> rootView<span style="font-weight:bold">.</span><span style="color:#008080">findViewById</span><span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">id</span><span style="font-weight:bold">.</span><span style="color:#008080">l1_t2_actions</span><span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57</span>        goButton <span style="font-weight:bold">=</span> rootView<span style="font-weight:bold">.</span><span style="color:#008080">findViewById</span><span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">id</span><span style="font-weight:bold">.</span><span style="color:#008080">l1_t2_go_button</span><span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58</span>        goButton<span style="font-weight:bold">.</span><span style="color:#008080">setOnClickListener</span><span style="font-weight:bold">(</span><span style="font-weight:bold">new</span> View<span style="font-weight:bold">.</span><span style="color:#008080">OnClickListener</span><span style="font-weight:bold">()</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59</span>            @Override
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60</span>            <span style="font-weight:bold">public</span> <span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">onClick</span><span style="font-weight:bold">(</span>View v<span style="font-weight:bold">)</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61</span>                go<span style="font-weight:bold">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62</span>            <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63</span>        <span style="font-weight:bold">});</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64</span>        expandedLW <span style="font-weight:bold">=</span> rootView<span style="font-weight:bold">.</span><span style="color:#008080">findViewById</span><span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">id</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_expanded_panel_list</span><span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65</span>        expandedText <span style="font-weight:bold">=</span> rootView<span style="font-weight:bold">.</span><span style="color:#008080">findViewById</span><span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">id</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_expanded_panel_text</span><span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66</span>        expandedTextPattern <span style="font-weight:bold">=</span> getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_expanded_text_pattern</span><span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67</span>        rootView<span style="font-weight:bold">.</span><span style="color:#008080">findViewById</span><span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">id</span><span style="font-weight:bold">.</span><span style="color:#008080">l1_t2_clear_button</span><span style="font-weight:bold">).</span><span style="color:#008080">setOnClickListener</span><span style="font-weight:bold">(</span><span style="font-weight:bold">new</span> View<span style="font-weight:bold">.</span><span style="color:#008080">OnClickListener</span><span style="font-weight:bold">()</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68</span>            @Override
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69</span>            <span style="font-weight:bold">public</span> <span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">onClick</span><span style="font-weight:bold">(</span>View v<span style="font-weight:bold">)</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70</span>                clear<span style="font-weight:bold">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71</span>            <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72</span>        <span style="font-weight:bold">});</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73</span>        <span style="font-weight:bold">return</span> rootView<span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74</span>    <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76</span>    @Override
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77</span>    <span style="font-weight:bold">public</span> <span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">onResume</span><span style="font-weight:bold">()</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78</span>        <span style="font-weight:bold">super</span><span style="font-weight:bold">.</span><span style="color:#008080">onResume</span><span style="font-weight:bold">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79</span>        updateExpandPanelList<span style="font-weight:bold">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80</span>    <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82</span>    <span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">clear</span><span style="font-weight:bold">()</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83</span>        SimpleDatabase simpleDatabase <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> SimpleDatabase<span style="font-weight:bold">(</span>getContext<span style="font-weight:bold">());</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84</span>        KittyMapper mapper <span style="font-weight:bold">=</span> simpleDatabase<span style="font-weight:bold">.</span><span style="color:#008080">getMapper</span><span style="font-weight:bold">(</span>SimpleExampleModel<span style="font-weight:bold">.</span><span style="color:#008080">class</span><span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85</span>        <span style="font-weight:bold">if</span><span style="font-weight:bold">(</span>actionsLW <span style="font-weight:bold">!=</span> <span style="font-weight:bold">null</span><span style="font-weight:bold">)</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86</span>            actionsLW<span style="font-weight:bold">.</span><span style="color:#008080">setAdapter</span><span style="font-weight:bold">(</span><span style="font-weight:bold">new</span> BasicArrayAdapter<span style="font-weight:bold">(</span>getContext<span style="font-weight:bold">(),</span> <span style="font-weight:bold">new</span> LinkedList<span style="font-weight:bold">&lt;</span>String<span style="font-weight:bold">&gt;()));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87</span>            actionsLW<span style="font-weight:bold">.</span><span style="color:#008080">setOnTouchListener</span><span style="font-weight:bold">(</span><span style="font-weight:bold">new</span> View<span style="font-weight:bold">.</span><span style="color:#008080">OnTouchListener</span><span style="font-weight:bold">()</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89</span>                <span style="color:#998;font-style:italic">// Setting on Touch Listener for handling the touch inside ScrollView
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90</span><span style="color:#998;font-style:italic"></span>                @Override
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91</span>                <span style="font-weight:bold">public</span> <span style="color:#458;font-weight:bold">boolean</span> <span style="color:#900;font-weight:bold">onTouch</span><span style="font-weight:bold">(</span>View v<span style="font-weight:bold">,</span> MotionEvent event<span style="font-weight:bold">)</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92</span>                    <span style="color:#998;font-style:italic">// Disallow the touch request for parent scroll on touch of child view
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93</span><span style="color:#998;font-style:italic"></span>                    v<span style="font-weight:bold">.</span><span style="color:#008080">getParent</span><span style="font-weight:bold">().</span><span style="color:#008080">requestDisallowInterceptTouchEvent</span><span style="font-weight:bold">(</span><span style="font-weight:bold">true</span><span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94</span>                    <span style="font-weight:bold">return</span> <span style="font-weight:bold">false</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95</span>                <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96</span>            <span style="font-weight:bold">});</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97</span>            addActionListItem<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_count</span><span style="font-weight:bold">),</span> mapper<span style="font-weight:bold">.</span><span style="color:#008080">countAll</span><span style="font-weight:bold">()));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98</span>            addActionListItem<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_clear</span><span style="font-weight:bold">),</span> mapper<span style="font-weight:bold">.</span><span style="color:#008080">deleteAll</span><span style="font-weight:bold">()));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99</span>            updateExpandPanelList<span style="font-weight:bold">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100</span>        <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101</span>        mapper<span style="font-weight:bold">.</span><span style="color:#008080">close</span><span style="font-weight:bold">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102</span>    <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104</span>    <span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">go</span><span style="font-weight:bold">()</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105</span>        <span style="font-weight:bold">if</span><span style="font-weight:bold">(</span>actionsLW <span style="font-weight:bold">!=</span> <span style="font-weight:bold">null</span><span style="font-weight:bold">)</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106</span>            actionsLW<span style="font-weight:bold">.</span><span style="color:#008080">setAdapter</span><span style="font-weight:bold">(</span><span style="font-weight:bold">new</span> BasicArrayAdapter<span style="font-weight:bold">(</span>getContext<span style="font-weight:bold">(),</span> <span style="font-weight:bold">new</span> LinkedList<span style="font-weight:bold">&lt;</span>String<span style="font-weight:bold">&gt;()));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107</span>            actionsLW<span style="font-weight:bold">.</span><span style="color:#008080">setOnTouchListener</span><span style="font-weight:bold">(</span><span style="font-weight:bold">new</span> View<span style="font-weight:bold">.</span><span style="color:#008080">OnTouchListener</span><span style="font-weight:bold">()</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109</span>                <span style="color:#998;font-style:italic">// Setting on Touch Listener for handling the touch inside ScrollView
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110</span><span style="color:#998;font-style:italic"></span>                @Override
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111</span>                <span style="font-weight:bold">public</span> <span style="color:#458;font-weight:bold">boolean</span> <span style="color:#900;font-weight:bold">onTouch</span><span style="font-weight:bold">(</span>View v<span style="font-weight:bold">,</span> MotionEvent event<span style="font-weight:bold">)</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112</span>                    <span style="color:#998;font-style:italic">// Disallow the touch request for parent scroll on touch of child view
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113</span><span style="color:#998;font-style:italic"></span>                    v<span style="font-weight:bold">.</span><span style="color:#008080">getParent</span><span style="font-weight:bold">().</span><span style="color:#008080">requestDisallowInterceptTouchEvent</span><span style="font-weight:bold">(</span><span style="font-weight:bold">true</span><span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114</span>                    <span style="font-weight:bold">return</span> <span style="font-weight:bold">false</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115</span>                <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116</span>            <span style="font-weight:bold">});</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118</span>            <span style="color:#998;font-style:italic">// Creating new instance of SimpleDatabase
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119</span><span style="color:#998;font-style:italic"></span>            SimpleDatabase simpleDatabase <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> SimpleDatabase<span style="font-weight:bold">(</span>getContext<span style="font-weight:bold">());</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121</span>            <span style="color:#998;font-style:italic">// Printing generated by KittyORM schema create and drop scripts
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122</span><span style="color:#998;font-style:italic"></span>            simpleDatabase<span style="font-weight:bold">.</span><span style="color:#008080">printPregeneratedCreateSchemaToLog</span><span style="font-weight:bold">(</span><span style="color:#b84">&#34;KITTY_ORM_DEMO_L1T2&#34;</span><span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123</span>            simpleDatabase<span style="font-weight:bold">.</span><span style="color:#008080">printPregeneratedDropSchemaToLog</span><span style="font-weight:bold">(</span><span style="color:#b84">&#34;KITTY_ORM_DEMO_L1T2&#34;</span><span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125</span>            <span style="color:#998;font-style:italic">// Printing registry to log (e.g. collection of KittyModels-&gt;KittyMappers that would be used)
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126</span><span style="color:#998;font-style:italic"></span>            simpleDatabase<span style="font-weight:bold">.</span><span style="color:#008080">printRegistryToLog</span><span style="font-weight:bold">(</span>KittyLog<span style="font-weight:bold">.</span><span style="color:#008080">LOG_LEVEL</span><span style="font-weight:bold">.</span><span style="color:#008080">E</span><span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">127</span>            KittyMapper mapper <span style="font-weight:bold">=</span> simpleDatabase<span style="font-weight:bold">.</span><span style="color:#008080">getMapper</span><span style="font-weight:bold">(</span>SimpleExampleModel<span style="font-weight:bold">.</span><span style="color:#008080">class</span><span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">128</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129</span>            <span style="color:#998;font-style:italic">// Counting records in db table and deleting them if table not empty
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">130</span><span style="color:#998;font-style:italic"></span>            <span style="font-weight:bold">if</span><span style="font-weight:bold">(</span>mapper<span style="font-weight:bold">.</span><span style="color:#008080">countAll</span><span style="font-weight:bold">()</span> <span style="font-weight:bold">&gt;</span> 0<span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">131</span>                mapper<span style="font-weight:bold">.</span><span style="color:#008080">deleteAll</span><span style="font-weight:bold">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">132</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">133</span>            <span style="color:#998;font-style:italic">// Insert new model example
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">134</span><span style="color:#998;font-style:italic"></span>            <span style="color:#998;font-style:italic">// Creating and setting three new models
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">135</span><span style="color:#998;font-style:italic"></span>            SimpleExampleModel alex <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> SimpleExampleModel<span style="font-weight:bold">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">136</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">137</span>            alex<span style="font-weight:bold">.</span><span style="color:#008080">randomInteger</span> <span style="font-weight:bold">=</span> 545141<span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">138</span>            alex<span style="font-weight:bold">.</span><span style="color:#008080">firstName</span> <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;Alex&#34;</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">139</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">140</span>            SimpleExampleModel marina <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> SimpleExampleModel<span style="font-weight:bold">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">141</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">142</span>            marina<span style="font-weight:bold">.</span><span style="color:#008080">randomInteger</span> <span style="font-weight:bold">=</span> 228<span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">143</span>            marina<span style="font-weight:bold">.</span><span style="color:#008080">firstName</span> <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;Marina&#34;</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">144</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">145</span>            SimpleExampleModel marina2 <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> SimpleExampleModel<span style="font-weight:bold">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">146</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">147</span>            marina2<span style="font-weight:bold">.</span><span style="color:#008080">randomInteger</span> <span style="font-weight:bold">=</span> 445555<span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">148</span>            marina2<span style="font-weight:bold">.</span><span style="color:#008080">firstName</span> <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;Marina&#34;</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">149</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150</span>            addActionListItem<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_inserting</span><span style="font-weight:bold">),</span> alex<span style="font-weight:bold">));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151</span>            addActionListItem<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_inserting</span><span style="font-weight:bold">),</span> marina<span style="font-weight:bold">));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152</span>            addActionListItem<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_inserting</span><span style="font-weight:bold">),</span> marina2<span style="font-weight:bold">));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">154</span>            <span style="color:#998;font-style:italic">// Saving those models
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">155</span><span style="color:#998;font-style:italic"></span>            <span style="color:#998;font-style:italic">// Saving model with mapper.save(M model)
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">156</span><span style="color:#998;font-style:italic"></span>            mapper<span style="font-weight:bold">.</span><span style="color:#008080">save</span><span style="font-weight:bold">(</span>alex<span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">157</span>            mapper<span style="font-weight:bold">.</span><span style="color:#008080">save</span><span style="font-weight:bold">(</span>marina2<span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">158</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">159</span>            <span style="color:#998;font-style:italic">// Saving model with mapper.insert(M model)
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">160</span><span style="color:#998;font-style:italic"></span>            <span style="color:#998;font-style:italic">// Better to use insert(M model) for new DB records cause it is little bit faster
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">161</span><span style="color:#998;font-style:italic"></span>            <span style="color:#458;font-weight:bold">long</span> marinaRowid <span style="font-weight:bold">=</span> mapper<span style="font-weight:bold">.</span><span style="color:#008080">insert</span><span style="font-weight:bold">(</span>marina<span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">162</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">163</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">164</span>            addActionListItem<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_inserted</span><span style="font-weight:bold">),</span> alex<span style="font-weight:bold">));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">165</span>            addActionListItem<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_inserted</span><span style="font-weight:bold">),</span> marina<span style="font-weight:bold">));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">166</span>            addActionListItem<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_inserted</span><span style="font-weight:bold">),</span> marina2<span style="font-weight:bold">));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">167</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">168</span>            addActionListItem<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_count</span><span style="font-weight:bold">),</span> mapper<span style="font-weight:bold">.</span><span style="color:#008080">countAll</span><span style="font-weight:bold">()));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">169</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">170</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">171</span>            <span style="color:#998;font-style:italic">// Finding existing records in DB and mapping them to entities
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">172</span><span style="color:#998;font-style:italic"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">173</span>            <span style="color:#458;font-weight:bold">int</span> findOperationId <span style="font-weight:bold">=</span> 0<span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">174</span>            <span style="color:#998;font-style:italic">// find with condition
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">175</span><span style="color:#998;font-style:italic"></span>            addActionListItem<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>getContext<span style="font-weight:bold">().</span><span style="color:#008080">getString</span><span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_retrieving</span><span style="font-weight:bold">),</span> <span style="color:#b84">&#34;mapper.findWhere&#34;</span><span style="font-weight:bold">,</span> <span style="color:#b84">&#34;WHERE first_name = Marina&#34;</span><span style="font-weight:bold">,</span> findOperationId<span style="font-weight:bold">));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">176</span>            SQLiteConditionBuilder builder <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> SQLiteConditionBuilder<span style="font-weight:bold">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">177</span>            builder<span style="font-weight:bold">.</span><span style="color:#008080">addField</span><span style="font-weight:bold">(</span><span style="color:#b84">&#34;first_name&#34;</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">178</span>                    <span style="font-weight:bold">.</span><span style="color:#008080">addSQLOperator</span><span style="font-weight:bold">(</span>SQLiteOperator<span style="font-weight:bold">.</span><span style="color:#008080">EQUAL</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">179</span>                    <span style="font-weight:bold">.</span><span style="color:#008080">addValue</span><span style="font-weight:bold">(</span><span style="color:#b84">&#34;Marina&#34;</span><span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">180</span>            List<span style="font-weight:bold">&lt;</span>SimpleExampleModel<span style="font-weight:bold">&gt;</span> marinas <span style="font-weight:bold">=</span> mapper<span style="font-weight:bold">.</span><span style="color:#008080">findWhere</span><span style="font-weight:bold">(</span>builder<span style="font-weight:bold">.</span><span style="color:#008080">build</span><span style="font-weight:bold">());</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">181</span>            <span style="font-weight:bold">if</span><span style="font-weight:bold">(</span>marinas <span style="font-weight:bold">!=</span> <span style="font-weight:bold">null</span><span style="font-weight:bold">)</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">182</span>                addActionListItem<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_retrieved</span><span style="font-weight:bold">),</span>  marinas<span style="font-weight:bold">.</span><span style="color:#008080">size</span><span style="font-weight:bold">(),</span> findOperationId<span style="font-weight:bold">));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">183</span>            <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">184</span>            <span style="color:#458;font-weight:bold">int</span> marinasCounter <span style="font-weight:bold">=</span> 0<span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">185</span>            <span style="font-weight:bold">for</span><span style="font-weight:bold">(</span>SimpleExampleModel m <span style="font-weight:bold">:</span> marinas<span style="font-weight:bold">)</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">186</span>                addActionListItem<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_retrieved_model_show</span><span style="font-weight:bold">),</span>  findOperationId<span style="font-weight:bold">,</span> marinasCounter<span style="font-weight:bold">,</span> m<span style="font-weight:bold">));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">187</span>                marinasCounter<span style="font-weight:bold">++;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">188</span>            <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">189</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">190</span>            findOperationId<span style="font-weight:bold">++;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">191</span>            <span style="color:#998;font-style:italic">// find with RowID
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">192</span><span style="color:#998;font-style:italic"></span>            addActionListItem<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_retrieving</span><span style="font-weight:bold">),</span> <span style="color:#b84">&#34;mapper.findByRowID&#34;</span><span style="font-weight:bold">,</span> <span style="color:#b84">&#34;RowID = &#34;</span><span style="font-weight:bold">+</span>marinaRowid<span style="font-weight:bold">,</span> findOperationId<span style="font-weight:bold">));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">193</span>            SimpleExampleModel marinaFromTableRowid <span style="font-weight:bold">=</span> mapper<span style="font-weight:bold">.</span><span style="color:#008080">findByRowID</span><span style="font-weight:bold">(</span>marinaRowid<span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">194</span>            <span style="font-weight:bold">if</span><span style="font-weight:bold">(</span>marinaFromTableRowid <span style="font-weight:bold">!=</span> <span style="font-weight:bold">null</span><span style="font-weight:bold">)</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">195</span>                addActionListItem<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_retrieved</span><span style="font-weight:bold">),</span>  1<span style="font-weight:bold">,</span> findOperationId<span style="font-weight:bold">));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">196</span>                addActionListItem<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_retrieved_model_show</span><span style="font-weight:bold">),</span>  findOperationId<span style="font-weight:bold">,</span> 0<span style="font-weight:bold">,</span> marinaFromTableRowid<span style="font-weight:bold">));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">197</span>            <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">198</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">199</span>            findOperationId<span style="font-weight:bold">++;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">200</span>            <span style="color:#998;font-style:italic">// find with IPK
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">201</span><span style="color:#998;font-style:italic"></span>            addActionListItem<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>getContext<span style="font-weight:bold">().</span><span style="color:#008080">getString</span><span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_retrieving</span><span style="font-weight:bold">),</span> <span style="color:#b84">&#34;mapper.findByIPK&#34;</span><span style="font-weight:bold">,</span> <span style="color:#b84">&#34;IPK = &#34;</span><span style="font-weight:bold">+</span>marinaFromTableRowid<span style="font-weight:bold">.</span><span style="color:#008080">id</span><span style="font-weight:bold">,</span> findOperationId<span style="font-weight:bold">));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">202</span>            SimpleExampleModel marinaFromTableIPK <span style="font-weight:bold">=</span> mapper<span style="font-weight:bold">.</span><span style="color:#008080">findByIPK</span><span style="font-weight:bold">(</span>marinaFromTableRowid<span style="font-weight:bold">.</span><span style="color:#008080">id</span><span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">203</span>            <span style="font-weight:bold">if</span><span style="font-weight:bold">(</span>marinaFromTableIPK <span style="font-weight:bold">!=</span> <span style="font-weight:bold">null</span><span style="font-weight:bold">)</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">204</span>                addActionListItem<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_retrieved</span><span style="font-weight:bold">),</span>  1<span style="font-weight:bold">,</span> findOperationId<span style="font-weight:bold">));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">205</span>                addActionListItem<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_retrieved_model_show</span><span style="font-weight:bold">),</span>  findOperationId<span style="font-weight:bold">,</span> 0<span style="font-weight:bold">,</span> marinaFromTableIPK<span style="font-weight:bold">));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">206</span>            <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">207</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">208</span>            findOperationId<span style="font-weight:bold">++;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">209</span>            <span style="color:#998;font-style:italic">// find with KittyPrimaryKey
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">210</span><span style="color:#998;font-style:italic"></span>            addActionListItem<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_retrieving</span><span style="font-weight:bold">),</span> <span style="color:#b84">&#34;mapper.findByPK&#34;</span><span style="font-weight:bold">,</span> <span style="color:#b84">&#34;KittyPrimaryKey [ id = &#34;</span><span style="font-weight:bold">+</span>marinaFromTableRowid<span style="font-weight:bold">.</span><span style="color:#008080">id</span><span style="font-weight:bold">,</span> findOperationId<span style="font-weight:bold">)));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">211</span>            KittyPrimaryKey pk <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> KittyPrimaryKeyBuilder<span style="font-weight:bold">()</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">212</span>                                            <span style="font-weight:bold">.</span><span style="color:#008080">addKeyColumnValue</span><span style="font-weight:bold">(</span><span style="color:#b84">&#34;id&#34;</span><span style="font-weight:bold">,</span> marinaFromTableRowid<span style="font-weight:bold">.</span><span style="color:#008080">id</span><span style="font-weight:bold">.</span><span style="color:#008080">toString</span><span style="font-weight:bold">())</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">213</span>                                            <span style="font-weight:bold">.</span><span style="color:#008080">build</span><span style="font-weight:bold">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">214</span>            SimpleExampleModel marinaFromTableKPK <span style="font-weight:bold">=</span> mapper<span style="font-weight:bold">.</span><span style="color:#008080">findByPK</span><span style="font-weight:bold">(</span>pk<span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">215</span>            <span style="font-weight:bold">if</span><span style="font-weight:bold">(</span>marinaFromTableKPK <span style="font-weight:bold">!=</span> <span style="font-weight:bold">null</span><span style="font-weight:bold">)</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">216</span>                addActionListItem<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_retrieved</span><span style="font-weight:bold">),</span>  1<span style="font-weight:bold">,</span> findOperationId<span style="font-weight:bold">));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">217</span>                addActionListItem<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_retrieved_model_show</span><span style="font-weight:bold">),</span>  findOperationId<span style="font-weight:bold">,</span> 0<span style="font-weight:bold">,</span> marinaFromTableKPK<span style="font-weight:bold">));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">218</span>            <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">219</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">220</span>            <span style="color:#998;font-style:italic">// Generating and inserting list of 10 random models
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">221</span><span style="color:#998;font-style:italic"></span>            List<span style="font-weight:bold">&lt;</span>SimpleExampleModel<span style="font-weight:bold">&gt;</span> randomModels <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> LinkedList<span style="font-weight:bold">&lt;&gt;();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">222</span>            <span style="font-weight:bold">for</span><span style="font-weight:bold">(</span><span style="color:#458;font-weight:bold">int</span> i <span style="font-weight:bold">=</span> 0<span style="font-weight:bold">;</span> i <span style="font-weight:bold">&lt;</span> 10<span style="font-weight:bold">;</span> i<span style="font-weight:bold">++)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">223</span>                randomModels<span style="font-weight:bold">.</span><span style="color:#008080">add</span><span style="font-weight:bold">(</span>RandomSimpleExampleModelUtil<span style="font-weight:bold">.</span><span style="color:#008080">randomSEModel</span><span style="font-weight:bold">());</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">224</span>            mapper<span style="font-weight:bold">.</span><span style="color:#008080">save</span><span style="font-weight:bold">(</span>randomModels<span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">225</span>            addActionListItem<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_random_save</span><span style="font-weight:bold">));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">226</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">227</span>            addActionListItem<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_count</span><span style="font-weight:bold">),</span> mapper<span style="font-weight:bold">.</span><span style="color:#008080">countAll</span><span style="font-weight:bold">()));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">228</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">229</span>            <span style="color:#998;font-style:italic">// Deleting some models
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">230</span><span style="color:#998;font-style:italic"></span>            <span style="color:#998;font-style:italic">// Deleting by entity, make sure that entity has RowID\IPK\PK set
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">231</span><span style="color:#998;font-style:italic"></span>            SQLiteCondition alexCondition <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> SQLiteConditionBuilder<span style="font-weight:bold">()</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">232</span>                                                        <span style="font-weight:bold">.</span><span style="color:#008080">addField</span><span style="font-weight:bold">(</span><span style="color:#b84">&#34;first_name&#34;</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">233</span>                                                        <span style="font-weight:bold">.</span><span style="color:#008080">addSQLOperator</span><span style="font-weight:bold">(</span>SQLiteOperator<span style="font-weight:bold">.</span><span style="color:#008080">EQUAL</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">234</span>                                                        <span style="font-weight:bold">.</span><span style="color:#008080">addValue</span><span style="font-weight:bold">(</span><span style="color:#b84">&#34;Alex&#34;</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">235</span>                                                        <span style="font-weight:bold">.</span><span style="color:#008080">build</span><span style="font-weight:bold">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">236</span>            SimpleExampleModel alexToDelete <span style="font-weight:bold">=</span> mapper<span style="font-weight:bold">.</span><span style="color:#008080">findFirst</span><span style="font-weight:bold">(</span>alexCondition<span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">237</span>            <span style="font-weight:bold">if</span><span style="font-weight:bold">(</span>alexToDelete<span style="font-weight:bold">!=</span><span style="font-weight:bold">null</span><span style="font-weight:bold">)</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">238</span>                addActionListItem<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_one_alex_to_delete_found</span><span style="font-weight:bold">));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">239</span>                <span style="font-weight:bold">if</span><span style="font-weight:bold">(</span>mapper<span style="font-weight:bold">.</span><span style="color:#008080">delete</span><span style="font-weight:bold">(</span>alexToDelete<span style="font-weight:bold">)</span> <span style="font-weight:bold">&gt;</span> 0<span style="font-weight:bold">)</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">240</span>                    addActionListItem<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_one_alex_deleted</span><span style="font-weight:bold">));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">241</span>                    addActionListItem<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_count</span><span style="font-weight:bold">),</span> mapper<span style="font-weight:bold">.</span><span style="color:#008080">countAll</span><span style="font-weight:bold">()));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">242</span>                <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">243</span>            <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">244</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">245</span>            <span style="color:#998;font-style:italic">// Deleting with condition
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">246</span><span style="color:#998;font-style:italic"></span>            SQLiteCondition marina445555Condition <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> SQLiteConditionBuilder<span style="font-weight:bold">()</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">247</span>                                                            <span style="font-weight:bold">.</span><span style="color:#008080">addField</span><span style="font-weight:bold">(</span><span style="color:#b84">&#34;random_integer&#34;</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">248</span>                                                            <span style="font-weight:bold">.</span><span style="color:#008080">addSQLOperator</span><span style="font-weight:bold">(</span>SQLiteOperator<span style="font-weight:bold">.</span><span style="color:#008080">EQUAL</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">249</span>                                                            <span style="font-weight:bold">.</span><span style="color:#008080">addValue</span><span style="font-weight:bold">(</span>marina2<span style="font-weight:bold">.</span><span style="color:#008080">randomInteger</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">250</span>                                                            <span style="font-weight:bold">.</span><span style="color:#008080">build</span><span style="font-weight:bold">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">251</span>            addActionListItem<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_2_one_marina_deleting</span><span style="font-weight:bold">));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">252</span>            <span style="font-weight:bold">if</span><span style="font-weight:bold">(</span>mapper<span style="font-weight:bold">.</span><span style="color:#008080">deleteByWhere</span><span style="font-weight:bold">(</span>marina445555Condition<span style="font-weight:bold">)</span> <span style="font-weight:bold">&gt;</span> 0<span style="font-weight:bold">)</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">253</span>                addActionListItem<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_2_one_marina_deleted</span><span style="font-weight:bold">));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">254</span>                addActionListItem<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_count</span><span style="font-weight:bold">),</span> mapper<span style="font-weight:bold">.</span><span style="color:#008080">countAll</span><span style="font-weight:bold">()));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">255</span>            <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">256</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">257</span>            <span style="color:#998;font-style:italic">// Updating models
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">258</span><span style="color:#998;font-style:italic"></span>            <span style="color:#998;font-style:italic">// updating current model
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">259</span><span style="color:#998;font-style:italic"></span>            <span style="color:#998;font-style:italic">// if model has RowId or IPK or PrimaryKey values set (3-rd is slowest) just
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">260</span><span style="color:#998;font-style:italic"></span>            SimpleExampleModel oldMarina <span style="font-weight:bold">=</span> marinaFromTableIPK<span style="font-weight:bold">.</span><span style="color:#008080">clone</span><span style="font-weight:bold">(</span>SimpleExampleModel<span style="font-weight:bold">.</span><span style="color:#008080">class</span><span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">261</span>            SimpleExampleModel newMarina <span style="font-weight:bold">=</span> marinaFromTableIPK<span style="font-weight:bold">.</span><span style="color:#008080">clone</span><span style="font-weight:bold">(</span>SimpleExampleModel<span style="font-weight:bold">.</span><span style="color:#008080">class</span><span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">262</span>            newMarina<span style="font-weight:bold">.</span><span style="color:#008080">randomInteger</span> <span style="font-weight:bold">=</span> 1337<span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">263</span>            addActionListItem<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_updating_entity</span><span style="font-weight:bold">),</span> oldMarina<span style="font-weight:bold">,</span> newMarina<span style="font-weight:bold">));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">264</span>            <span style="font-weight:bold">if</span><span style="font-weight:bold">(</span>mapper<span style="font-weight:bold">.</span><span style="color:#008080">update</span><span style="font-weight:bold">(</span>newMarina<span style="font-weight:bold">)</span> <span style="font-weight:bold">&gt;</span> 0<span style="font-weight:bold">)</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">265</span>                addActionListItem<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_updated</span><span style="font-weight:bold">),</span> oldMarina<span style="font-weight:bold">,</span> newMarina<span style="font-weight:bold">));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">266</span>                findOperationId<span style="font-weight:bold">++;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">267</span>                <span style="color:#998;font-style:italic">// find with IPK
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">268</span><span style="color:#998;font-style:italic"></span>                addActionListItem<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>getContext<span style="font-weight:bold">().</span><span style="color:#008080">getString</span><span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_retrieving</span><span style="font-weight:bold">),</span> <span style="color:#b84">&#34;mapper.findByIPK&#34;</span><span style="font-weight:bold">,</span> <span style="color:#b84">&#34;IPK = &#34;</span><span style="font-weight:bold">+</span>marinaFromTableRowid<span style="font-weight:bold">.</span><span style="color:#008080">id</span><span style="font-weight:bold">,</span> findOperationId<span style="font-weight:bold">));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">269</span>                SimpleExampleModel marinaFromTableIPK2 <span style="font-weight:bold">=</span> mapper<span style="font-weight:bold">.</span><span style="color:#008080">findByIPK</span><span style="font-weight:bold">(</span>marinaFromTableRowid<span style="font-weight:bold">.</span><span style="color:#008080">id</span><span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">270</span>                <span style="font-weight:bold">if</span><span style="font-weight:bold">(</span>marinaFromTableIPK <span style="font-weight:bold">!=</span> <span style="font-weight:bold">null</span><span style="font-weight:bold">)</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">271</span>                    addActionListItem<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_retrieved</span><span style="font-weight:bold">),</span>  1<span style="font-weight:bold">,</span> findOperationId<span style="font-weight:bold">));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">272</span>                    addActionListItem<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_retrieved_model_show</span><span style="font-weight:bold">),</span>  findOperationId<span style="font-weight:bold">,</span> 0<span style="font-weight:bold">,</span> marinaFromTableIPK2<span style="font-weight:bold">));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">273</span>                    addActionListItem<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_count</span><span style="font-weight:bold">),</span> mapper<span style="font-weight:bold">.</span><span style="color:#008080">countAll</span><span style="font-weight:bold">()));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">274</span>                <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">275</span>            <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">276</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">277</span>            <span style="color:#998;font-style:italic">// another option is updating with generating query
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">278</span><span style="color:#998;font-style:italic"></span>            SimpleExampleModel updateMarina <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> SimpleExampleModel<span style="font-weight:bold">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">279</span>            updateMarina<span style="font-weight:bold">.</span><span style="color:#008080">randomInteger</span> <span style="font-weight:bold">=</span> 121212<span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">280</span>            addActionListItem<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_updating_query_like</span><span style="font-weight:bold">),</span> updateMarina<span style="font-weight:bold">));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">281</span>            builder <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> SQLiteConditionBuilder<span style="font-weight:bold">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">282</span>            builder<span style="font-weight:bold">.</span><span style="color:#008080">addField</span><span style="font-weight:bold">(</span><span style="color:#b84">&#34;first_name&#34;</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">283</span>                    <span style="font-weight:bold">.</span><span style="color:#008080">addSQLOperator</span><span style="font-weight:bold">(</span>SQLiteOperator<span style="font-weight:bold">.</span><span style="color:#008080">EQUAL</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">284</span>                    <span style="font-weight:bold">.</span><span style="color:#008080">addValue</span><span style="font-weight:bold">(</span><span style="color:#b84">&#34;Marina&#34;</span><span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">285</span>            <span style="font-weight:bold">if</span><span style="font-weight:bold">(</span>mapper<span style="font-weight:bold">.</span><span style="color:#008080">update</span><span style="font-weight:bold">(</span>updateMarina<span style="font-weight:bold">,</span> builder<span style="font-weight:bold">.</span><span style="color:#008080">build</span><span style="font-weight:bold">(),</span> <span style="font-weight:bold">new</span> String<span style="font-weight:bold">[]{</span><span style="color:#b84">&#34;randomInteger&#34;</span><span style="font-weight:bold">},</span> CVUtils<span style="font-weight:bold">.</span><span style="color:#008080">INCLUDE_ONLY_SELECTED_FIELDS</span><span style="font-weight:bold">)</span> <span style="font-weight:bold">&gt;</span> 0<span style="font-weight:bold">)</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">286</span>                addActionListItem<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_updating_query_like_updated</span><span style="font-weight:bold">),</span> updateMarina<span style="font-weight:bold">));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">287</span>                findOperationId<span style="font-weight:bold">++;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">288</span>                <span style="color:#998;font-style:italic">// find with IPK
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">289</span><span style="color:#998;font-style:italic"></span>                addActionListItem<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>getContext<span style="font-weight:bold">().</span><span style="color:#008080">getString</span><span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_retrieving</span><span style="font-weight:bold">),</span> <span style="color:#b84">&#34;mapper.findByIPK&#34;</span><span style="font-weight:bold">,</span> <span style="color:#b84">&#34;IPK = &#34;</span><span style="font-weight:bold">+</span>marinaFromTableRowid<span style="font-weight:bold">.</span><span style="color:#008080">id</span><span style="font-weight:bold">,</span> findOperationId<span style="font-weight:bold">));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">290</span>                SimpleExampleModel marinaFromTableIPK2 <span style="font-weight:bold">=</span> mapper<span style="font-weight:bold">.</span><span style="color:#008080">findByIPK</span><span style="font-weight:bold">(</span>marinaFromTableRowid<span style="font-weight:bold">.</span><span style="color:#008080">id</span><span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">291</span>                <span style="font-weight:bold">if</span><span style="font-weight:bold">(</span>marinaFromTableIPK <span style="font-weight:bold">!=</span> <span style="font-weight:bold">null</span><span style="font-weight:bold">)</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">292</span>                    addActionListItem<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_retrieved</span><span style="font-weight:bold">),</span>  1<span style="font-weight:bold">,</span> findOperationId<span style="font-weight:bold">));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">293</span>                    addActionListItem<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_retrieved_model_show</span><span style="font-weight:bold">),</span>  findOperationId<span style="font-weight:bold">,</span> 0<span style="font-weight:bold">,</span> marinaFromTableIPK2<span style="font-weight:bold">));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">294</span>                    addActionListItem<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_count</span><span style="font-weight:bold">),</span> mapper<span style="font-weight:bold">.</span><span style="color:#008080">countAll</span><span style="font-weight:bold">()));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">295</span>                <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">296</span>            <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">297</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">298</span>            <span style="color:#998;font-style:italic">// bulk operations in TX mode
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">299</span><span style="color:#998;font-style:italic"></span>            LinkedList<span style="font-weight:bold">&lt;</span>SimpleExampleModel<span style="font-weight:bold">&gt;</span> randModels <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> LinkedList<span style="font-weight:bold">&lt;&gt;();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">300</span>            <span style="font-weight:bold">for</span><span style="font-weight:bold">(</span><span style="color:#458;font-weight:bold">int</span> i <span style="font-weight:bold">=</span> 0<span style="font-weight:bold">;</span> i <span style="font-weight:bold">&lt;</span> 10<span style="font-weight:bold">;</span> i<span style="font-weight:bold">++)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">301</span>                randModels<span style="font-weight:bold">.</span><span style="color:#008080">add</span><span style="font-weight:bold">(</span>RandomSimpleExampleModelUtil<span style="font-weight:bold">.</span><span style="color:#008080">randomSEModel</span><span style="font-weight:bold">());</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">302</span>            mapper<span style="font-weight:bold">.</span><span style="color:#008080">saveInTransaction</span><span style="font-weight:bold">(</span>randModels<span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">303</span>            addActionListItem<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_random_save</span><span style="font-weight:bold">));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">304</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">305</span>            addActionListItem<span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>getString<span style="font-weight:bold">(</span>R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_count</span><span style="font-weight:bold">),</span> mapper<span style="font-weight:bold">.</span><span style="color:#008080">countAll</span><span style="font-weight:bold">()));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">306</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">307</span>            <span style="color:#998;font-style:italic">// closing mapper
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">308</span><span style="color:#998;font-style:italic"></span>            mapper<span style="font-weight:bold">.</span><span style="color:#008080">close</span><span style="font-weight:bold">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">309</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">310</span>            updateExpandPanelList<span style="font-weight:bold">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">311</span>        <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">312</span>    <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">313</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">314</span>    <span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">updateExpandPanelList</span><span style="font-weight:bold">()</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">315</span>        <span style="font-weight:bold">if</span><span style="font-weight:bold">(</span>expandedText <span style="font-weight:bold">!=</span> <span style="font-weight:bold">null</span> <span style="font-weight:bold">&amp;&amp;</span> expandedLW <span style="font-weight:bold">!=</span> <span style="font-weight:bold">null</span> <span style="font-weight:bold">&amp;&amp;</span> expandedTextPattern <span style="font-weight:bold">!=</span> <span style="font-weight:bold">null</span><span style="font-weight:bold">)</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">316</span>            SimpleDatabase sdb <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> SimpleDatabase<span style="font-weight:bold">(</span>getContext<span style="font-weight:bold">());</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">317</span>            KittyMapper mapper <span style="font-weight:bold">=</span> sdb<span style="font-weight:bold">.</span><span style="color:#008080">getMapper</span><span style="font-weight:bold">(</span>SimpleExampleModel<span style="font-weight:bold">.</span><span style="color:#008080">class</span><span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">318</span>            expandedText<span style="font-weight:bold">.</span><span style="color:#008080">setText</span><span style="font-weight:bold">(</span>format<span style="font-weight:bold">(</span>expandedTextPattern<span style="font-weight:bold">,</span> mapper<span style="font-weight:bold">.</span><span style="color:#008080">countAll</span><span style="font-weight:bold">()));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">319</span>            List<span style="font-weight:bold">&lt;</span>SimpleExampleModel<span style="font-weight:bold">&gt;</span> models <span style="font-weight:bold">=</span> mapper<span style="font-weight:bold">.</span><span style="color:#008080">findAll</span><span style="font-weight:bold">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">320</span>            <span style="font-weight:bold">if</span><span style="font-weight:bold">(</span>models<span style="font-weight:bold">!=</span><span style="font-weight:bold">null</span><span style="font-weight:bold">)</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">321</span>                LinkedList<span style="font-weight:bold">&lt;</span>String<span style="font-weight:bold">&gt;</span> modelsToString <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> LinkedList<span style="font-weight:bold">&lt;&gt;();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">322</span>                Iterator<span style="font-weight:bold">&lt;</span>SimpleExampleModel<span style="font-weight:bold">&gt;</span> modelIterator <span style="font-weight:bold">=</span> models<span style="font-weight:bold">.</span><span style="color:#008080">iterator</span><span style="font-weight:bold">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">323</span>                <span style="font-weight:bold">while</span> <span style="font-weight:bold">(</span>modelIterator<span style="font-weight:bold">.</span><span style="color:#008080">hasNext</span><span style="font-weight:bold">())</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">324</span>                    modelsToString<span style="font-weight:bold">.</span><span style="color:#008080">addLast</span><span style="font-weight:bold">(</span>modelIterator<span style="font-weight:bold">.</span><span style="color:#008080">next</span><span style="font-weight:bold">().</span><span style="color:#008080">toString</span><span style="font-weight:bold">());</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">325</span>                <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">326</span>                expandedLW<span style="font-weight:bold">.</span><span style="color:#008080">setAdapter</span><span style="font-weight:bold">(</span><span style="font-weight:bold">new</span> BasicArrayAdapter<span style="font-weight:bold">(</span>getContext<span style="font-weight:bold">(),</span> modelsToString<span style="font-weight:bold">));</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">327</span>                expandedLW<span style="font-weight:bold">.</span><span style="color:#008080">setOnTouchListener</span><span style="font-weight:bold">(</span><span style="font-weight:bold">new</span> View<span style="font-weight:bold">.</span><span style="color:#008080">OnTouchListener</span><span style="font-weight:bold">()</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">328</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">329</span>                    <span style="color:#998;font-style:italic">// Setting on Touch Listener for handling the touch inside ScrollView
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">330</span><span style="color:#998;font-style:italic"></span>                    @Override
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">331</span>                    <span style="font-weight:bold">public</span> <span style="color:#458;font-weight:bold">boolean</span> <span style="color:#900;font-weight:bold">onTouch</span><span style="font-weight:bold">(</span>View v<span style="font-weight:bold">,</span> MotionEvent event<span style="font-weight:bold">)</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">332</span>                        <span style="color:#998;font-style:italic">// Disallow the touch request for parent scroll on touch of child view
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">333</span><span style="color:#998;font-style:italic"></span>                        v<span style="font-weight:bold">.</span><span style="color:#008080">getParent</span><span style="font-weight:bold">().</span><span style="color:#008080">requestDisallowInterceptTouchEvent</span><span style="font-weight:bold">(</span><span style="font-weight:bold">true</span><span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">334</span>                        <span style="font-weight:bold">return</span> <span style="font-weight:bold">false</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">335</span>                    <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">336</span>                <span style="font-weight:bold">});</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">337</span>            <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">338</span>            mapper<span style="font-weight:bold">.</span><span style="color:#008080">close</span><span style="font-weight:bold">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">339</span>        <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">340</span>    <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">341</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">342</span>    <span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">addActionListItem</span><span style="font-weight:bold">(</span>String item<span style="font-weight:bold">)</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">343</span>        <span style="font-weight:bold">if</span><span style="font-weight:bold">(</span>actionsLW <span style="font-weight:bold">!=</span> <span style="font-weight:bold">null</span><span style="font-weight:bold">)</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">344</span>            <span style="font-weight:bold">((</span>BasicArrayAdapter<span style="font-weight:bold">)</span>actionsLW<span style="font-weight:bold">.</span><span style="color:#008080">getAdapter</span><span style="font-weight:bold">()).</span><span style="color:#008080">addItemLast</span><span style="font-weight:bold">(</span>item<span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">345</span>            <span style="font-weight:bold">((</span>BasicArrayAdapter<span style="font-weight:bold">)</span> actionsLW<span style="font-weight:bold">.</span><span style="color:#008080">getAdapter</span><span style="font-weight:bold">()).</span><span style="color:#008080">notifyDataSetChanged</span><span style="font-weight:bold">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">346</span>        <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">347</span>    <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">348</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">349</span>    <span style="color:#998;font-style:italic">// Fab menu section
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">350</span><span style="color:#998;font-style:italic"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">351</span>    @Override
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">352</span>    <span style="font-weight:bold">public</span> View<span style="font-weight:bold">.</span><span style="color:#008080">OnClickListener</span> <span style="color:#900;font-weight:bold">helpFabMenuAction</span><span style="font-weight:bold">()</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">353</span>        <span style="font-weight:bold">return</span> <span style="font-weight:bold">new</span> View<span style="font-weight:bold">.</span><span style="color:#008080">OnClickListener</span><span style="font-weight:bold">()</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">354</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">355</span>            <span style="color:#998;font-style:italic">/**
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">356</span><span style="color:#998;font-style:italic">             * Called when a view has been clicked.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">357</span><span style="color:#998;font-style:italic">             *
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">358</span><span style="color:#998;font-style:italic">             * @param v The view that was clicked.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">359</span><span style="color:#998;font-style:italic">             */</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">360</span>            @Override
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">361</span>            <span style="font-weight:bold">public</span> <span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">onClick</span><span style="font-weight:bold">(</span>View v<span style="font-weight:bold">)</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">362</span>                <span style="font-weight:bold">((</span>LessonDetailActivity<span style="font-weight:bold">)</span> getParentFragment<span style="font-weight:bold">().</span><span style="color:#008080">getActivity</span><span style="font-weight:bold">()).</span><span style="color:#008080">showWebViewDialog</span><span style="font-weight:bold">(</span>tutorialPageName<span style="font-weight:bold">,</span> <span style="font-weight:bold">null</span><span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">363</span>            <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">364</span>        <span style="font-weight:bold">};</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">365</span>    <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">366</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">367</span>    @Override
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">368</span>    <span style="font-weight:bold">public</span> View<span style="font-weight:bold">.</span><span style="color:#008080">OnClickListener</span> <span style="color:#900;font-weight:bold">sourceFabMenuAction</span><span style="font-weight:bold">()</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">369</span>        <span style="font-weight:bold">return</span> <span style="font-weight:bold">new</span> View<span style="font-weight:bold">.</span><span style="color:#008080">OnClickListener</span><span style="font-weight:bold">()</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">370</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">371</span>            <span style="color:#998;font-style:italic">/**
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">372</span><span style="color:#998;font-style:italic">             * Called when a view has been clicked.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">373</span><span style="color:#998;font-style:italic">             *
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">374</span><span style="color:#998;font-style:italic">             * @param v The view that was clicked.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">375</span><span style="color:#998;font-style:italic">             */</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">376</span>            @Override
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">377</span>            <span style="font-weight:bold">public</span> <span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">onClick</span><span style="font-weight:bold">(</span>View v<span style="font-weight:bold">)</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">378</span>                <span style="font-weight:bold">((</span>LessonDetailActivity<span style="font-weight:bold">)</span> getParentFragment<span style="font-weight:bold">().</span><span style="color:#008080">getActivity</span><span style="font-weight:bold">()).</span><span style="color:#008080">showWebViewDialog</span><span style="font-weight:bold">(</span>tutorialSourceCodeLocation<span style="font-weight:bold">,</span> <span style="font-weight:bold">null</span><span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">379</span>            <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">380</span>        <span style="font-weight:bold">};</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">381</span>    <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">382</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">383</span>    @Override
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">384</span>    <span style="font-weight:bold">public</span> View<span style="font-weight:bold">.</span><span style="color:#008080">OnClickListener</span> <span style="color:#900;font-weight:bold">schemaFabMenuAction</span><span style="font-weight:bold">()</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">385</span>        <span style="font-weight:bold">return</span> <span style="font-weight:bold">new</span> View<span style="font-weight:bold">.</span><span style="color:#008080">OnClickListener</span><span style="font-weight:bold">()</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">386</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">387</span>            <span style="color:#998;font-style:italic">/**
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">388</span><span style="color:#998;font-style:italic">             * Called when a view has been clicked.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">389</span><span style="color:#998;font-style:italic">             *
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">390</span><span style="color:#998;font-style:italic">             * @param v The view that was clicked.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">391</span><span style="color:#998;font-style:italic">             */</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">392</span>            @Override
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">393</span>            <span style="font-weight:bold">public</span> <span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">onClick</span><span style="font-weight:bold">(</span>View v<span style="font-weight:bold">)</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">394</span>                <span style="font-weight:bold">((</span>LessonDetailActivity<span style="font-weight:bold">)</span> getParentFragment<span style="font-weight:bold">().</span><span style="color:#008080">getActivity</span><span style="font-weight:bold">()).</span><span style="color:#008080">showWebViewDialog</span><span style="font-weight:bold">(</span>tutorialSchemaLocation<span style="font-weight:bold">,</span> <span style="font-weight:bold">null</span><span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">395</span>            <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">396</span>        <span style="font-weight:bold">};</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">397</span>    <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">398</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">399</span>    @Override
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">400</span>    <span style="font-weight:bold">protected</span> <span style="color:#458;font-weight:bold">int</span> <span style="color:#900;font-weight:bold">snackbarMessageResource</span><span style="font-weight:bold">()</span> <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">401</span>        <span style="font-weight:bold">return</span> R<span style="font-weight:bold">.</span><span style="color:#008080">string</span><span style="font-weight:bold">.</span><span style="color:#008080">_l1_t2_snackbar_message</span><span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">402</span>    <span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">403</span><span style="font-weight:bold">}</span></code></pre></div>
+</details></p>
+
+
+    
+    
+        <div class="chevrons">
+    <div id="navigation">
+<a class="nav nav-prev" href="/getting_started/l1_schema/" title="DB schema"> <i class="fa fa-chevron-left"></i><label>DB schema</label></a>
+    <a class="nav nav-next" href="/crud_operations/" title="CRUD operations" style="margin-right: 0px;"><label>CRUD operations</label><i class="fa fa-chevron-right"></i></a></div>
+  </div>
+
+  </section>
+</article>
+
+<footer>
+
+<div class="footline">
+    
+
+    
+
+    
+    <div class="date">
+        <i class='fa fa-calendar'></i> Last update on 15/12/2018
+    </div>
+    
+
+    
+    <div class="github-link">
+      <a href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/getting_started/l1_code.en.md" target="blank"><i class="fa fa-code-fork"></i>
+        Improve this page</a>
+    </div>
+    
+  </div>
+
+
+	<div>
+
+
+  
+    <p><a href="/license/"><em>KittyORM project. Copyright © 2018 Denis Bogomolov. Some rights reserved.</em></a></p>
+
+<p><em>KittyORM documentation site powered by <a href="https://gohugo.io"><strong>Hugo</strong></a> with <a href="https://github.com/vjeantet/hugo-theme-docdock"><strong>DocDock</strong></a> theme.</em></p>
+
+<p><center></p>
+
+<p><a href="https://github.com/akaish/KittyORM" title="Visit KittyORM Github repo">
+
+<span class="fa fa-github"  style="font-size:large" aria-hidden="true"></span>
+
+</a>&nbsp;&nbsp;
+<a href="https://twitter.com/OrmKitty" title="Follow KittyORM at twitter">
+
+<span class="fa fa-twitter"  style="font-size:large" aria-hidden="true"></span>
+
+</a>&nbsp;&nbsp;
+<a href="https://t.me/kittyorm" title="Subscribe to KittyORM telegram channel">
+
+<span class="fa fa-telegram"  style="font-size:large" aria-hidden="true"></span>
+
+</a>&nbsp;&nbsp;
+<a href="https://stackoverflow.com/users/10656176/kittyorm" title="Ask questions related with KittyORM at StackOverflow">
+
+<span class="fa fa-stack-overflow"  style="font-size:large" aria-hidden="true"></span>
+
+</a>&nbsp;&nbsp;
+<a href="/hidden/android" title="Check out KittyORM Demo at Play Market">
+
+<span class="fa fa-android"  style="font-size:large" aria-hidden="true"></span>
+
+</a>&nbsp;&nbsp;
+<a href="/contacts" title="Contact us">
+
+<span class="fa fa-envelope"  style="font-size:large" aria-hidden="true"></span>
+
+</a>&nbsp;&nbsp;
+<a href="/makekittygreater/l6t4" title="Sponsor KittyORM development">
+
+<span class="fa fa-usd"  style="font-size:large" aria-hidden="true"></span>
+
+</a>&nbsp;&nbsp;</p>
+
+<p></center></p>
+
+  
+
+
+
+	</div>
+</footer>
+
+<script src="/js/clipboard.min.js"></script>
+
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<script src="/js/featherlight.min.js"></script>
+
+
+
+<script src="/theme-flex/script.js"></script>
+
+
+    
+
+    
+    
+
+    
+  </body>
+</html>

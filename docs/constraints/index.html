@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>KittyORM: Fast and reliable ORM for SQLite\Android</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2018-12-25T19:01:22 MSK">
+<title>Constraints and indexes declarations :: KittyORM: Fast and reliable ORM for SQLite\Android</title>
+<link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/theme-flex/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+      var baseurl = "\/";
+</script>
+<meta name="description" content="">
+
+
+
+    
+  </head>
+  <body data-url="/constraints/">
+    
+      <header>
+  <div class="logo">
+    
+	
+  
+    <a class="baselink" href="/">KittyORM: Fast and reliable ORM for SQLite\Android</a>
+  
+
+
+  </div>
+  <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
+    <nav class="shortcuts">
+            <li class="" role="">
+                <a href="https://github.com/akaish/KittyORM"  rel="noopener">
+                  <i class='fa fa-github'></i> <label>Github repo</label>
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="https://twitter.com/OrmKitty"  rel="noopener">
+                  <i class='fa fa-twitter'></i> <label>@OrmKitty</label>
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="https://t.me/kittyorm"  rel="noopener">
+                  <i class='fa fa-telegram'></i> <label>KittyORM channel</label>
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="/kittydoc/"  rel="noopener">
+                  <i class='fa fa-at'></i> <label>Javadoc</label>
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="/hidden/android"  rel="noopener">
+                  <i class='fa fa-android'></i> <label>KittyORM Demo at PlayMarket</label>
+                </a>
+            </li>
+            <li class="" role="">
+                <a href="/contacts"  rel="noopener">
+                  <i class='fa fa-envelope'></i> <label>Contacts</label>
+                </a>
+            </li>
+    </nav>
+</header>
+<article>
+  <aside>
+    <ul class="menu">
+          <li data-nav-id="/" class="dd-item">
+          <a href="/">
+            <i class="fa fa-fw fa-home"></i>
+          </a>
+          </li>
+    <li data-nav-id="/getting_started/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/getting_started/">Getting started with KittyORM</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/getting_started/l1_schema/" class="dd-item">
+        <div>
+          <a href="/getting_started/l1_schema/">
+            <i class='fa fa-database'>&nbsp;</i> DB schema
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/getting_started/l1_code/" class="dd-item">
+        <div>
+          <a href="/getting_started/l1_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/crud_operations/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/crud_operations/">CRUD operations</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/crud_operations/save/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/crud_operations/save/">Saving new entity</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/crud_operations/save/l2_schema/" class="dd-item">
+        <div>
+          <a href="/crud_operations/save/l2_schema/">
+            <i class='fa fa-database'>&nbsp;</i> DB schema
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/crud_operations/save/l2t1_code/" class="dd-item">
+        <div>
+          <a href="/crud_operations/save/l2t1_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/crud_operations/update/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/crud_operations/update/">Updating existing entity</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/crud_operations/update/l2_schema/" class="dd-item">
+        <div>
+          <a href="/crud_operations/update/l2_schema/">
+            <i class='fa fa-database'>&nbsp;</i> DB schema
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/crud_operations/update/l2t2_code/" class="dd-item">
+        <div>
+          <a href="/crud_operations/update/l2t2_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/crud_operations/delete/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/crud_operations/delete/">Deleting entities</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/crud_operations/delete/l2_schema/" class="dd-item">
+        <div>
+          <a href="/crud_operations/delete/l2_schema/">
+            <i class='fa fa-database'>&nbsp;</i> DB schema
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/crud_operations/delete/l2t3_code/" class="dd-item">
+        <div>
+          <a href="/crud_operations/delete/l2t3_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/crud_operations/find/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/crud_operations/find/">Finding entities</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/crud_operations/find/l2_schema/" class="dd-item">
+        <div>
+          <a href="/crud_operations/find/l2_schema/">
+            <i class='fa fa-database'>&nbsp;</i> DB schema
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/crud_operations/find/l2t4_code/" class="dd-item">
+        <div>
+          <a href="/crud_operations/find/l2t4_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/crud_operations/bulk/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/crud_operations/bulk/">KittyORM and bulk operations</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/crud_operations/bulk/l2_schema/" class="dd-item">
+        <div>
+          <a href="/crud_operations/bulk/l2_schema/">
+            <i class='fa fa-database'>&nbsp;</i> DB schema
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/crud_operations/bulk/l2t5_code/" class="dd-item">
+        <div>
+          <a href="/crud_operations/bulk/l2t5_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/datatype_mapping/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/datatype_mapping/">KittyORM datatypes mapping</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/datatype_mapping/l3_schema/" class="dd-item">
+        <div>
+          <a href="/datatype_mapping/l3_schema/">
+            <i class='fa fa-database'>&nbsp;</i> DB schema
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/datatype_mapping/l3t1_code/" class="dd-item">
+        <div>
+          <a href="/datatype_mapping/l3t1_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/constraints/" class="dd-item parent active haschildren
+        ">
+      <div>
+      <a href="/constraints/">Constraints and indexes declarations</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/constraints/l3_schema/" class="dd-item">
+        <div>
+          <a href="/constraints/l3_schema/">
+            <i class='fa fa-database'>&nbsp;</i> DB schema
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/constraints/l3t2_code/" class="dd-item">
+        <div>
+          <a href="/constraints/l3t2_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/migrations/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/migrations/">Migrations between different DB versions</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+    <li data-nav-id="/migrations/overview/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/migrations/overview/">Migrations overview</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/migrations/overview/l5t1_schema/" class="dd-item">
+        <div>
+          <a href="/migrations/overview/l5t1_schema/">
+            <i class='fa fa-database'>&nbsp;</i> DB schema
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/migrations/overview/l5t1_code/" class="dd-item">
+        <div>
+          <a href="/migrations/overview/l5t1_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/migrations/dropcreate/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/migrations/dropcreate/">DropCreate Migrator</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/migrations/dropcreate/l5t2_schema/" class="dd-item">
+        <div>
+          <a href="/migrations/dropcreate/l5t2_schema/">
+            <i class='fa fa-database'>&nbsp;</i> DB schema
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/migrations/dropcreate/l5t2_code/" class="dd-item">
+        <div>
+          <a href="/migrations/dropcreate/l5t2_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/migrations/simplemigrations/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/migrations/simplemigrations/">Simple Migration Script Generator Migrator</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/migrations/simplemigrations/l5t3_schema/" class="dd-item">
+        <div>
+          <a href="/migrations/simplemigrations/l5t3_schema/">
+            <i class='fa fa-database'>&nbsp;</i> DB schema
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/migrations/simplemigrations/l5t3_code/" class="dd-item">
+        <div>
+          <a href="/migrations/simplemigrations/l5t3_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/migrations/fsmigrations/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/migrations/fsmigrations/">Filescript Migrator</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/migrations/fsmigrations/l5t4_schema/" class="dd-item">
+        <div>
+          <a href="/migrations/fsmigrations/l5t4_schema/">
+            <i class='fa fa-database'>&nbsp;</i> DB schema
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/migrations/fsmigrations/l5t4_code/" class="dd-item">
+        <div>
+          <a href="/migrations/fsmigrations/l5t4_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/speedup/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/speedup/">Speed up your KittyORM</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/speedup/l4t1_code/" class="dd-item">
+        <div>
+          <a href="/speedup/l4t1_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/debug/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/debug/">Debugging KittyORM</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/debug/l4t2_code/" class="dd-item">
+        <div>
+          <a href="/debug/l4t2_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/encrypt/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/encrypt/">Database encryption</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/encrypt/l4t3_code/" class="dd-item">
+        <div>
+          <a href="/encrypt/l4t3_code/">
+            <i class='fa fa-code'>&nbsp;</i> Source code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/makekittygreater/" class="dd-item alwaysopen haschildren
+        ">
+      <div>
+      <a href="/makekittygreater/">Make KittyORM greater</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/makekittygreater/l6t1/" class="dd-item">
+        <div>
+          <a href="/makekittygreater/l6t1/">
+            <i class='fa fa-edit'>&nbsp;</i> Use KittyORM
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/makekittygreater/l6t2/" class="dd-item">
+        <div>
+          <a href="/makekittygreater/l6t2/">
+            <i class='fa fa-share'>&nbsp;</i> Share KittyORM
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/makekittygreater/l6t3/" class="dd-item">
+        <div>
+          <a href="/makekittygreater/l6t3/">
+            <i class='fa fa-github'>&nbsp;</i> Contribute to KittyORM
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/makekittygreater/l6t4/" class="dd-item">
+        <div>
+          <a href="/makekittygreater/l6t4/">
+            <i class='fa fa-usd'>&nbsp;</i> Sponsor KittyORM development
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/contacts/" class="dd-item
+        ">
+      <div>
+      <a href="/contacts/"><i class='fa fa-envelope'>&nbsp;</i> Contacts</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/license/" class="dd-item
+        ">
+      <div>
+      <a href="/license/">Legal information</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+
+
+
+
+    </ul>
+    <section>
+    </section>
+  </aside>
+  <section class="page">
+    
+    <div class="nav-select">
+      <center>Navigation : 
+        <select onchange="javascript:location.href = this.value;">
+          
+    <option value="/getting_started/" >
+   Getting started with KittyORM</option>
+    <option value="/crud_operations/" >
+   CRUD operations</option>
+    <option value="/datatype_mapping/" >
+   KittyORM datatypes mapping</option>
+    <option value="/constraints/"  selected>
+   Constraints and indexes declarations</option> 
+      <option value="/constraints/l3_schema/" >- DB schema</option>
+      <option value="/constraints/l3t2_code/" >- Source code</option>
+  
+    <option value="/migrations/" >
+   Migrations between different DB versions</option>
+    <option value="/speedup/" >
+   Speed up your KittyORM</option>
+    <option value="/debug/" >
+   Debugging KittyORM</option>
+    <option value="/encrypt/" >
+   Database encryption</option>
+    <option value="/makekittygreater/" >
+   Make KittyORM greater</option> 
+      <option value="/makekittygreater/l6t1/" >- Use KittyORM</option>
+      <option value="/makekittygreater/l6t2/" >- Share KittyORM</option>
+      <option value="/makekittygreater/l6t3/" >- Contribute to KittyORM</option>
+      <option value="/makekittygreater/l6t4/" >- Sponsor KittyORM development</option>
+  
+    <option value="/contacts/" >
+   Contacts</option>
+    <option value="/license/" >
+   Legal information</option>
+    <option value="/hidden/" >
+   Hidden</option>
+
+
+
+        </select>
+      </center>
+    </div>
+      <div>
+        <div class="searchbox">
+          <input data-search-input id="search-by" type="text" placeholder="Search...">
+        </div>
+        <script type="text/javascript" src="/js/lunr.min.js"></script>
+        <script type="text/javascript" src="/js/auto-complete.js"></script>
+        <link href="/css/auto-complete.css" rel="stylesheet">
+        <script type="text/javascript">
+          
+              var baseurl = "\/";
+          
+        </script>
+        <script type="text/javascript" src="/js/search.js"></script>
+      </div>
+    
+
+    <h1>Constraints and indexes declarations</h1>
+    
+    
+    
+
+
+
+<div class="panel panel-primary">
+	
+	<div class="panel-body"><p><center><img src="src/1.png?height=150px&amp;classes=border,inline" alt="alt text" />  <img src="src/2.png?height=150px&amp;classes=border,inline" alt="alt text" /> <img src="src/3.png?height=150px&amp;classes=border,inline" alt="alt text" /> <img src="src/4.png?height=150px&amp;classes=border,inline" alt="alt text" /> <img src="src/5.png?height=150px&amp;classes=border,inline" alt="alt text" /> <img src="src/6.png?height=150px&amp;classes=border,inline" alt="alt text" /></center></p>
+</div>
+	<div class="panel-footer">Demo application screenshots for this article</div>
+</div>
+
+
+<p>KittyORM supports indexes and constraints declaration by using annotations. Right now KittyORM offers you functionality to define seven supported by SQLite constraints without any need to define them in raw SQL code. Also in such way you can define table indexes. KittyORM is capable to define database schema with nearly all features that are supported by SQLite (<a href="https://sqlite.org/lang_createtable.html">SQL As Understood By SQLite</a>) with usage only of annotations. In demo you can play with form for creating and inserting entity that declares all constraints and index.</p>
+
+<h3 id="table-of-contents">Table of contents</h3>
+
+<ol>
+<li><a href="#not-null-constraint-declaration"><code>NOT NULL</code> constraint declaration</a></li>
+<li><a href="#default-constraint-declaration"><code>DEFAULT</code> constraint declaration</a></li>
+<li><a href="#unique-constraint-declaration"><code>UNIQUE</code> constraint declaration</a></li>
+<li><a href="#check-constraint-declaration"><code>CHECK</code> constraint declaration</a></li>
+<li><a href="#collate-constraint-declaration"><code>COLLATE</code> constraint declaration</a></li>
+<li><a href="#primary-key-constraint-declaration"><code>PRIMARY KEY</code> constraint declaration</a></li>
+<li><a href="#foreign-key-constraint-declaration"><code>FOREIGN KEY</code> constraint declaration</a></li>
+<li><a href="#indexes-declaration">Indexes declaration</a></li>
+</ol>
+
+<h3 id="not-null-constraint-declaration"><code>NOT NULL</code> constraint declaration</h3>
+
+<p>To declare <code>NOT NULL</code> constraint just annotate corresponding model field with <code>@NOT_NULL</code> annotation. Example:
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>@KITTY_COLUMN<span style="font-weight:bold">(</span>columnOrder <span style="font-weight:bold">=</span> 0<span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>@PRIMARY_KEY
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>@NOT_NULL <span style="color:#998;font-style:italic">// NOT NULL constraint declaration
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#998;font-style:italic"></span><span style="font-weight:bold">public</span> Long id<span style="font-weight:bold">;</span></code></pre></div>
+<a href="#table-of-contents">Back to table of contents ^</a></p>
+
+<h3 id="default-constraint-declaration"><code>DEFAULT</code> constraint declaration</h3>
+
+<p>To declare <code>DEFAULT</code> constraint just annotate corresponding model field with <code>@DEFAULT</code> annotation. Example:
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>@KITTY_COLUMN<span style="font-weight:bold">(</span>columnOrder <span style="font-weight:bold">=</span> 3<span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>@DEFAULT<span style="font-weight:bold">(</span>signedInteger <span style="font-weight:bold">=</span> 28<span style="font-weight:bold">)</span> <span style="color:#998;font-style:italic">// You can choose for options for default declaration, if nothing set than 0 value would be used
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#998;font-style:italic"></span>@NOT_NULL
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="font-weight:bold">public</span> Integer defaultNumber<span style="font-weight:bold">;</span></code></pre></div>
+Without setting any fields of <code>@DEFAULT</code> annotation then default value for annotated field would be 0 (int, zero). KittyORM provide you some options on declaring default constraints, for example, you can set as a default value for field predefined <code>LiteralValues</code> enum element, signed integer, literal value or expression. Example of declaring <code>DEFAULT</code> constraint from predefined literals:
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>@KITTY_COLUMN<span style="font-weight:bold">(</span>columnOrder <span style="font-weight:bold">=</span> 4<span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>@DEFAULT<span style="font-weight:bold">(</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>        predefinedLiteralValue <span style="font-weight:bold">=</span> LiteralValues<span style="font-weight:bold">.</span><span style="color:#008080">CURRENT_DATE</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>@NOT_NULL
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span style="font-weight:bold">public</span> String creationDate<span style="font-weight:bold">;</span></code></pre></div>
+By design, KittyORM tries to insert NULL value from entity field to database at insert, so to avoid inserting NULL to database column that should acquire value from <code>DEFAULT</code> constraint before inserting model you have to invoke on this model <code>KittyModel.setFieldExclusion(&quot;modelFieldName&quot;)</code> method. Example:
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>IndexesAndConstraintsModel model <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> IndexesAndConstraintsModel<span style="font-weight:bold">();</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>model<span style="font-weight:bold">.</span><span style="color:#008080">animal</span> <span style="font-weight:bold">=</span> someAnimal<span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="font-weight:bold">...</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>model<span style="font-weight:bold">.</span><span style="color:#008080">setFieldExclusion</span><span style="font-weight:bold">(</span><span style="color:#b84">&#34;creationDate&#34;</span><span style="font-weight:bold">);</span> <span style="color:#998;font-style:italic">// Forces KittyORM to exclude this field at insertion so DEFAULT constraint would be triggered
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span style="color:#998;font-style:italic"></span><span style="font-weight:bold">...</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>KittyMapper mapper <span style="font-weight:bold">=</span> getDatabase<span style="font-weight:bold">().</span><span style="color:#008080">getMapper</span><span style="font-weight:bold">(</span>IndexesAndConstraintsModel<span style="font-weight:bold">.</span><span style="color:#008080">class</span><span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>mapper<span style="font-weight:bold">.</span><span style="color:#008080">save</span><span style="font-weight:bold">(</span>model<span style="font-weight:bold">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span>mapper<span style="font-weight:bold">.</span><span style="color:#008080">close</span><span style="font-weight:bold">();</span></code></pre></div>
+<a href="#table-of-contents">Back to table of contents ^</a></p>
+
+<h3 id="unique-constraint-declaration"><code>UNIQUE</code> constraint declaration</h3>
+
+<p>You can declare <code>UNIQUE</code> constraint in two ways:</p>
+
+<ol>
+<li><p>To declare <code>UNIQUE</code> constraint only on one column than just annotate model corresponding field with <code>@UNIQUE</code> annotation. Example:
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>@KITTY_COLUMN<span style="font-weight:bold">(</span>columnOrder <span style="font-weight:bold">=</span> 1<span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>@NOT_NULL
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>@UNIQUE
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="font-weight:bold">public</span> Long rndId<span style="font-weight:bold">;</span></code></pre></div>
+In order to set conflict clause just set <code>@UNIQUE.onConflict</code> field with any suitable value from <code>ConflictClauses</code> enum.</p></li>
+
+<li><p>To declare <code>UNIQUE</code> constraint on more than one column annotate model with <code>@UNIQUE_T</code> annotation. Example:
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>@KITTY_TABLE<span style="font-weight:bold">(</span>tableName <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;cai&#34;</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>@FOREIGN_KEY_T<span style="font-weight:bold">(</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>        name <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;CAI_FK&#34;</span><span style="font-weight:bold">,</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>        columns <span style="font-weight:bold">=</span> <span style="font-weight:bold">{</span>IndexesAndConstraintsModel<span style="font-weight:bold">.</span><span style="color:#008080">RANDOM_ID_CNAME</span><span style="font-weight:bold">},</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>        reference <span style="font-weight:bold">=</span> @FOREIGN_KEY_REFERENCE<span style="font-weight:bold">(</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>                foreignTableName <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;random&#34;</span><span style="font-weight:bold">,</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>                foreignTableColumns <span style="font-weight:bold">=</span> <span style="font-weight:bold">{</span><span style="color:#b84">&#34;id&#34;</span><span style="font-weight:bold">},</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>                onUpdate <span style="font-weight:bold">=</span> OnUpdateDeleteActions<span style="font-weight:bold">.</span><span style="color:#008080">CASCADE</span><span style="font-weight:bold">,</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>                onDelete <span style="font-weight:bold">=</span> OnUpdateDeleteActions<span style="font-weight:bold">.</span><span style="color:#008080">CASCADE</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>        <span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>@INDEX<span style="font-weight:bold">(</span>indexColumns <span style="font-weight:bold">=</span> <span style="font-weight:bold">{</span><span style="color:#b84">&#34;creation_date&#34;</span><span style="font-weight:bold">})</span> 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>@UNIQUE_T<span style="font-weight:bold">(</span>columns <span style="font-weight:bold">=</span> <span style="font-weight:bold">{</span><span style="color:#b84">&#34;rnd_id, animal&#34;</span><span style="font-weight:bold">})</span> <span style="color:#998;font-style:italic">// Declaring unique constraint on more than two columns
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span style="color:#998;font-style:italic"></span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="color:#458;font-weight:bold">IndexesAndConstraintsModel</span> <span style="font-weight:bold">extends</span> KittyModel <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>    <span style="font-weight:bold">...</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span style="font-weight:bold">}</span></code></pre></div>
+In order to set conflict clause just set <code>@UNIQUE_T.onConflict</code> field with any suitable value from <code>ConflictClauses</code> enum.<br />
+In order to set <code>UNIQUE</code> constraint name set <code>@UNIQUE_T.name</code> otherwise it would be generated automatically.<br />
+If you need more than one <code>UNIQUE</code> constraint declaration defined with usage of <code>@UNIQUE_T</code> annotation, annotate model with <code>UNIQUE_T_ARRAY</code>.</p></li>
+</ol>
+
+<p><a href="#table-of-contents">Back to table of contents ^</a></p>
+
+<h3 id="check-constraint-declaration"><code>CHECK</code> constraint declaration</h3>
+
+<p>To declare <code>CHECK</code> constraint just annotate corresponding model field with <code>@CHECK</code> annotation and specify check expression. Example:
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>@KITTY_COLUMN<span style="font-weight:bold">(</span>columnOrder <span style="font-weight:bold">=</span> 2<span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>@CHECK<span style="font-weight:bold">(</span>checkExpression <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;animal IN (\&#34;CAT\&#34;, \&#34;TIGER\&#34;, \&#34;LION\&#34;)&#34;</span><span style="font-weight:bold">)</span> <span style="color:#998;font-style:italic">// only cats allowed to this party
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#998;font-style:italic"></span><span style="font-weight:bold">public</span> Animals animal<span style="font-weight:bold">;</span></code></pre></div></p>
+
+<p><a href="#table-of-contents">Back to table of contents ^</a></p>
+
+<h3 id="collate-constraint-declaration"><code>COLLATE</code> constraint declaration</h3>
+
+<p>To declare <code>COLLATE</code> constraint just annotate corresponding model field with <code>@COLLATE</code> annotation and specify built-in collation. Example:
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>@KITTY_COLUMN<span style="font-weight:bold">(</span>columnOrder <span style="font-weight:bold">=</span> 2<span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>@COLLATE<span style="font-weight:bold">(</span>collation <span style="font-weight:bold">=</span> BuiltInCollations<span style="font-weight:bold">.</span><span style="color:#008080">NOCASE</span><span style="font-weight:bold">)</span> <span style="color:#998;font-style:italic">// Collation example
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#998;font-style:italic"></span>@CHECK<span style="font-weight:bold">(</span>checkExpression <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;animal IN (\&#34;CAT\&#34;, \&#34;TIGER\&#34;, \&#34;LION\&#34;)&#34;</span><span style="font-weight:bold">)</span> 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="font-weight:bold">public</span> Animals animal<span style="font-weight:bold">;</span></code></pre></div></p>
+
+<p><a href="#table-of-contents">Back to table of contents ^</a></p>
+
+<h3 id="primary-key-constraint-declaration"><code>PRIMARY KEY</code> constraint declaration</h3>
+
+<p>You can declare <code>PRIMARY KEY</code> constraint in three ways:</p>
+
+<ol>
+<li><p>To define <code>INTEGER PRIMARY KEY</code> just set <code>@KITTY_COLUMN.isIPK</code> field value to <code>true</code> of corresponding model field. Example:
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>@KITTY_COLUMN<span style="font-weight:bold">(</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>        columnOrder <span style="font-weight:bold">=</span> 0<span style="font-weight:bold">,</span> 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>        isIPK <span style="font-weight:bold">=</span> <span style="font-weight:bold">true</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span style="font-weight:bold">public</span> Long id<span style="font-weight:bold">;</span></code></pre></div></p></li>
+
+<li><p>Second way to define <code>PRIMARY KEY</code> is to annotate corresponding model field with <code>@PRIMARY_KEY</code> annotation. Example:
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>@KITTY_COLUMN<span style="font-weight:bold">(</span>columnOrder <span style="font-weight:bold">=</span> 0<span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>@PRIMARY_KEY
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>@NOT_NULL
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="font-weight:bold">public</span> Long id<span style="font-weight:bold">;</span></code></pre></div>
+In order to set order just set <code>PRIMARY_KEY.orderAscDesc</code> field with any suitable value from <code>AscDesc</code> enum.<br />
+In order to set <code>AUTOIMCREMENT</code> flag set <code>@PRIMARY_KEY.autoincrement</code> field to true (default false).<br />
+In order to set conflict clause just set <code>@PRIMARY_KEY.onConflict</code> field with any suitable value from <code>ConflictClauses</code> enum.</p></li>
+
+<li><p>Third way to define <code>PRIMARY KEY</code> is to annotate model implementation with <code>@PRIMARY_KEY_T</code> annotation and specify <code>@PRIMARY_KEY_T.columns</code> array. Example:
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>@KITTY_TABLE<span style="font-weight:bold">(</span>tableName <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;cpk_test&#34;</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>@PRIMARY_KEY_T<span style="font-weight:bold">(</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    columns <span style="font-weight:bold">=</span> <span style="font-weight:bold">{</span><span style="color:#b84">&#34;user_name&#34;</span><span style="font-weight:bold">,</span> <span style="color:#b84">&#34;email&#34;</span><span style="font-weight:bold">}</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="color:#458;font-weight:bold">CPKModel</span> <span style="font-weight:bold">extends</span> KittyModel <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    @KITTY_COLUMN<span style="font-weight:bold">(</span>columnOrder <span style="font-weight:bold">=</span> 0<span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    <span style="font-weight:bold">public</span> String userName<span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    @KITTY_COLUMN<span style="font-weight:bold">(</span>columnOrder <span style="font-weight:bold">=</span> 1<span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    @UNIQUE
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>    <span style="font-weight:bold">public</span> String email<span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>    <span style="font-weight:bold">...</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span style="font-weight:bold">}</span></code></pre></div>
+In order to set <code>PRIMARY KEY</code> constraint name set <code>@PRIMARY_KEY_T.name</code> otherwise it would be generated automatically.<br />
+In order to set conflict clause just set <code>@PRIMARY_KEY_T.onConflict</code> field with any suitable value from <code>ConflictClauses</code> enum.</p></li>
+</ol>
+
+<p><a href="#table-of-contents">Back to table of contents ^</a></p>
+
+<h3 id="foreign-key-constraint-declaration"><code>FOREIGN KEY</code> constraint declaration</h3>
+
+<p>You can declare <code>FOREIGN KEY</code> constraint in two ways:</p>
+
+<ol>
+<li><p>If you have only one column at table that refer to another table column you can just annotate corresponding model field with <code>@FOREIGN_KEY</code> annotation and specify <code>@FOREIGN_KEY.reference</code> with <code>@FOREIGN_KEY_REFERENCE</code>. Example:
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>@KITTY_COLUMN<span style="font-weight:bold">(</span>columnOrder <span style="font-weight:bold">=</span> 1<span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>@NOT_NULL
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>@UNIQUE
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>@FOREIGN_KEY<span style="font-weight:bold">(</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>        reference <span style="font-weight:bold">=</span> @FOREIGN_KEY_REFERENCE<span style="font-weight:bold">(</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>                foreignTableName <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;random&#34;</span><span style="font-weight:bold">,</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>                foreignTableColumns <span style="font-weight:bold">=</span> <span style="font-weight:bold">{</span><span style="color:#b84">&#34;id&#34;</span><span style="font-weight:bold">},</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>                onUpdate <span style="font-weight:bold">=</span> OnUpdateDeleteActions<span style="font-weight:bold">.</span><span style="color:#008080">CASCADE</span><span style="font-weight:bold">,</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>                onDelete <span style="font-weight:bold">=</span> OnUpdateDeleteActions<span style="font-weight:bold">.</span><span style="color:#008080">CASCADE</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>        <span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="font-weight:bold">public</span> Long rndId<span style="font-weight:bold">;</span></code></pre></div></p></li>
+
+<li><p>If you have more than one reference column at <code>FOREIGN KEY</code> declaration, annotate model with <code>@FOREIGN_KEY_T</code> annotation and specify <code>@FOREIGN_KEY_T.reference</code> with <code>@FOREIGN_KEY_REFERENCE</code> and <code>@FOREIGN_KEY_T.columns</code> with string array of reference columns. Example:
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>@KITTY_TABLE<span style="font-weight:bold">(</span>tableName <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;cai&#34;</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>@FOREIGN_KEY_T<span style="font-weight:bold">(</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>        name <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;CAI_FK&#34;</span><span style="font-weight:bold">,</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>        columns <span style="font-weight:bold">=</span> <span style="font-weight:bold">{</span>IndexesAndConstraintsModel<span style="font-weight:bold">.</span><span style="color:#008080">RANDOM_ID_CNAME</span><span style="font-weight:bold">},</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>        reference <span style="font-weight:bold">=</span> @FOREIGN_KEY_REFERENCE<span style="font-weight:bold">(</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>                foreignTableName <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;random&#34;</span><span style="font-weight:bold">,</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>                foreignTableColumns <span style="font-weight:bold">=</span> <span style="font-weight:bold">{</span><span style="color:#b84">&#34;id&#34;</span><span style="font-weight:bold">},</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>                onUpdate <span style="font-weight:bold">=</span> OnUpdateDeleteActions<span style="font-weight:bold">.</span><span style="color:#008080">CASCADE</span><span style="font-weight:bold">,</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>                onDelete <span style="font-weight:bold">=</span> OnUpdateDeleteActions<span style="font-weight:bold">.</span><span style="color:#008080">CASCADE</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>        <span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>@INDEX<span style="font-weight:bold">(</span>indexColumns <span style="font-weight:bold">=</span> <span style="font-weight:bold">{</span><span style="color:#b84">&#34;creation_date&#34;</span><span style="font-weight:bold">})</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="color:#458;font-weight:bold">IndexesAndConstraintsModel</span> <span style="font-weight:bold">extends</span> KittyModel <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>    <span style="font-weight:bold">...</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>    
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>    @KITTY_COLUMN<span style="font-weight:bold">(</span>columnOrder <span style="font-weight:bold">=</span> 1<span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>    @NOT_NULL
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>    @UNIQUE
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>    <span style="font-weight:bold">public</span> Long rndId<span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>    <span style="font-weight:bold">...</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span style="font-weight:bold">}</span></code></pre></div>
+In order to set <code>FOREIGN KEY</code> constraint name set <code>@FOREIGN_KEY_T.name</code> otherwise it would be generated automatically.</p></li>
+</ol>
+
+<p>If you need more than one <strong>FK</strong> that can be declared only with <code>@FOREIGN_KEY_T</code> you can annotate model implementation <code>@FOREIGN_KEY_T_ARRAY</code> and specify at <code>@FOREIGN_KEY_T_ARRAY.foreignKeys</code> all foreign keys you need.<br />
+At <code>@FOREIGN_KEY_REFERENCE</code> annotation you have to specify reference table and columns by setting <code>@FOREIGN_KEY_REFERENCE.foreignTableName</code> and <code>@FOREIGN_KEY_REFERENCE.foreignTableColumns</code>. Optionally you can specify <code>ON UPDATE</code> and <code>ON DELETE</code> actions by setting <code>@FOREIGN_KEY_REFERENCE.onUpdate</code> and <code>@FOREIGN_KEY_REFERENCE.onDelete</code> with enum element from <code>OnUpdateDeleteActions</code>. Also, you can specify defferable option by setting <code>@FOREIGN_KEY_REFERENCE.deferrableOption</code> with some value <code>DeferrableOptions</code> enumeration.</p>
+
+<div class="panel panel-warning">
+	
+	<div class="panel-body"><p>Do not forget to turn on foreign keys supports by setting <code>@KITTY_DATABASE.isPragmaOn</code> to true at your KittyORM database implementation if you want to use them!</p>
+</div>
+	<div class="panel-footer">Tip #1</div>
+</div>
+
+
+<p><a href="#table-of-contents">Back to table of contents ^</a></p>
+
+<h3 id="indexes-declaration">Indexes declaration</h3>
+
+<p>In KittyORM indexes declarations stored at same POJO classes that are used for schema generation. To declare an index just annotate model implementation with columns that would be indexed with <code>@INDEX</code> annotation and set <code>@INDEX.indexColumns</code> with array of those indexed columns or in case when there is only one indexed column for one index declaration just annotate corresponding nodel implementation field with <code>@ONE_COLUMN_INDEX</code>. Example:</p>
+
+<ol>
+<li><p>Index declaration with <code>@INDEX</code> annotation:
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>@KITTY_TABLE<span style="font-weight:bold">(</span>tableName <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;cai&#34;</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>@FOREIGN_KEY_T<span style="font-weight:bold">(</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>        name <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;CAI_FK&#34;</span><span style="font-weight:bold">,</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>        columns <span style="font-weight:bold">=</span> <span style="font-weight:bold">{</span>IndexesAndConstraintsModel<span style="font-weight:bold">.</span><span style="color:#008080">RANDOM_ID_CNAME</span><span style="font-weight:bold">},</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>        reference <span style="font-weight:bold">=</span> @FOREIGN_KEY_REFERENCE<span style="font-weight:bold">(</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>                foreignTableName <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;random&#34;</span><span style="font-weight:bold">,</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>                foreignTableColumns <span style="font-weight:bold">=</span> <span style="font-weight:bold">{</span><span style="color:#b84">&#34;id&#34;</span><span style="font-weight:bold">},</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>                onUpdate <span style="font-weight:bold">=</span> OnUpdateDeleteActions<span style="font-weight:bold">.</span><span style="color:#008080">CASCADE</span><span style="font-weight:bold">,</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>                onDelete <span style="font-weight:bold">=</span> OnUpdateDeleteActions<span style="font-weight:bold">.</span><span style="color:#008080">CASCADE</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>        <span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>@INDEX<span style="font-weight:bold">(</span>indexColumns <span style="font-weight:bold">=</span> <span style="font-weight:bold">{</span><span style="color:#b84">&#34;creation_date&#34;</span><span style="font-weight:bold">})</span> <span style="color:#998;font-style:italic">// index declaration
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span style="color:#998;font-style:italic"></span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="color:#458;font-weight:bold">IndexesAndConstraintsModel</span> <span style="font-weight:bold">extends</span> KittyModel <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>    <span style="font-weight:bold">...</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>    @KITTY_COLUMN<span style="font-weight:bold">(</span>columnOrder <span style="font-weight:bold">=</span> 4<span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>    @DEFAULT<span style="font-weight:bold">(</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>            predefinedLiteralValue <span style="font-weight:bold">=</span> LiteralValues<span style="font-weight:bold">.</span><span style="color:#008080">CURRENT_DATE</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>    <span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>    @NOT_NULL
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>    <span style="font-weight:bold">public</span> String creationDate<span style="font-weight:bold">;</span> <span style="color:#998;font-style:italic">// indexed column
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span style="color:#998;font-style:italic"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>    <span style="font-weight:bold">...</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span style="font-weight:bold">}</span></code></pre></div></p></li>
+
+<li><p>Index declaration with <code>@ONE_COLUMN_INDEX</code> annotation:
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>@KITTY_TABLE<span style="font-weight:bold">(</span>tableName <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;cai&#34;</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="font-weight:bold">...</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="color:#458;font-weight:bold">IndexesAndConstraintsModel</span> <span style="font-weight:bold">extends</span> KittyModel <span style="font-weight:bold">{</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    <span style="font-weight:bold">...</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    @KITTY_COLUMN<span style="font-weight:bold">(</span>columnOrder <span style="font-weight:bold">=</span> 5<span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    @DEFAULT<span style="font-weight:bold">(</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>            predefinedLiteralValue <span style="font-weight:bold">=</span> LiteralValues<span style="font-weight:bold">.</span><span style="color:#008080">CURRENT_TIMESTAMP</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    <span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    <span style="color:#998;font-style:italic">// One column indexe declaration example
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="color:#998;font-style:italic"></span>    @ONE_COLUMN_INDEX<span style="font-weight:bold">(</span>unique <span style="font-weight:bold">=</span> <span style="font-weight:bold">true</span><span style="font-weight:bold">,</span> indexName <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;IAC_unique_index_creation_timestamp&#34;</span><span style="font-weight:bold">)</span> 
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>    @NOT_NULL
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    <span style="font-weight:bold">public</span> Timestamp creationTmstmp<span style="font-weight:bold">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>    <span style="font-weight:bold">...</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span style="font-weight:bold">}</span></code></pre></div></p></li>
+</ol>
+
+<p>For both <code>@INDEX</code> and <code>@ONE_COLUMN_INDEX</code> index declaration you can specify index uniqueness (<code>@INDEX.unique</code> and <code>@ONE_COLUMN_INDEX.unique</code> fields), <code>IF NOT EXISTS</code> flag (<code>@INDEX.ifNotExists</code> and <code>@ONE_COLUMN_INDEX.ifNotExists</code> fields), where expression (<code>@INDEX.whereExpression</code> and <code>@ONE_COLUMN_INDEX.whereExpression</code> fields) and index name (<code>@INDEX.indexName</code> and <code>@ONE_COLUMN_INDEX.indexName</code> fields).<br />
+If you need more than one index declaration with more than one indexed columns than annotate model implementation with <code>@INDEX_ARRAY</code> annotation and define your indexes there.</p>
+
+<p><a href="#table-of-contents">Back to table of contents ^</a></p>
+
+
+
+    
+    
+        <div class="chevrons">
+    <div id="navigation">
+<a class="nav nav-prev" href="/datatype_mapping/l3t1_code/" title="Source code"> <i class="fa fa-chevron-left"></i><label>Source code</label></a>
+    <a class="nav nav-next" href="/constraints/l3_schema/" title="DB schema" style="margin-right: 0px;"><label>DB schema</label><i class="fa fa-chevron-right"></i></a></div>
+  </div>
+
+  </section>
+</article>
+
+<footer>
+
+<div class="footline">
+    
+
+    
+
+    
+    <div class="date">
+        <i class='fa fa-calendar'></i> Last update on 15/12/2018
+    </div>
+    
+
+    
+    <div class="github-link">
+      <a href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/constraints/_index.md" target="blank"><i class="fa fa-code-fork"></i>
+        Improve this page</a>
+    </div>
+    
+  </div>
+
+
+	<div>
+
+
+  
+    <p><a href="/license/"><em>KittyORM project. Copyright © 2018 Denis Bogomolov. Some rights reserved.</em></a></p>
+
+<p><em>KittyORM documentation site powered by <a href="https://gohugo.io"><strong>Hugo</strong></a> with <a href="https://github.com/vjeantet/hugo-theme-docdock"><strong>DocDock</strong></a> theme.</em></p>
+
+<p><center></p>
+
+<p><a href="https://github.com/akaish/KittyORM" title="Visit KittyORM Github repo">
+
+<span class="fa fa-github"  style="font-size:large" aria-hidden="true"></span>
+
+</a>&nbsp;&nbsp;
+<a href="https://twitter.com/OrmKitty" title="Follow KittyORM at twitter">
+
+<span class="fa fa-twitter"  style="font-size:large" aria-hidden="true"></span>
+
+</a>&nbsp;&nbsp;
+<a href="https://t.me/kittyorm" title="Subscribe to KittyORM telegram channel">
+
+<span class="fa fa-telegram"  style="font-size:large" aria-hidden="true"></span>
+
+</a>&nbsp;&nbsp;
+<a href="https://stackoverflow.com/users/10656176/kittyorm" title="Ask questions related with KittyORM at StackOverflow">
+
+<span class="fa fa-stack-overflow"  style="font-size:large" aria-hidden="true"></span>
+
+</a>&nbsp;&nbsp;
+<a href="/hidden/android" title="Check out KittyORM Demo at Play Market">
+
+<span class="fa fa-android"  style="font-size:large" aria-hidden="true"></span>
+
+</a>&nbsp;&nbsp;
+<a href="/contacts" title="Contact us">
+
+<span class="fa fa-envelope"  style="font-size:large" aria-hidden="true"></span>
+
+</a>&nbsp;&nbsp;
+<a href="/makekittygreater/l6t4" title="Sponsor KittyORM development">
+
+<span class="fa fa-usd"  style="font-size:large" aria-hidden="true"></span>
+
+</a>&nbsp;&nbsp;</p>
+
+<p></center></p>
+
+  
+
+
+
+	</div>
+</footer>
+
+<script src="/js/clipboard.min.js"></script>
+
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<script src="/js/featherlight.min.js"></script>
+
+
+
+<script src="/theme-flex/script.js"></script>
+
+
+    
+
+    
+    
+
+    
+  </body>
+</html>

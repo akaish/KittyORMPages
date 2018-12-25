@@ -1,0 +1,76 @@
+baseURL = "/"
+
+languageCode = "en-us"
+DefaultContentLanguage = "en"
+title = "KittyORM: Fast and reliable ORM for SQLite\\Android"
+theme = "docdock"
+# themesdir = "themes/"
+pygmentsCodeFences = true
+pygmentsStyle = "trac"
+
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir= false
+enableMissingTranslationPlaceholders = false
+publishDir = "docs"
+
+# [Languages]
+# [Languages.en]
+# title = "Documentation for Hugo docDock"
+# weight = 1
+# languageName = "English"
+# 
+# [Languages.fr]
+# title = "Documentation du thème docDock"
+# weight = 2
+# languageName = "Français"
+
+
+[params]
+editURL = "https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/"
+showVisitedLinks = true # default is false
+themeStyle = "flex" # "original" or "flex" # default "flex"
+themeVariant = "" # choose theme variant "green", "gold" , "gray", "blue" (default)
+ordersectionsby = "weight" # ordersectionsby = "title"
+disableHomeIcon = false # default is false
+disableSearch = false # default is false
+disableNavChevron = false # set true to hide next/prev chevron, default is false
+highlightClientSide = false # set true to use highlight.pack.js instead of the default hugo chroma highlighter
+menushortcutsnewtab = false # set true to open shortcuts links to a new tab/window
+enableGitInfo = true
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+
+
+[[menu.shortcuts]]
+identifier = "jd"
+name = "<i class='fa fa-at'></i> <label>Javadoc</label>"
+url = "/kittydoc/"
+weight = 21
+
+[[menu.shortcuts]]
+pre = "<h3>More</h3>"
+name = "<i class='fa fa-github'></i> <label>Github repo</label>"
+identifier = "ds"
+url = "https://github.com/akaish/KittyORM"
+weight = 10
+
+[[menu.shortcuts]]
+name = "<i class='fa fa-twitter'></i> <label>@OrmKitty</label>"
+url = "https://twitter.com/OrmKitty"
+weight = 11
+
+[[menu.shortcuts]]
+name = "<i class='fa fa-telegram'></i> <label>KittyORM channel</label>"
+url = "https://t.me/kittyorm"
+weight = 20
+
+[[menu.shortcuts]]
+name = "<i class='fa fa-android'></i> <label>KittyORM Demo at PlayMarket</label>"
+url = "/hidden/android"
+weight = 25
+
+[[menu.shortcuts]]
+name = "<i class='fa fa-envelope'></i> <label>Contacts</label>"
+url = "/contacts"
+weight = 30

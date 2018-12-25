@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Make KittyORM greater on KittyORM: Fast and reliable ORM for SQLite\Android</title>
+    <link>/makekittygreater/</link>
+    <description>Recent content in Make KittyORM greater on KittyORM: Fast and reliable ORM for SQLite\Android</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 15 Dec 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/makekittygreater/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Use KittyORM</title>
+      <link>/makekittygreater/l6t1/</link>
+      <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/makekittygreater/l6t1/</guid>
+      <description>Use KittyORM in your projects and leave your feedback! It is very simple to make KittyORM even greater. Just use it in your projects and leave your feedback. Easy as a pie:
+ Visit KittyORM page located at https://akaish.github.io/KittyOrmPages/ or KittyORM GitHub repository located at https://github.com/akaish/KittyORM to acquire instructions on configuring your project in order to use KittyORM.
+ Implement your business logic without messing with SQL and a lot of boiler plate code for database operations.</description>
+    </item>
+    
+    <item>
+      <title>Share KittyORM</title>
+      <link>/makekittygreater/l6t2/</link>
+      <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/makekittygreater/l6t2/</guid>
+      <description>Like KittyORM? Share it! You use KittyORM and you like it? Share it with those who can use for their projects. That&amp;rsquo;s simple. It is really easy way to help to improve KittyORM, more people use it means more feedback, bug reports or feature request would be received. Bigger community means greater opportunities for KittyORM project and all other projects that use it or would use it for database related operations.</description>
+    </item>
+    
+    <item>
+      <title>Contribute to KittyORM</title>
+      <link>/makekittygreater/l6t3/</link>
+      <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/makekittygreater/l6t3/</guid>
+      <description>Like KittyORM? Develop it! Like KittyORM and have some ideas how to improve it? Have some free time you want to spend to develop KittyORM? Would like to help to translate KittyORM documentation to more languages? You&amp;rsquo;re welcome! Contact us via email kittyorm@gmail.com with subject contains !contribute and become a contributor! What things you can do right now?
+ KittyORM code right now not covered with unit tests. It would be awesome to fix this situation.</description>
+    </item>
+    
+    <item>
+      <title>Sponsor KittyORM development</title>
+      <link>/makekittygreater/l6t4/</link>
+      <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/makekittygreater/l6t4/</guid>
+      <description>Like KittyORM? Sponsor it! A lot of time spent to develop KittyORM and right now KittyORM is capable to fulfill most of your needs related with implementing database operations to support your business processes. It was hard work to bring KittyORM to you. You can help KittyORM to become more efficient, fast, stable etc. Just use it, share it or contribute to it. However, it would be great if you consider to help KittyORM with voluntary donation.</description>
+    </item>
+    
+  </channel>
+</rss>
