@@ -2,7 +2,7 @@ baseURL = "https://akaish.github.io/KittyORMPages/"
 
 languageCode = "en-us"
 DefaultContentLanguage = "en"
-title = "KittyORM: Fast and reliable ORM for SQLite\\Android"
+title = "KittyORM Pages"
 theme = "docdock"
 # themesdir = "themes/"
 pygmentsCodeFences = true
