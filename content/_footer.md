@@ -1,5 +1,5 @@
 
-[_KittyORM project. Copyright © 2018 Denis Bogomolov. Some rights reserved._](/license/)
+[_KittyORM project. Copyright © 2018 Denis Bogomolov. Some rights reserved._](https://akaish.github.io/KittyORMPages/license/)
 
 _KittyORM documentation site powered by [**Hugo**](https://gohugo.io) with [**DocDock**](https://github.com/vjeantet/hugo-theme-docdock) theme._
 

@@ -20,7 +20,7 @@ By design KittyORM has three main mechanisms for supporting migrations between d
 Also, you are able to implement your own migration mechanism by extending `KittyDatabaseHelper.class` and setting `onUpgradeBehavior` annotation propertie of `@KITTY_DATABASE_HELPER` that annotates your `KittyDatabase` implementation to `KITTY_DATABASE_HELPER.UpgradeBehavior.USE_CUSTOM_MIGRATOR`.
 
 ### Initial database setup
-In this lesson we would work with database with name `mig`. In this tab we would create first version of `mig` schema, first iteration consists only from one table `mig.mig_one`. Tap "CREATE MIG..." button to create schema and fill it with some random values (see [KittyORM Demo](/hidden/android "KittyORM Demo at Google Play Market")).
+In this lesson we would work with database with name `mig`. In this tab we would create first version of `mig` schema, first iteration consists only from one table `mig.mig_one`. Tap "CREATE MIG..." button to create schema and fill it with some random values (see [KittyORM Demo](https://akaish.github.io/KittyORMPages/hidden/android "KittyORM Demo at Google Play Market")).
 
 **Mig v.1**
 

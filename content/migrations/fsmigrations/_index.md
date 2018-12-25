@@ -94,7 +94,7 @@ public class MigrationDBv4 extends KittyDatabase {
 {{< /highlight >}} 
 
 
-To demonstrate Filescript Migrator, in this lesson we would migrate database `mig` from version `3` to `4`. For those purposes we create at assets following path `kittysqliteorm/mig/version_migrations` that contains only one script: `3-3-4-4.sql`. When you hit "CREATE MIG..." button following can happen (see [KittyORM Demo](/hidden/android "KittyORM Demo at Google Play Market")):
+To demonstrate Filescript Migrator, in this lesson we would migrate database `mig` from version `3` to `4`. For those purposes we create at assets following path `kittysqliteorm/mig/version_migrations` that contains only one script: `3-3-4-4.sql`. When you hit "CREATE MIG..." button following can happen (see [KittyORM Demo](https://akaish.github.io/KittyORMPages/hidden/android "KittyORM Demo at Google Play Market")):
 
 1. If database not created yet, then it would be created using script located at `KittyNamingUtils.ASSETS_URI_START + "kittysqliteorm/mig/mig-v-4-create.sql` and after this would be applied script located at `KittyNamingUtils.EXTERNAL_MEM_URI_START + "kittysqliteorm/mig/mig-v-4-after_create.sql`.
 2. If database already exists and has version code `4` then all data would be wiped and then tables in database would be filled with some randomly generated records.

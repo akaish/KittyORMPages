@@ -81,4 +81,4 @@ mapper.update(toUpdate, builder.build(), new String[]{"randomInt"}, CVUtils.INCL
 You can path to `KittyMapper.update(M model, SQLiteCondition condition, String[] names, int IEFlag)` as `names` parameter column fields or POJO field names. With `IEFlag` you can specify how to treat values you passed as `names` parameter. Following flags are supported: `INCLUDE_ONLY_SELECTED_FIELDS`, `INCLUDE_ALL_EXCEPT_SELECTED_FIELDS`, `INCLUDE_ONLY_SELECTED_COLUMN_NAMES`, `INCLUDE_ALL_EXCEPT_SELECTED_COLUMN_NAMES` and `IGNORE_INCLUSIONS_AND_EXCLUSIONS`.
 {{% /panel %}}
 
-You can get more documentation on building clauses with `SQLiteConditionBuilder.class` at [KittyORM project page](https://akaish.github.io/KittyOrmPages/).
+You can get more documentation on building clauses with `SQLiteConditionBuilder.class` at [KittyORM project page](https://akaish.github.io/KittyORMPages/).

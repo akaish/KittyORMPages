@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-25T19:54:54 MSK">
+<meta name="revised" content="2018-12-25T20:02:42 MSK">
 <title>Debugging KittyORM :: KittyORM: Fast and reliable ORM for SQLite\Android</title>
 <link rel="shortcut icon" href="/KittyORMPages/images/favicon.png" type="image/x-icon" />
 <link href="/KittyORMPages/css/font-awesome.min.css" rel="stylesheet">
@@ -547,7 +547,7 @@ Let&rsquo;s take a closer look on base logging setting:</p>
 <ul>
 <li><code>isLoggingOn</code> - main logging flag, by default - false. Setting this value to true would cause KittyORM log all errors, warnings and bootstrap info except log output of dex util and queries. When this value is false than no logging would be performed at all, even if <code>isProductionOn</code> flag is false and <code>isKittyDexUtilLoggingEnabled</code> flag is true. Most log messages would contain specified log tag, database name and database version to make debugging easier.</li>
 <li><code>isProductionOn</code>- query logging, by default - true. When this value is false and <code>isLoggingOn</code> is true - logs queries sent to be executed by SQLite to log stream. Be sure that you turn production mode on when you&rsquo;re ready to publish your application because logging queries to log stream is a potential security vulnerability and may slow down KittyORM when, for example, you need to save a big amount of entities to database.</li>
-<li><code>isKittyDexUtilLoggingEnabled</code> - dex util logging flag, by default - false. When this value is true and <code>isLoggingOn</code> is true - logs messages related with usage of <code>KittyDexUtils.class</code>. Actually, it is bag idea to generate KittyORM registry from package at production builds, because it causes slow initialization of KittyORM implementation, refer to <a href="/speedup/">Speed up your KittyORM article</a> for more details.</li>
+<li><code>isKittyDexUtilLoggingEnabled</code> - dex util logging flag, by default - false. When this value is true and <code>isLoggingOn</code> is true - logs messages related with usage of <code>KittyDexUtils.class</code>. Actually, it is bag idea to generate KittyORM registry from package at production builds, because it causes slow initialization of KittyORM implementation, refer to <a href="https://akaish.github.io/KittyORMPages/speedup/">Speed up your KittyORM article</a> for more details.</li>
 <li><code>logTag</code> - log tag for all log messages related to this KittyORM database implementation. By default - <code>&quot;KittySQLiteORM&quot;</code>.</li>
 </ul>
 
@@ -629,7 +629,7 @@ Let&rsquo;s take a closer look on base logging setting:</p>
 
 
   
-    <p><a href="/license/"><em>KittyORM project. Copyright © 2018 Denis Bogomolov. Some rights reserved.</em></a></p>
+    <p><a href="https://akaish.github.io/KittyORMPages/license/"><em>KittyORM project. Copyright © 2018 Denis Bogomolov. Some rights reserved.</em></a></p>
 
 <p><em>KittyORM documentation site powered by <a href="https://gohugo.io"><strong>Hugo</strong></a> with <a href="https://github.com/vjeantet/hugo-theme-docdock"><strong>DocDock</strong></a> theme.</em></p>
 
