@@ -45,7 +45,7 @@ home = [ "HTML", "RSS", "JSON"]
 [[menu.shortcuts]]
 identifier = "jd"
 name = "<i class='fa fa-at'></i> <label>Javadoc</label>"
-url = "/kittydoc/"
+url = "https://akaish.github.io/KittyORM/"
 weight = 21
 
 [[menu.shortcuts]]

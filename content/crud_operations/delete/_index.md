@@ -63,4 +63,4 @@ SQLiteCondition condition = new SQLiteConditionBuilder()
             .addSQLOperator(CLOSE_SUBC)
             .build();
 {{< /highlight >}}
-All supported by KittyORM SQLite operators presented at [`net.akaish.kitty.orm.query.conditions.SQLiteOperator`](https://akaish.github.io/KittyORMPages/kittydoc/net/akaish/kitty/orm/query/conditions/SQLiteOperator.html) enumeration.
+All supported by KittyORM SQLite operators presented at [`net.akaish.kitty.orm.query.conditions.SQLiteOperator`](https://akaish.github.io/KittyORM/net/akaish/kitty/orm/query/conditions/SQLiteOperator.html) enumeration.

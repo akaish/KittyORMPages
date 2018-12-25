@@ -9,7 +9,7 @@ layout: "lesson"
 <center>![alt text](src/1.png?height=150px&classes=border,inline)  ![alt text](src/2.png?height=150px&classes=border,inline) ![alt text](src/3.png?height=150px&classes=border,inline) ![alt text](src/4.png?height=150px&classes=border,inline)</center>
 {{% /panel %}}
 
-To find entities with KittyORM just use one of methods already implemented at [`KittyMapper.class`](https://akaish.github.io/KittyORMPages/kittydoc/net/akaish/kitty/orm/KittyMapper.html):
+To find entities with KittyORM just use one of methods already implemented at [`KittyMapper.class`](https://akaish.github.io/KittyORM/net/akaish/kitty/orm/KittyMapper.html):
 {{< highlight java "linenos=inline, linenostart=1">}}
 // Initializing database instance
 BasicDatabase db = new BasicDatabase(getContext());
