@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Debugging KittyORM on KittyORM: Fast and reliable ORM for SQLite\Android</title>
-    <link>/debug/</link>
+    <link>https://akaish.github.io/KittyORMPages/debug/</link>
     <description>Recent content in Debugging KittyORM on KittyORM: Fast and reliable ORM for SQLite\Android</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 15 Dec 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/debug/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://akaish.github.io/KittyORMPages/debug/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Source code</title>
-      <link>/debug/l4t2_code/</link>
+      <link>https://akaish.github.io/KittyORMPages/debug/l4t2_code/</link>
       <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>/debug/l4t2_code/</guid>
+      <guid>https://akaish.github.io/KittyORMPages/debug/l4t2_code/</guid>
       <description>Example of KittyORM logging setup: 1@KITTY_DATABASE( 2 isLoggingOn = true, // Base logging flag 3 isProductionOn = false, // Production logging flag 4 isKittyDexUtilLoggingEnabled = false, // dex logging flag 5 logTag = MigrationDBv3.LTAG, // log tag 6 databaseName = &amp;#34;mig&amp;#34;, // database name 7 databaseVersion = 3, // database version 8 ... 9) 10 11public class MigrationDBv3 extends KittyDatabase { 12 13 public static final String LTAG = &amp;#34;MIGv3&amp;#34;; 14 15 .</description>
     </item>
     

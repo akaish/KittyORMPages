@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://akaish.github.io/KittyORMPages/"
 
 languageCode = "en-us"
 DefaultContentLanguage = "en"

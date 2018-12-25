@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CRUD operations on KittyORM: Fast and reliable ORM for SQLite\Android</title>
-    <link>/crud_operations/</link>
+    <link>https://akaish.github.io/KittyORMPages/crud_operations/</link>
     <description>Recent content in CRUD operations on KittyORM: Fast and reliable ORM for SQLite\Android</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 15 Dec 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/crud_operations/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://akaish.github.io/KittyORMPages/crud_operations/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

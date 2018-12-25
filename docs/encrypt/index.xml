@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Database encryption on KittyORM: Fast and reliable ORM for SQLite\Android</title>
-    <link>/encrypt/</link>
+    <link>https://akaish.github.io/KittyORMPages/encrypt/</link>
     <description>Recent content in Database encryption on KittyORM: Fast and reliable ORM for SQLite\Android</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 15 Dec 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/encrypt/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://akaish.github.io/KittyORMPages/encrypt/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Source code</title>
-      <link>/encrypt/l4t3_code/</link>
+      <link>https://akaish.github.io/KittyORMPages/encrypt/l4t3_code/</link>
       <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>/encrypt/l4t3_code/</guid>
+      <guid>https://akaish.github.io/KittyORMPages/encrypt/l4t3_code/</guid>
       <description>Example script for changing all imports at KittyORM that import Android database classes to corresponding classes of SQLCipher: #!/bin/bash find . -name &amp;#39;*.java&amp;#39; -exec sed -i -e &amp;#39;s/android.database.sqlite/net.sqlcipher.database/g&amp;#39; {} \; find . -name &amp;#39;*.java&amp;#39; -exec sed -i -e &amp;#39;s/android.database/net.sqlcipher/g&amp;#39; {} \; Modifying methods of KittyDatabaseHelper.class for encryption support: 1public SQLiteDatabase getWritableDatabase(String pwd) { 2 return super.getWritableDatabase(pwd); 3} 4 5public SQLiteDatabase getReadableDatabase(String pwd) { 6 return super.getReadableDatabase(pwd); 7} Modifying сonstructor of KittyDatabase.</description>
     </item>
     

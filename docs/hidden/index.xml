@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hidden on KittyORM: Fast and reliable ORM for SQLite\Android</title>
-    <link>/hidden/</link>
+    <link>https://akaish.github.io/KittyORMPages/hidden/</link>
     <description>Recent content in Hidden on KittyORM: Fast and reliable ORM for SQLite\Android</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 16 Aug 2018 06:50:21 +0300</lastBuildDate>
     
-	<atom:link href="/hidden/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://akaish.github.io/KittyORMPages/hidden/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>KittyORM Demo at Play Market</title>
-      <link>/hidden/android/</link>
+      <link>https://akaish.github.io/KittyORMPages/hidden/android/</link>
       <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>/hidden/android/</guid>
+      <guid>https://akaish.github.io/KittyORMPages/hidden/android/</guid>
       <description>Hi, check out KittyORM Demo at Google Play. KittyORM Demo application is not only some demo that would help you understand capabilities of KittyORM but also it is an interactive tutorial with build-in documentation, code snippets etc that would help to implement any KittyORM feature in your projects.
 
  KittyORM Demo application screenshots  </description>

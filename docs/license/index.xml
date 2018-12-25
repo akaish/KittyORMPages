@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Legal information on KittyORM: Fast and reliable ORM for SQLite\Android</title>
-    <link>/license/</link>
+    <link>https://akaish.github.io/KittyORMPages/license/</link>
     <description>Recent content in Legal information on KittyORM: Fast and reliable ORM for SQLite\Android</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 15 Dec 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/license/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://akaish.github.io/KittyORMPages/license/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
