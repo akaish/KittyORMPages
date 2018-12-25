@@ -67,7 +67,7 @@ weight = 20
 
 [[menu.shortcuts]]
 name = "<i class='fa fa-android'></i> <label>KittyORM Demo at PlayMarket</label>"
-url = "/hidden/android"
+url = "hidden/android"
 weight = 25
 
 [[menu.shortcuts]]
