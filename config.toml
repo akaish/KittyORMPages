@@ -50,7 +50,7 @@ weight = 21
 
 [[menu.shortcuts]]
 pre = "<h3>More</h3>"
-name = "<i class='fa fa-github'></i> <label>Github repo</label>"
+name = "<i class='fa fa-github'></i> <label>Github</label>"
 identifier = "ds"
 url = "https://github.com/akaish/KittyORM"
 weight = 10
@@ -61,12 +61,12 @@ url = "https://twitter.com/OrmKitty"
 weight = 11
 
 [[menu.shortcuts]]
-name = "<i class='fa fa-telegram'></i> <label>KittyORM channel</label>"
+name = "<i class='fa fa-telegram'></i> <label>@KittyORM</label>"
 url = "https://t.me/kittyorm"
 weight = 20
 
 [[menu.shortcuts]]
-name = "<i class='fa fa-android'></i> <label>KittyORM Demo at PlayMarket</label>"
+name = "<i class='fa fa-android'></i> <label>KittyORM Demo</label>"
 url = "/hidden/android"
 weight = 25
 
