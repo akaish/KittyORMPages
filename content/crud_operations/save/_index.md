@@ -490,7 +490,7 @@ Annotation name | Annotated element | Annotation purposes
 `@KITTY_DATABASE_REGISTRY` | `KittyDatabase` regular implementation | Used for KittyORM database registry definition. 
 `@KITTY_REGISTRY_PAIR` | `KittyDatabase` regular implementation | Used for model and mapper pair definition apart with KittyORM database registry definition via `@KITTY_DATABASE_REGISTRY`. 
 
-You can find more documentation about KittyORM basic annotations at [KittyORM project page](https://akaish.github.io/KittyOrmPages/).
+You can find more documentation about KittyORM basic annotations at [KittyORM project page](https://akaish.github.io/KittyORMPages/).
 
 ### Creating new entity and storing it in database
 {{% panel theme="warning" footer="Tip #2" %}}
@@ -534,6 +534,6 @@ However, `KittyMapper.save(List<M> models)` allows you to save entities associat
 So some tip: use most suitable method for concrete task. If you want to save 100% newly created entity then just use `insert(M model)` method. If you for some reasons do not know is model associated with new or with existing record and model has support of rowid\IPK\PK with auto generated columns than use `save(M model)`.
 
 {{% panel theme="warning" footer="Tip #3" %}}
-Overview of supported SQLite type affinities and Java → type affinity table located in [KittyORM datatypes mapping](/datatype_mapping/).
+Overview of supported SQLite type affinities and Java → type affinity table located in [KittyORM datatypes mapping](datatype_mapping/).
 {{% /panel %}}
 

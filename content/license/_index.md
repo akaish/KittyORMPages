@@ -16,7 +16,7 @@ KittyORM project consists of three main components, two of them are hosted at Gi
   Copyright © 2018 Denis Bogomolov. Some rights reserved.  
   KittyORM Demo is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, US.
 
-Third component is documentation pages and website located at [https://akaish.github.io/KittyOrmPages/](https://akaish.github.io/KittyOrmPages/).
+Third component is documentation pages and website located at [https://akaish.github.io/KittyORMPages/](https://akaish.github.io/KittyORMPages/).
 
  * **KittyORM documentation** - KittyORM documentation, available at **KittyORM Demo** application and at KittyORM pages website. Author: Denis Bogomolov (Bogomolov Denis Romanovich)  
   Copyright © 2018 Denis Bogomolov. Some rights reserved.  
