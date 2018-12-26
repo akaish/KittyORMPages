@@ -10,7 +10,7 @@ pre: "<i class='fa fa-code'>&nbsp;</i> "
 
 1. 
 <details> 
-  <summary>Click to view `MigrationDBv2.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `MigrationDBv2.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 @KITTY_DATABASE(
         isLoggingOn = true,
@@ -48,7 +48,7 @@ public class MigrationDBv2 extends KittyDatabase {
 
 2. 
 <details> 
-  <summary>Click to view `MigOneModel.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `MigOneModel.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 @KITTY_TABLE(
         tableName = "mig_one"
@@ -90,7 +90,7 @@ public class MigOneModel extends KittyModel {
 
 3. 
 <details> 
-  <summary>Click to view `MigTwoModel.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `MigTwoModel.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 @KITTY_TABLE(
         tableName = "mig_two"
@@ -144,7 +144,7 @@ public class MigTwoModel extends KittyModel {
 
 1. 
 <details> 
-  <summary>Click to view `MigV2RandomModelFactory.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `MigV2RandomModelFactory.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 public class MigV2RandomModelFactory {
     final Context ctx;
@@ -188,7 +188,7 @@ public class MigV2RandomModelFactory {
 
 2. 
 <details> 
-  <summary>Click to view `Lesson5Tab2DCMigrations.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `Lesson5Tab2DCMigrations.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 public class Lesson5Tab2DCMigrations extends Lesson5BaseFragment {
 

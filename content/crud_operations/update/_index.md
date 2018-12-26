@@ -54,7 +54,7 @@ mapper.update(toUpdate, builder.build(), new String[]{"randomInt"}, CVUtils.INCL
 {{< /highlight >}}
 
 <details> 
-  <summary>Click to view update example in a block:</summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view update example in a block:</summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 // Initializing database instance
 BasicDatabase db = new BasicDatabase(getContext());

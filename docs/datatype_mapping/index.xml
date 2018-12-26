@@ -26,8 +26,8 @@
       <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://akaish.github.io/KittyORMPages/datatype_mapping/l3t1_code/</guid>
-      <description>KittyORM custom mapping implementation example   Click to view model field annotation example:  1// Saving to text 2@KITTY_COLUMN( 3 columnOrder = 18, 4 columnAffinity = TypeAffinities.TEXT 5) 6@KITTY_COLUMN_SERIALIZATION 7public AnimalSounds stringSDF; 8 9// Saving to blob 10@KITTY_COLUMN( 11 columnOrder = 20, 12 columnAffinity = TypeAffinities.BLOB 13) 14@KITTY_COLUMN_SERIALIZATION 15public Bitmap byteArraySDF; 
-  Click to serialization\deserialization methods implementation examples:  1String stringSDFSerialize() { 2 if(stringSDF == null) return null; 3 return new GsonBuilder().</description>
+      <description>KittyORM custom mapping implementation example     Click to view model field annotation example:  1// Saving to text 2@KITTY_COLUMN( 3 columnOrder = 18, 4 columnAffinity = TypeAffinities.TEXT 5) 6@KITTY_COLUMN_SERIALIZATION 7public AnimalSounds stringSDF; 8 9// Saving to blob 10@KITTY_COLUMN( 11 columnOrder = 20, 12 columnAffinity = TypeAffinities.BLOB 13) 14@KITTY_COLUMN_SERIALIZATION 15public Bitmap byteArraySDF; 
+    Click to serialization\deserialization methods implementation examples:  1String stringSDFSerialize() { 2 if(stringSDF == null) return null; 3 return new GsonBuilder().</description>
     </item>
     
   </channel>

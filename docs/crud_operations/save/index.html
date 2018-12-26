@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-26T00:23:02 MSK">
+<meta name="revised" content="2018-12-27T01:25:47 MSK">
 <title>Saving new entity :: KittyORM Pages</title>
 <link rel="shortcut icon" href="/KittyORMPages/images/favicon.png" type="image/x-icon" />
 <link href="/KittyORMPages/css/font-awesome.min.css" rel="stylesheet">
@@ -550,7 +550,11 @@
 
 <p><strong>Firstly</strong>, create KittyDatabase implementation class annotated with <code>@KITTY_DATABASE</code> annotation.
 <details>
-  <summary>Click to view this lesson KittyORM database implemetation: </summary>
+  <summary>
+
+<span class="fa fa-code"  style="font-size:large" aria-hidden="true"></span>
+
+Click to view this lesson KittyORM database implemetation: </summary>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>@KITTY_DATABASE<span style="font-weight:bold">(</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>        databaseName <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;basic_database&#34;</span><span style="font-weight:bold">,</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>        domainPackageNames <span style="font-weight:bold">=</span> <span style="font-weight:bold">{</span><span style="color:#b84">&#34;net.akaish.kittyormdemo.sqlite.basicdb&#34;</span><span style="font-weight:bold">},</span>
@@ -586,7 +590,11 @@
 
 <p><strong>Secondly</strong>, create abstract <code>AbstractRandomModel.class</code> POJO that defines some basic POJO fields.
 <details>
-  <summary>Click to view <code>AbstractRandomModel.class</code>: </summary>
+  <summary>
+
+<span class="fa fa-code"  style="font-size:large" aria-hidden="true"></span>
+
+Click to view <code>AbstractRandomModel.class</code>: </summary>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="font-weight:bold">public</span> <span style="font-weight:bold">abstract</span> <span style="font-weight:bold">class</span> <span style="color:#458;font-weight:bold">AbstractRandomModel</span> <span style="font-weight:bold">extends</span> KittyModel <span style="font-weight:bold">{</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    <span style="font-weight:bold">public</span> <span style="font-weight:bold">static</span> <span style="font-weight:bold">final</span> String RND_INTEGER_CNAME <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;rnd_int_custom_column_name&#34;</span><span style="font-weight:bold">;</span>
@@ -633,7 +641,11 @@
 
 <p><strong>Thirdly</strong>, define three regular POJO classes, two of them extend <code>AbstractRandomModel.class</code>.
 <details>
-  <summary>Click to view POJO classes used in this tutorial: </summary>
+  <summary>
+
+<span class="fa fa-code"  style="font-size:large" aria-hidden="true"></span>
+
+Click to view POJO classes used in this tutorial: </summary>
 <strong>RandomModel.class:</strong>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>@KITTY_TABLE
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>@KITTY_EXTENDED_CRUD<span style="font-weight:bold">(</span>extendedCrudController <span style="font-weight:bold">=</span> RandomMapper<span style="font-weight:bold">.</span><span style="color:#008080">class</span><span style="font-weight:bold">)</span>
@@ -938,7 +950,11 @@
 
 <p>And, <strong>finally</strong>, create extended CRUD controller for usage with <code>RandomModel.class</code> POJO.
 <details>
-  <summary>Click to view <code>RandomMapper.class</code>: </summary>
+  <summary>
+
+<span class="fa fa-code"  style="font-size:large" aria-hidden="true"></span>
+
+Click to view <code>RandomMapper.class</code>: </summary>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="color:#458;font-weight:bold">RandomMapper</span> <span style="font-weight:bold">extends</span> KittyMapper <span style="font-weight:bold">{</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    <span style="font-weight:bold">public</span> <span style="font-weight:bold">&lt;</span>M <span style="font-weight:bold">extends</span> KittyModel<span style="font-weight:bold">&gt;</span> <span style="color:#900;font-weight:bold">RandomMapper</span><span style="font-weight:bold">(</span>KittyTableConfiguration tableConfiguration<span style="font-weight:bold">,</span>
@@ -1162,7 +1178,7 @@ So some tip: use most suitable method for concrete task. If you want to save 100
 
     
     <div class="github-link">
-      <a href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/crud_operations/save/_index.md" target="blank"><i class="fa fa-code-fork"></i>
+      <a href="https://github.com/akaish/KittyORMPages/tree/master/content/crud_operations/save/_index.md" target="blank"><i class="fa fa-code-fork"></i>
         Improve this page</a>
     </div>
     

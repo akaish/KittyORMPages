@@ -10,7 +10,7 @@ pre: "<i class='fa fa-code'>&nbsp;</i> "
 
 1. 
 <details> 
-  <summary>Click to view model field annotation example: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view model field annotation example: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 // Saving to text
 @KITTY_COLUMN(
@@ -32,7 +32,7 @@ public Bitmap byteArraySDF;
 
 2. 
 <details> 
-  <summary>Click to serialization\deserialization methods implementation examples: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to serialization\deserialization methods implementation examples: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 String stringSDFSerialize() {
     if(stringSDF == null) return null;
@@ -64,7 +64,7 @@ public Bitmap byteArraySDFDeserialize(byte[] cursorData) {
 
 1. 
 <details> 
-  <summary>Click to view `BasicDatabase.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `BasicDatabase.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 @KITTY_DATABASE(
         databaseName = "basic_database",
@@ -102,7 +102,7 @@ public class BasicDatabase extends KittyDatabase {
 
 2. 
 <details> 
-  <summary>Click to view `AbstractRandomModel.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `AbstractRandomModel.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 public abstract class AbstractRandomModel extends KittyModel {
 
@@ -143,7 +143,7 @@ public abstract class AbstractRandomModel extends KittyModel {
 
 3. 
 <details> 
-  <summary>Click to view `ComplexRandomModel.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `ComplexRandomModel.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 @KITTY_TABLE
 @KITTY_EXTENDED_CRUD(extendedCrudController = ComplexRandomMapper.class)
@@ -353,7 +353,7 @@ public class ComplexRandomModel extends AbstractRandomModel {
 
 4. 
 <details> 
-  <summary>Click to view `ComplexRandomMapper.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `ComplexRandomMapper.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 public class ComplexRandomMapper extends KittyMapper {
 
@@ -369,7 +369,7 @@ public class ComplexRandomMapper extends KittyMapper {
 
 1. 
 <details> 
-  <summary>Click to view `RNDComplexRandomModelFactory.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `RNDComplexRandomModelFactory.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 public class RNDComplexRandomModelFactory {
 
@@ -469,7 +469,7 @@ public class RNDComplexRandomModelFactory {
 
 2. 
 <details> 
-  <summary>Click to view `Lesson3Tab1DatatypesAffinities.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `Lesson3Tab1DatatypesAffinities.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 public class Lesson3Tab1DatatypesAffinities extends Lesson3BaseFragment {
 

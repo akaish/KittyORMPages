@@ -6,8 +6,13 @@ weight: 1
 layout: "lesson"
 ---
 ### Gradle setup
-First step is to add KittyORM via Gradle to your project:
-[TODO code block gradle depencie]
+First step is to add KittyORM via Gradle to your app `build.gradle`:
+{{< highlight gradle "linenos=inline, linenostart=1">}}
+dependencies {
+    compile 'net.akaish.kitty.orm:kitty-orm:0.1.1'
+}
+{{< /highlight >}} 
+
 ### KittyORM configuration and implementation
 Create package for storing your POJO models, KittyORM database class, KittyORM helper class (if necessary) and KittyORM extended mappers (if necessary).
 
@@ -80,7 +85,7 @@ public class SimpleExampleModel extends KittyModel {
 By default, all names in KittyORM if they weren’t specified explicitly in annotations would be generated from class names and field names. For database name it would be used `KittyUtils.fieldNameToLowerCaseUnderScore(String fieldName)` method where `fieldName` is database implementation class name. For table names would be used `KittyUtils.fieldNameToLowerCaseUnderScore(String fieldName)` where `fieldName` is POJO class name without Model\model ending (if ending exists) and for column names would be used `KittyUtils.fieldNameToLowerCaseUnderScore(String fieldName)`.
 
 <details> 
-  <summary>Click to view `KittyUtils.fieldNameToLowerCaseUnderScore(String fieldName)`</summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `KittyUtils.fieldNameToLowerCaseUnderScore(String fieldName)`</summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 /**
  * Converts input string (designed for camel case variable names)

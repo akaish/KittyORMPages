@@ -125,8 +125,8 @@
       <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://akaish.github.io/KittyORMPages/constraints/l3t2_code/</guid>
-      <description>KittyORM constraint declaration examples   Click to view NOT NULL constraint declaration example:  1@KITTY_COLUMN(columnOrder = 0) 2@PRIMARY_KEY 3@NOT_NULL // NOT NULL constraint declaration 4public Long id; 
-  Click to view DEFAULT constraint declaration examples:  1@KITTY_COLUMN(columnOrder = 3) 2@DEFAULT(signedInteger = 28) // You can choose for options for default declaration, if nothing set than 0 value would be used 3@NOT_NULL 4public Integer defaultNumber; 5 6@KITTY_COLUMN(columnOrder = 4) 7@DEFAULT( 8 predefinedLiteralValue = LiteralValues.</description>
+      <description>KittyORM constraint declaration examples     Click to view NOT NULL constraint declaration example:  1@KITTY_COLUMN(columnOrder = 0) 2@PRIMARY_KEY 3@NOT_NULL // NOT NULL constraint declaration 4public Long id; 
+    Click to view DEFAULT constraint declaration examples:  1@KITTY_COLUMN(columnOrder = 3) 2@DEFAULT(signedInteger = 28) // You can choose for options for default declaration, if nothing set than 0 value would be used 3@NOT_NULL 4public Integer defaultNumber; 5 6@KITTY_COLUMN(columnOrder = 4) 7@DEFAULT( 8 predefinedLiteralValue = LiteralValues.</description>
     </item>
     
     <item>
@@ -162,7 +162,7 @@
       <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://akaish.github.io/KittyORMPages/crud_operations/save/l2t1_code/</guid>
-      <description>KittyORM insertion example 1// Initializing database instance 2BasicDatabase db = new BasicDatabase(getContext()); 3// Getting mapper instance 4RandomMapper mapper = (RandomMapper) db.getMapper(RandomModel.class); 5// Initializing model 6RandomModel toInsert = new RandomModel(); 7// Setting model fields 8toInsert.randomInt = 10; 9... 10// Saving model with save method 11mapper.save(toInsert); 12// Saving model with direct insert call 13mapper.insert(toInsert); KittyORM basic_datase implementation sources   Click to view BasicDatabase.class:  1@KITTY_DATABASE( 2 databaseName = &amp;#34;basic_database&amp;#34;, 3 domainPackageNames = {&amp;#34;net.</description>
+      <description>KittyORM insertion example 1// Initializing database instance 2BasicDatabase db = new BasicDatabase(getContext()); 3// Getting mapper instance 4RandomMapper mapper = (RandomMapper) db.getMapper(RandomModel.class); 5// Initializing model 6RandomModel toInsert = new RandomModel(); 7// Setting model fields 8toInsert.randomInt = 10; 9... 10// Saving model with save method 11mapper.save(toInsert); 12// Saving model with direct insert call 13mapper.insert(toInsert); KittyORM basic_datase implementation sources     Click to view BasicDatabase.class:  1@KITTY_DATABASE( 2 databaseName = &amp;#34;basic_database&amp;#34;, 3 domainPackageNames = {&amp;#34;net.</description>
     </item>
     
     <item>
@@ -180,8 +180,8 @@
       <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://akaish.github.io/KittyORMPages/datatype_mapping/l3t1_code/</guid>
-      <description>KittyORM custom mapping implementation example   Click to view model field annotation example:  1// Saving to text 2@KITTY_COLUMN( 3 columnOrder = 18, 4 columnAffinity = TypeAffinities.TEXT 5) 6@KITTY_COLUMN_SERIALIZATION 7public AnimalSounds stringSDF; 8 9// Saving to blob 10@KITTY_COLUMN( 11 columnOrder = 20, 12 columnAffinity = TypeAffinities.BLOB 13) 14@KITTY_COLUMN_SERIALIZATION 15public Bitmap byteArraySDF; 
-  Click to serialization\deserialization methods implementation examples:  1String stringSDFSerialize() { 2 if(stringSDF == null) return null; 3 return new GsonBuilder().</description>
+      <description>KittyORM custom mapping implementation example     Click to view model field annotation example:  1// Saving to text 2@KITTY_COLUMN( 3 columnOrder = 18, 4 columnAffinity = TypeAffinities.TEXT 5) 6@KITTY_COLUMN_SERIALIZATION 7public AnimalSounds stringSDF; 8 9// Saving to blob 10@KITTY_COLUMN( 11 columnOrder = 20, 12 columnAffinity = TypeAffinities.BLOB 13) 14@KITTY_COLUMN_SERIALIZATION 15public Bitmap byteArraySDF; 
+    Click to serialization\deserialization methods implementation examples:  1String stringSDFSerialize() { 2 if(stringSDF == null) return null; 3 return new GsonBuilder().</description>
     </item>
     
     <item>
@@ -208,7 +208,7 @@
       <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://akaish.github.io/KittyORMPages/getting_started/l1_code/</guid>
-      <description>Database, model, supporting classes  Click to view SimpleDatabase.class 1package net.akaish.kittyormdemo.sqlite.introductiondb; 2 3import android.content.Context; 4 5import net.akaish.kitty.orm.KittyDatabase; 6import net.akaish.kitty.orm.annotations.KITTY_DATABASE; 7 8/** 9* Created by akaish on 09.08.18. 10*/ 11@KITTY_DATABASE( 12 isLoggingOn = true, 13 isProductionOn = false, 14 domainPackageNames = {&amp;#34;net.akaish.kittyormdemo.sqlite.introductiondb&amp;#34;} 15) 16public class SimpleDatabase extends KittyDatabase { 17 /** 18* KittyORM main database class that represents bootstrap and holder for all related with database 19* components. 20* &amp;lt;br&amp;gt; See {@link KittyDatabase#KittyDatabase(Context, String)} for more info.</description>
+      <description>Database, model, supporting classes    Click to view SimpleDatabase.class 1package net.akaish.kittyormdemo.sqlite.introductiondb; 2 3import android.content.Context; 4 5import net.akaish.kitty.orm.KittyDatabase; 6import net.akaish.kitty.orm.annotations.KITTY_DATABASE; 7 8/** 9* Created by akaish on 09.08.18. 10*/ 11@KITTY_DATABASE( 12 isLoggingOn = true, 13 isProductionOn = false, 14 domainPackageNames = {&amp;#34;net.akaish.kittyormdemo.sqlite.introductiondb&amp;#34;} 15) 16public class SimpleDatabase extends KittyDatabase { 17 /** 18* KittyORM main database class that represents bootstrap and holder for all related with database 19* components. 20* &amp;lt;br&amp;gt; See {@link KittyDatabase#KittyDatabase(Context, String)} for more info.</description>
     </item>
     
     <item>
@@ -217,7 +217,7 @@
       <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://akaish.github.io/KittyORMPages/migrations/dropcreate/l5t2_code/</guid>
-      <description>KittyORM mig v.2 implementation sources**   Click to view MigrationDBv2.class:  1@KITTY_DATABASE( 2 isLoggingOn = true, 3 isProductionOn = false, 4 databaseName = &amp;#34;mig&amp;#34;, 5 databaseVersion = 2, 6 logTag = MigrationDBv2.LTAG, 7 domainPackageNames = {&amp;#34;net.akaish.kittyormdemo.sqlite.migrations.migv2&amp;#34;} 8) 9@KITTY_DATABASE_REGISTRY( 10 domainModels = { 11 net.akaish.kittyormdemo.sqlite.migrations.migv2.MigOneModel.class, 12 net.akaish.kittyormdemo.sqlite.migrations.migv2.MigTwoModel.class 13 } 14) 15@KITTY_DATABASE_HELPER( 16 onUpgradeBehavior = KITTY_DATABASE_HELPER.UpgradeBehavior.DROP_AND_CREATE 17) 18public class MigrationDBv2 extends KittyDatabase { 19 20 public static final String LTAG = &amp;#34;MIGv2&amp;#34;; 21 22 /** 23* KittyORM main database class that represents bootstrap and holder for all related with database 24* components.</description>
+      <description>KittyORM mig v.2 implementation sources**     Click to view MigrationDBv2.class:  1@KITTY_DATABASE( 2 isLoggingOn = true, 3 isProductionOn = false, 4 databaseName = &amp;#34;mig&amp;#34;, 5 databaseVersion = 2, 6 logTag = MigrationDBv2.LTAG, 7 domainPackageNames = {&amp;#34;net.akaish.kittyormdemo.sqlite.migrations.migv2&amp;#34;} 8) 9@KITTY_DATABASE_REGISTRY( 10 domainModels = { 11 net.akaish.kittyormdemo.sqlite.migrations.migv2.MigOneModel.class, 12 net.akaish.kittyormdemo.sqlite.migrations.migv2.MigTwoModel.class 13 } 14) 15@KITTY_DATABASE_HELPER( 16 onUpgradeBehavior = KITTY_DATABASE_HELPER.UpgradeBehavior.DROP_AND_CREATE 17) 18public class MigrationDBv2 extends KittyDatabase { 19 20 public static final String LTAG = &amp;#34;MIGv2&amp;#34;; 21 22 /** 23* KittyORM main database class that represents bootstrap and holder for all related with database 24* components.</description>
     </item>
     
     <item>
@@ -226,7 +226,7 @@
       <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://akaish.github.io/KittyORMPages/migrations/fsmigrations/l5t4_code/</guid>
-      <description>KittyORM mig v.4 implementation sources   Click to view MigrationDBv4.class:  1@KITTY_DATABASE( 2 isLoggingOn = false, 3 isProductionOn = true, 4 isKittyDexUtilLoggingEnabled = false, 5 databaseName = &amp;#34;mig&amp;#34;, 6 domainPackageNames = {&amp;#34;net.akaish.kittyormdemo.sqlite.migrations.migv4&amp;#34;}, 7 databaseVersion = 4, 8 logTag = MigrationDBv4.LTAG 9) 10@KITTY_DATABASE_REGISTRY( 11 domainModels = { 12 net.akaish.kittyormdemo.sqlite.migrations.migv4.MigTwoModel.class, 13 net.akaish.kittyormdemo.sqlite.migrations.migv4.MigThreeModel.class, 14 net.akaish.kittyormdemo.sqlite.migrations.migv4.MigFourModel.class 15 } 16) 17@KITTY_DATABASE_HELPER( 18 onUpgradeBehavior = KITTY_DATABASE_HELPER.UpgradeBehavior.USE_FILE_MIGRATIONS 19) 20public class MigrationDBv4 extends KittyDatabase { 21 22 public static final String LTAG = &amp;#34;MIGv4&amp;#34;; 23 24 /** 25* KittyORM main database class that represents bootstrap and holder for all related with database 26* components.</description>
+      <description>KittyORM mig v.4 implementation sources     Click to view MigrationDBv4.class:  1@KITTY_DATABASE( 2 isLoggingOn = false, 3 isProductionOn = true, 4 isKittyDexUtilLoggingEnabled = false, 5 databaseName = &amp;#34;mig&amp;#34;, 6 domainPackageNames = {&amp;#34;net.akaish.kittyormdemo.sqlite.migrations.migv4&amp;#34;}, 7 databaseVersion = 4, 8 logTag = MigrationDBv4.LTAG 9) 10@KITTY_DATABASE_REGISTRY( 11 domainModels = { 12 net.akaish.kittyormdemo.sqlite.migrations.migv4.MigTwoModel.class, 13 net.akaish.kittyormdemo.sqlite.migrations.migv4.MigThreeModel.class, 14 net.akaish.kittyormdemo.sqlite.migrations.migv4.MigFourModel.class 15 } 16) 17@KITTY_DATABASE_HELPER( 18 onUpgradeBehavior = KITTY_DATABASE_HELPER.UpgradeBehavior.USE_FILE_MIGRATIONS 19) 20public class MigrationDBv4 extends KittyDatabase { 21 22 public static final String LTAG = &amp;#34;MIGv4&amp;#34;; 23 24 /** 25* KittyORM main database class that represents bootstrap and holder for all related with database 26* components.</description>
     </item>
     
     <item>
@@ -235,7 +235,7 @@
       <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://akaish.github.io/KittyORMPages/migrations/overview/l5t1_code/</guid>
-      <description>KittyORM mig v.1 implementation sources   Click to view MigrationDBv1.class:  1@KITTY_DATABASE( 2 isLoggingOn = true, 3 isProductionOn = false, 4 databaseName = &amp;#34;mig&amp;#34;, 5 databaseVersion = 1, 6 logTag = MigrationDBv1.LTAG, 7 domainPackageNames = {&amp;#34;net.akaish.kittyormdemo.sqlite.migrations.migv1&amp;#34;} 8) 9@KITTY_DATABASE_REGISTRY( 10 domainModels = {net.akaish.kittyormdemo.sqlite.migrations.migv1.MigOneModel.class} 11) 12public class MigrationDBv1 extends KittyDatabase { 13 14 public static final String LTAG = &amp;#34;MIGv1&amp;#34;; 15 16 /** 17* KittyORM main database class that represents bootstrap and holder for all related with database 18* components.</description>
+      <description>KittyORM mig v.1 implementation sources     Click to view MigrationDBv1.class:  1@KITTY_DATABASE( 2 isLoggingOn = true, 3 isProductionOn = false, 4 databaseName = &amp;#34;mig&amp;#34;, 5 databaseVersion = 1, 6 logTag = MigrationDBv1.LTAG, 7 domainPackageNames = {&amp;#34;net.akaish.kittyormdemo.sqlite.migrations.migv1&amp;#34;} 8) 9@KITTY_DATABASE_REGISTRY( 10 domainModels = {net.akaish.kittyormdemo.sqlite.migrations.migv1.MigOneModel.class} 11) 12public class MigrationDBv1 extends KittyDatabase { 13 14 public static final String LTAG = &amp;#34;MIGv1&amp;#34;; 15 16 /** 17* KittyORM main database class that represents bootstrap and holder for all related with database 18* components.</description>
     </item>
     
     <item>
@@ -244,7 +244,7 @@
       <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://akaish.github.io/KittyORMPages/migrations/simplemigrations/l5t3_code/</guid>
-      <description>KittyORM mig v.3 implementation sources   Click to view MigrationDBv3.class:  1@KITTY_DATABASE( 2 isLoggingOn = true, 3 isProductionOn = false, 4 isKittyDexUtilLoggingEnabled = false, 5 logTag = MigrationDBv3.LTAG, 6 databaseName = &amp;#34;mig&amp;#34;, 7 databaseVersion = 3, 8 domainPackageNames = {&amp;#34;net.akaish.kittyormdemo.sqlite.migrations.migv3&amp;#34;} 9) 10@KITTY_DATABASE_REGISTRY( 11 domainModels = { 12 net.akaish.kittyormdemo.sqlite.migrations.migv3.MigOneModel.class, 13 net.akaish.kittyormdemo.sqlite.migrations.migv3.MigTwoModel.class, 14 net.akaish.kittyormdemo.sqlite.migrations.migv3.MigThreeModel.class 15 } 16) 17@KITTY_DATABASE_HELPER( 18 onUpgradeBehavior = KITTY_DATABASE_HELPER.UpgradeBehavior.USE_SIMPLE_MIGRATIONS 19) 20public class MigrationDBv3 extends KittyDatabase { 21 22 public static final String LTAG = &amp;#34;MIGv3&amp;#34;; 23 /** 24* KittyORM main database class that represents bootstrap and holder for all related with database 25* components.</description>
+      <description>KittyORM mig v.3 implementation sources     Click to view MigrationDBv3.class:  1@KITTY_DATABASE( 2 isLoggingOn = true, 3 isProductionOn = false, 4 isKittyDexUtilLoggingEnabled = false, 5 logTag = MigrationDBv3.LTAG, 6 databaseName = &amp;#34;mig&amp;#34;, 7 databaseVersion = 3, 8 domainPackageNames = {&amp;#34;net.akaish.kittyormdemo.sqlite.migrations.migv3&amp;#34;} 9) 10@KITTY_DATABASE_REGISTRY( 11 domainModels = { 12 net.akaish.kittyormdemo.sqlite.migrations.migv3.MigOneModel.class, 13 net.akaish.kittyormdemo.sqlite.migrations.migv3.MigTwoModel.class, 14 net.akaish.kittyormdemo.sqlite.migrations.migv3.MigThreeModel.class 15 } 16) 17@KITTY_DATABASE_HELPER( 18 onUpgradeBehavior = KITTY_DATABASE_HELPER.UpgradeBehavior.USE_SIMPLE_MIGRATIONS 19) 20public class MigrationDBv3 extends KittyDatabase { 21 22 public static final String LTAG = &amp;#34;MIGv3&amp;#34;; 23 /** 24* KittyORM main database class that represents bootstrap and holder for all related with database 25* components.</description>
     </item>
     
     <item>
@@ -253,7 +253,7 @@
       <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://akaish.github.io/KittyORMPages/speedup/l4t1_code/</guid>
-      <description>Tip №1: Avoid using generating data model from packages    Click to view static registry initialization via annotations example:  1@KITTY_DATABASE( 2 databaseName = &amp;#34;basic_database&amp;#34;, 3 domainPackageNames = {&amp;#34;net.akaish.kittyormdemo.sqlite.basicdb&amp;#34;}, 4 logTag = LOG_TAG, 5 isLoggingOn = true, 6 isProductionOn = true, 7 isPragmaOn = true 8) 9@KITTY_DATABASE_REGISTRY( 10 // You can just define set of domain models and extended crud controllers (mappers) would 11 // be added only if those models are annotated with KITTY_EXTENDED_CRUD annotation.</description>
+      <description>Tip №1: Avoid using generating data model from packages      Click to view static registry initialization via annotations example:  1@KITTY_DATABASE( 2 databaseName = &amp;#34;basic_database&amp;#34;, 3 domainPackageNames = {&amp;#34;net.akaish.kittyormdemo.sqlite.basicdb&amp;#34;}, 4 logTag = LOG_TAG, 5 isLoggingOn = true, 6 isProductionOn = true, 7 isPragmaOn = true 8) 9@KITTY_DATABASE_REGISTRY( 10 // You can just define set of domain models and extended crud controllers (mappers) would 11 // be added only if those models are annotated with KITTY_EXTENDED_CRUD annotation.</description>
     </item>
     
     <item>

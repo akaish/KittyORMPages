@@ -10,7 +10,7 @@ pre: "<i class='fa fa-code'>&nbsp;</i> "
 
 1. 
 <details> 
-  <summary>Click to view `NOT NULL` constraint declaration example: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `NOT NULL` constraint declaration example: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 @KITTY_COLUMN(columnOrder = 0)
 @PRIMARY_KEY
@@ -21,7 +21,7 @@ public Long id;
 
 2. 
 <details> 
-  <summary>Click to view `DEFAULT` constraint declaration examples: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `DEFAULT` constraint declaration examples: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 @KITTY_COLUMN(columnOrder = 3)
 @DEFAULT(signedInteger = 28) // You can choose for options for default declaration, if nothing set than 0 value would be used
@@ -39,7 +39,7 @@ public String creationDate;
 
 3. 
 <details> 
-  <summary>Click to view `UNIQUE` constraint declaration examples: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `UNIQUE` constraint declaration examples: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 @KITTY_COLUMN(columnOrder = 1)
 @NOT_NULL
@@ -68,7 +68,7 @@ public class IndexesAndConstraintsModel extends KittyModel {
 
 4. 
 <details> 
-  <summary>Click to view `CHECK` constraint declaration example: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `CHECK` constraint declaration example: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 @KITTY_COLUMN(columnOrder = 2)
 @CHECK(checkExpression = "animal IN (\"CAT\", \"TIGER\", \"LION\")") // only cats allowed to this party
@@ -78,7 +78,7 @@ public Animals animal;
 
 5. 
 <details> 
-  <summary>Click to view `COLLATE` constraint declaration example: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `COLLATE` constraint declaration example: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 @KITTY_COLUMN(columnOrder = 2)
 @COLLATE(collation = BuiltInCollations.NOCASE) // Collation example
@@ -89,7 +89,7 @@ public Animals animal;
 
 6. 
 <details> 
-  <summary>Click to view `PRIMARY KEY` constraint declaration examples: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `PRIMARY KEY` constraint declaration examples: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 @KITTY_COLUMN(
         columnOrder = 0, 
@@ -124,7 +124,7 @@ public class CPKModel extends KittyModel {
 
 7. 
 <details> 
-  <summary>Click to view `FOREIGN KEY` constraint declaration examples: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `FOREIGN KEY` constraint declaration examples: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 @KITTY_COLUMN(columnOrder = 1)
 @NOT_NULL
@@ -167,7 +167,7 @@ public class IndexesAndConstraintsModel extends KittyModel {
 
 8. 
 <details> 
-  <summary>Click to view index declaration examples: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view index declaration examples: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 @KITTY_TABLE(tableName = "cai")
 @FOREIGN_KEY_T(
@@ -218,7 +218,7 @@ public class IndexesAndConstraintsModel extends KittyModel {
 
 1. 
 <details> 
-  <summary>Click to view `BasicDatabase.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `BasicDatabase.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 @KITTY_DATABASE(
         databaseName = "basic_database",
@@ -256,7 +256,7 @@ public class BasicDatabase extends KittyDatabase {
 
 2. 
 <details> 
-  <summary>Click to view `AbstractRandomModel.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `AbstractRandomModel.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 public abstract class AbstractRandomModel extends KittyModel {
 
@@ -297,7 +297,7 @@ public abstract class AbstractRandomModel extends KittyModel {
 
 3. 
 <details> 
-  <summary>Click to view `ComplexRandomModel.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `ComplexRandomModel.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 @KITTY_TABLE
 @KITTY_EXTENDED_CRUD(extendedCrudController = ComplexRandomMapper.class)
@@ -507,7 +507,7 @@ public class ComplexRandomModel extends AbstractRandomModel {
 
 4. 
 <details> 
-  <summary>Click to view `ComplexRandomMapper.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `ComplexRandomMapper.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 public class ComplexRandomMapper extends KittyMapper {
 
@@ -521,7 +521,7 @@ public class ComplexRandomMapper extends KittyMapper {
 
 5. 
 <details> 
-  <summary>Click to view `IndexesAndConstraintsModel.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `IndexesAndConstraintsModel.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 @KITTY_TABLE(tableName = "cai")
 @FOREIGN_KEY_T(
@@ -592,7 +592,7 @@ public class IndexesAndConstraintsModel extends KittyModel {
 
 1. 
 <details> 
-  <summary>Click to view `Lesson3Tab2Constraints.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `Lesson3Tab2Constraints.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 public class Lesson3Tab2Constraints extends Lesson3BaseFragment {
 

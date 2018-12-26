@@ -10,7 +10,7 @@ In this lesson we work with a bit more complex KittyORM example. This example da
 
 **Firstly**, create KittyDatabase implementation class annotated with `@KITTY_DATABASE` annotation.
 <details> 
-  <summary>Click to view this lesson KittyORM database implemetation: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view this lesson KittyORM database implemetation: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 @KITTY_DATABASE(
         databaseName = "basic_database",
@@ -49,7 +49,7 @@ public class BasicDatabase extends KittyDatabase {
 
 **Secondly**, create abstract `AbstractRandomModel.class` POJO that defines some basic POJO fields.
 <details> 
-  <summary>Click to view `AbstractRandomModel.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `AbstractRandomModel.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 public abstract class AbstractRandomModel extends KittyModel {
 
@@ -94,7 +94,7 @@ Fields that annotated with `@KITTY_COLUMN` would be used for mapping. Notice, th
 
 **Thirdly**, define three regular POJO classes, two of them extend `AbstractRandomModel.class`.
 <details> 
-  <summary>Click to view POJO classes used in this tutorial: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view POJO classes used in this tutorial: </summary>
 **RandomModel.class:**
 {{< highlight java "linenos=inline, linenostart=1">}}
 @KITTY_TABLE
@@ -405,7 +405,7 @@ public class ComplexRandomModel extends AbstractRandomModel {
 
 And, **finally**, create extended CRUD controller for usage with `RandomModel.class` POJO.
 <details> 
-  <summary>Click to view `RandomMapper.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `RandomMapper.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 public class RandomMapper extends KittyMapper {
 

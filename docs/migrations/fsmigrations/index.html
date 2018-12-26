@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-26T00:23:02 MSK">
+<meta name="revised" content="2018-12-27T01:25:48 MSK">
 <title>Filescript Migrator :: KittyORM Pages</title>
 <link rel="shortcut icon" href="/KittyORMPages/images/favicon.png" type="image/x-icon" />
 <link href="/KittyORMPages/css/font-awesome.min.css" rel="stylesheet">
@@ -567,7 +567,11 @@ With KittyORM you can use stored at file system or at assets SQLite scripts for 
 </ol>
 
 <p><details>
-  <summary>Click here to view an example of proper SQLite script file content supported by KittyORM: </summary>
+  <summary>
+
+<span class="fa fa-code"  style="font-size:large" aria-hidden="true"></span>
+
+Click here to view an example of proper SQLite script file content supported by KittyORM: </summary>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#998;font-style:italic">-- Some comment here
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#998;font-style:italic"></span><span style="font-weight:bold">CREATE</span> <span style="font-weight:bold">TABLE</span> <span style="font-weight:bold">IF</span> <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">EXISTS</span> mig_four (id <span style="color:#999">INTEGER</span> <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span> <span style="font-weight:bold">PRIMARY</span> <span style="font-weight:bold">KEY</span> <span style="font-weight:bold">ASC</span>, mig_three_reference <span style="color:#999">INTEGER</span> <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span> <span style="font-weight:bold">REFERENCES</span> mig_three (id) <span style="font-weight:bold">ON</span> <span style="font-weight:bold">UPDATE</span> <span style="font-weight:bold">NO</span> ACTION <span style="font-weight:bold">ON</span> <span style="font-weight:bold">DELETE</span> <span style="font-weight:bold">NO</span> ACTION, mig_two_reference <span style="color:#999">INTEGER</span> <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span> <span style="font-weight:bold">REFERENCES</span> mig_two (id) <span style="font-weight:bold">ON</span> <span style="font-weight:bold">UPDATE</span> <span style="font-weight:bold">NO</span> ACTION <span style="font-weight:bold">ON</span> <span style="font-weight:bold">DELETE</span> <span style="font-weight:bold">NO</span> ACTION, creation_date <span style="color:#999">INTEGER</span> <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span> <span style="font-weight:bold">DEFAULT</span>  <span style="font-weight:bold">CURRENT_DATE</span> );
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="font-weight:bold">CREATE</span> <span style="font-weight:bold">TABLE</span> <span style="font-weight:bold">IF</span> <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">EXISTS</span> mig_three (id <span style="color:#999">INTEGER</span> <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span> <span style="font-weight:bold">PRIMARY</span> <span style="font-weight:bold">KEY</span> <span style="font-weight:bold">ASC</span>, new_sv_name <span style="color:#999">TEXT</span> <span style="font-weight:bold">NOT</span> <span style="font-weight:bold">NULL</span> <span style="font-weight:bold">DEFAULT</span> <span style="color:#b84">&#39;Something random&#39;</span>, random_long <span style="color:#999">INTEGER</span> <span style="font-weight:bold">DEFAULT</span> <span style="color:#099">22</span>);
@@ -868,7 +872,7 @@ With KittyORM you can use stored at file system or at assets SQLite scripts for 
 
     
     <div class="github-link">
-      <a href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/migrations/fsmigrations/_index.md" target="blank"><i class="fa fa-code-fork"></i>
+      <a href="https://github.com/akaish/KittyORMPages/tree/master/content/migrations/fsmigrations/_index.md" target="blank"><i class="fa fa-code-fork"></i>
         Improve this page</a>
     </div>
     

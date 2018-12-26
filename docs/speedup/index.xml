@@ -17,7 +17,7 @@
       <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://akaish.github.io/KittyORMPages/speedup/l4t1_code/</guid>
-      <description>Tip №1: Avoid using generating data model from packages    Click to view static registry initialization via annotations example:  1@KITTY_DATABASE( 2 databaseName = &amp;#34;basic_database&amp;#34;, 3 domainPackageNames = {&amp;#34;net.akaish.kittyormdemo.sqlite.basicdb&amp;#34;}, 4 logTag = LOG_TAG, 5 isLoggingOn = true, 6 isProductionOn = true, 7 isPragmaOn = true 8) 9@KITTY_DATABASE_REGISTRY( 10 // You can just define set of domain models and extended crud controllers (mappers) would 11 // be added only if those models are annotated with KITTY_EXTENDED_CRUD annotation.</description>
+      <description>Tip №1: Avoid using generating data model from packages      Click to view static registry initialization via annotations example:  1@KITTY_DATABASE( 2 databaseName = &amp;#34;basic_database&amp;#34;, 3 domainPackageNames = {&amp;#34;net.akaish.kittyormdemo.sqlite.basicdb&amp;#34;}, 4 logTag = LOG_TAG, 5 isLoggingOn = true, 6 isProductionOn = true, 7 isPragmaOn = true 8) 9@KITTY_DATABASE_REGISTRY( 10 // You can just define set of domain models and extended crud controllers (mappers) would 11 // be added only if those models are annotated with KITTY_EXTENDED_CRUD annotation.</description>
     </item>
     
   </channel>

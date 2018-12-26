@@ -10,7 +10,7 @@ pre: "<i class='fa fa-code'>&nbsp;</i> "
 
 1.  
 <details> 
-  <summary>Click to view static registry initialization via annotations example: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view static registry initialization via annotations example: </summary>
   {{< highlight java "linenos=inline, linenostart=1">}}
 @KITTY_DATABASE(
         databaseName = "basic_database",
@@ -44,7 +44,7 @@ public class BasicDatabase extends KittyDatabase {
 </details>
 2. 
 <details> 
-  <summary>Click to view static registry initialization via overloading `getStaticRegistry()` method example: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view static registry initialization via overloading `getStaticRegistry()` method example: </summary>
   {{< highlight java "linenos=inline, linenostart=1">}}
 @KITTY_DATABASE(
         databaseName = "basic_database",
@@ -88,7 +88,7 @@ public class BasicDatabase extends KittyDatabase {
 
 1. 
 <details> 
-  <summary>Click to view KittyDatabase implementation static initialization at `Application` implementation example: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view KittyDatabase implementation static initialization at `Application` implementation example: </summary>
   {{< highlight java "linenos=inline, linenostart=1">}}
 public class AwesomeApplication extends Application {
 
@@ -110,7 +110,7 @@ public class AwesomeApplication extends Application {
 
 1. 
 <details> 
-  <summary>Click to view `INDEX` declaration with KittyORM example: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `INDEX` declaration with KittyORM example: </summary>
   {{< highlight java "linenos=inline, linenostart=1">}}
 @KITTY_TABLE(tableName = "cai")
 @INDEX(indexColumns = {"creation_date"}) // Index declaration example №1
@@ -134,7 +134,7 @@ public class IndexesAndConstraintsModel extends KittyModel {
 </details>
 2. 
 <details> 
-  <summary>Click to view bulk insert operation in transaction mode with KittyORM example: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view bulk insert operation in transaction mode with KittyORM example: </summary>
   {{< highlight java "linenos=inline, linenostart=1">}}
 void insertIntoDB() {
     // Getting mapper instance and filling model collection with random models
@@ -157,7 +157,7 @@ void insertIntoDB() {
 
 1. 
 <details> 
-  <summary>Click to view logging settings example: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view logging settings example: </summary>
   {{< highlight java "linenos=inline, linenostart=1">}}
 @KITTY_DATABASE(
         isLoggingOn = false, // By default false, bootstrap and error logging
@@ -179,7 +179,7 @@ public class MigrationDBv4 extends KittyDatabase {
 
 1. 
 <details> 
-  <summary>Click to view example of KittyORM in `AsyncTask`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view example of KittyORM in `AsyncTask`: </summary>
   {{< highlight java "linenos=inline, linenostart=1">}}
     static final int INSERT_AMOUNT = 25;
 

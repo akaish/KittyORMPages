@@ -22,7 +22,7 @@ KittyORM supports running SQLite scripts from files stored in assets or at devic
 2. KittyORM supports one line comments.
 
 <details> 
-  <summary>Click here to view an example of proper SQLite script file content supported by KittyORM: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click here to view an example of proper SQLite script file content supported by KittyORM: </summary>
 {{< highlight sql "linenos=inline, linenostart=1">}}
 -- Some comment here
 CREATE TABLE IF NOT EXISTS mig_four (id INTEGER NOT NULL PRIMARY KEY ASC, mig_three_reference INTEGER NOT NULL REFERENCES mig_three (id) ON UPDATE NO ACTION ON DELETE NO ACTION, mig_two_reference INTEGER NOT NULL REFERENCES mig_two (id) ON UPDATE NO ACTION ON DELETE NO ACTION, creation_date INTEGER NOT NULL DEFAULT  CURRENT_DATE );

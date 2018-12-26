@@ -104,7 +104,7 @@ public class RandomModel extends AbstractRandomModel {
 
 2. Create new class that extends `KittyMapper.class`, implement default constructor and locate it at domain package, fill it with your logic.
 <details> 
-  <summary>Click to view extended crud controller implementation example: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view extended crud controller implementation example: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 public class RandomMapper extends KittyMapper {
 

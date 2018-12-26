@@ -52,7 +52,7 @@ mapper.update(toUpdate, builder.build(), new String[]{"randomInt"}, CVUtils.INCL
 
 1. 
 <details> 
-  <summary>Click to view `BasicDatabase.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `BasicDatabase.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 @KITTY_DATABASE(
         databaseName = "basic_database",
@@ -90,7 +90,7 @@ public class BasicDatabase extends KittyDatabase {
 
 2. 
 <details> 
-  <summary>Click to view `AbstractRandomModel.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `AbstractRandomModel.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 public abstract class AbstractRandomModel extends KittyModel {
 
@@ -131,7 +131,7 @@ public abstract class AbstractRandomModel extends KittyModel {
 
 3. 
 <details> 
-  <summary>Click to view `RandomModel.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `RandomModel.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 @KITTY_TABLE
 @KITTY_EXTENDED_CRUD(extendedCrudController = RandomMapper.class)
@@ -170,7 +170,7 @@ public class RandomModel extends AbstractRandomModel {
 
 4. 
 <details> 
-  <summary>Click to view `RandomMapper.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `RandomMapper.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 public class RandomMapper extends KittyMapper {
 
@@ -242,7 +242,7 @@ public class RandomMapper extends KittyMapper {
 
 5. 
 <details> 
-  <summary>Click to view `ComplexRandomModel.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `ComplexRandomModel.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 @KITTY_TABLE
 @KITTY_EXTENDED_CRUD(extendedCrudController = ComplexRandomMapper.class)
@@ -452,7 +452,7 @@ public class ComplexRandomModel extends AbstractRandomModel {
 
 6. 
 <details> 
-  <summary>Click to view `IndexesAndConstraintsModel.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `IndexesAndConstraintsModel.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 @KITTY_TABLE(tableName = "cai")
 @FOREIGN_KEY_T(
@@ -524,7 +524,7 @@ public class IndexesAndConstraintsModel extends KittyModel {
 
 1. 
 <details> 
-  <summary>Click to view `RNDRandomModelFactory.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `RNDRandomModelFactory.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 public class RNDRandomModelFactory {
 
@@ -577,7 +577,7 @@ public class RNDRandomModelFactory {
 
 2. 
 <details> 
-  <summary>Click to view `Lesson2Tab2Update.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `Lesson2Tab2Update.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 public class Lesson2Tab2Update extends Lesson2BaseFragment {
 

@@ -8,7 +8,7 @@ pre: "<i class='fa fa-code'>&nbsp;</i> "
 ---
 ##### Database, model, supporting classes
 <details> 
-  <summary>Click to view `SimpleDatabase.class`</summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `SimpleDatabase.class`</summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 package net.akaish.kittyormdemo.sqlite.introductiondb;
 
@@ -41,7 +41,7 @@ public class SimpleDatabase extends KittyDatabase {
 </details>
 
 <details> 
-  <summary>Click to view `SimpleExampleModel.class`</summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `SimpleExampleModel.class`</summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 package net.akaish.kittyormdemo.sqlite.introductiondb;
 
@@ -87,7 +87,7 @@ public class SimpleExampleModel extends KittyModel {
 </details>
 
 <details> 
-  <summary>Click to view `RandomSimpleExampleModelUtil.class`</summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `RandomSimpleExampleModelUtil.class`</summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 package net.akaish.kittyormdemo.sqlite.introductiondb.util;
 
@@ -115,7 +115,7 @@ public class RandomSimpleExampleModelUtil {
 </details>
 ##### "RUN CRUD OPERATIONS" code
 <details> 
-  <summary>Click to view `GettingStartedTutorialCode.allInOne()`</summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `GettingStartedTutorialCode.allInOne()`</summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 // Creating new instance of SimpleDatabase
 SimpleDatabase simpleDatabase = new SimpleDatabase(ctx);
@@ -232,7 +232,7 @@ mapper.close();
 </details>
 ##### Lesson's activity fragment
 <details> 
-  <summary>Click to view `SimpleDatabase.class`</summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `SimpleDatabase.class`</summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 package net.akaish.kittyormdemo.lessons.one;
 

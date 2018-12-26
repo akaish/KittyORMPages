@@ -10,7 +10,7 @@ pre: "<i class='fa fa-code'>&nbsp;</i> "
 
 1. 
 <details> 
-  <summary>Click to view `MigrationDBv3.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `MigrationDBv3.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 @KITTY_DATABASE(
         isLoggingOn = true,
@@ -49,7 +49,7 @@ public class MigrationDBv3 extends KittyDatabase {
 
 2. 
 <details> 
-  <summary>Click to view `MigOneModel.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `MigOneModel.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 @KITTY_TABLE(
         tableName = "mig_one"
@@ -90,7 +90,7 @@ public class MigOneModel extends KittyModel {
 
 3. 
 <details> 
-  <summary>Click to view `MigTwoModel.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `MigTwoModel.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 @KITTY_TABLE(
         tableName = "mig_two"
@@ -156,7 +156,7 @@ public class MigTwoModel extends KittyModel {
 
 4. 
 <details> 
-  <summary>Click to view `MigThreeModel.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `MigThreeModel.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 @KITTY_TABLE(tableName = "mig_three")
 public class MigThreeModel extends KittyModel {
@@ -192,7 +192,7 @@ public class MigThreeModel extends KittyModel {
 
 1. 
 <details> 
-  <summary>Click to view `MigV3RandomModelFactory.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `MigV3RandomModelFactory.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 public class MigV3RandomModelFactory {
     final Context context;
@@ -286,7 +286,7 @@ public class MigV3RandomModelFactory {
 
 2. 
 <details> 
-  <summary>Click to view `Lesson5Tab3AutogenMigration.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `Lesson5Tab3AutogenMigration.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 public class Lesson5Tab3AutogenMigration extends Lesson5BaseFragment {
 

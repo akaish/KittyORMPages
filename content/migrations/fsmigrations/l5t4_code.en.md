@@ -10,7 +10,7 @@ pre: "<i class='fa fa-code'>&nbsp;</i> "
 
 1. 
 <details> 
-  <summary>Click to view `MigrationDBv4.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `MigrationDBv4.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 @KITTY_DATABASE(
         isLoggingOn = false,
@@ -50,7 +50,7 @@ public class MigrationDBv4 extends KittyDatabase {
 
 2. 
 <details> 
-  <summary>Click to view `MigTwoModel.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `MigTwoModel.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 @KITTY_TABLE(
         tableName = "mig_two"
@@ -108,7 +108,7 @@ public class MigTwoModel extends KittyModel {
 
 3. 
 <details> 
-  <summary>Click to view `MigThreeModel.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `MigThreeModel.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 @KITTY_TABLE(tableName = "mig_three")
 public class MigThreeModel extends KittyModel {
@@ -150,7 +150,7 @@ public class MigThreeModel extends KittyModel {
 
 4. 
 <details> 
-  <summary>Click to view `MigFourModel.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `MigFourModel.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 @KITTY_TABLE(tableName = "mig_four")
 public class MigFourModel extends KittyModel {
@@ -208,7 +208,7 @@ public class MigFourModel extends KittyModel {
 
 1. 
 <details> 
-  <summary>Click to view `MigV4RandomModelFactory.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `MigV4RandomModelFactory.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 public class MigV4RandomModelFactory {
 
@@ -303,7 +303,7 @@ public class MigV4RandomModelFactory {
 
 2. 
 <details> 
-  <summary>Click to view `Lesson5Tab4FilescriptMigration.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `Lesson5Tab4FilescriptMigration.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 public class Lesson5Tab4FilescriptMigration extends Lesson5BaseFragment {
 

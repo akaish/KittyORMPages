@@ -11,7 +11,7 @@ pre: "<i class='fa fa-code'>&nbsp;</i> "
 
 1. 
 <details> 
-  <summary>Click to view `MigrationDBv1.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `MigrationDBv1.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 @KITTY_DATABASE(
         isLoggingOn = true,
@@ -43,7 +43,7 @@ public class MigrationDBv1 extends KittyDatabase {
 
 2. 
 <details> 
-  <summary>Click to view `MigOneModel.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `MigOneModel.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 @KITTY_TABLE(
         tableName = "mig_one"
@@ -83,7 +83,7 @@ public class MigOneModel extends KittyModel{
 
 1. 
 <details> 
-  <summary>Click to view `MigV1RandomModelFactory.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `MigV1RandomModelFactory.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 public class MigV1RandomModelFactory {
     final Context ctx;
@@ -106,7 +106,7 @@ public class MigV1RandomModelFactory {
 
 2. 
 <details> 
-  <summary>Click to view `Lesson5Tab1InitialDatabase.class`: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view `Lesson5Tab1InitialDatabase.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
 public class Lesson5Tab1InitialDatabase extends Lesson5BaseFragment {
 

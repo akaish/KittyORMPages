@@ -17,7 +17,7 @@ find . -name '*.java' -exec sed -i -e 's/android.database/net.sqlcipher/g' {} \;
   {{< /highlight >}} 
 * Modify some methods of `KittyDatabaseHelper.class` for adding support of database encryption.
 <details> 
-  <summary>Click to view modified methods of `KittyDatabaseHelper.class` with encryption support: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view modified methods of `KittyDatabaseHelper.class` with encryption support: </summary>
   {{< highlight java "linenos=inline, linenostart=1">}}
 public SQLiteDatabase getWritableDatabase(String pwd) {
     return super.getWritableDatabase(pwd);
@@ -30,7 +30,7 @@ public SQLiteDatabase getReadableDatabase(String pwd) {
 </details> 
 * Modify constructor of `KittyDatabase.class` for adding support of database encryption.
 <details> 
-  <summary>Click to view modified constructor of `KittyDatabaseHelper.class` with encryption support: </summary>
+  <summary>{{< icon name="fa-code" size="large" >}}Click to view modified constructor of `KittyDatabaseHelper.class` with encryption support: </summary>
   {{< highlight java "linenos=inline, linenostart=1">}}
 public KittyDatabase(Context ctx, String databasePassword) {
     net.sqlcipher.database.SQLiteDatabase.loadLibs(ctx);

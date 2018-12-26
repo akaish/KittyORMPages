@@ -30,7 +30,7 @@ Main idea of creating KittyORM is to offer a tool that would suit both people wh
 * Support of database version management. KittyORM provides you three migration options: `DropCreate` Migrator, `FileScript` Migrator and `SimpleMigrationScriptGenerator` Migrator.
 * Ready for database encryption implementation.
 * Simple but really flexible API. Practically, most components of KittyORM can be customized to suit your needs.
-* Good documentation contains tutorial with code snippets, javadoc and demo application available at TODO [add link when application would be published]
+* Good documentation contains tutorial with code snippets, javadoc and demo application available at [KittyORM project page](https://akaish.github.io/KittyORMPages).
 
 {{% panel footer="KittyORM Demo application screenshots" %}}
 <center>![alt text](hidden/android_src/2.png?height=150px&classes=border,inline)   ![alt text](hidden/android_src/3.png?height=150px&classes=border,inline)   ![alt text](hidden/android_src/4.png?height=150px&classes=border,inline)  ![alt text](hidden/android_src/5.png?height=150px&classes=border,inline)  ![alt text](hidden/android_src/7.png?height=150px&classes=border,inline)  ![alt text](hidden/android_src/8.png?height=150px&classes=border,inline)  ![alt text](hidden/android_src/9.png?height=150px&classes=border,inline)</center>

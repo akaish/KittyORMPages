@@ -26,7 +26,7 @@
       <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://akaish.github.io/KittyORMPages/migrations/overview/l5t1_code/</guid>
-      <description>KittyORM mig v.1 implementation sources   Click to view MigrationDBv1.class:  1@KITTY_DATABASE( 2 isLoggingOn = true, 3 isProductionOn = false, 4 databaseName = &amp;#34;mig&amp;#34;, 5 databaseVersion = 1, 6 logTag = MigrationDBv1.LTAG, 7 domainPackageNames = {&amp;#34;net.akaish.kittyormdemo.sqlite.migrations.migv1&amp;#34;} 8) 9@KITTY_DATABASE_REGISTRY( 10 domainModels = {net.akaish.kittyormdemo.sqlite.migrations.migv1.MigOneModel.class} 11) 12public class MigrationDBv1 extends KittyDatabase { 13 14 public static final String LTAG = &amp;#34;MIGv1&amp;#34;; 15 16 /** 17* KittyORM main database class that represents bootstrap and holder for all related with database 18* components.</description>
+      <description>KittyORM mig v.1 implementation sources     Click to view MigrationDBv1.class:  1@KITTY_DATABASE( 2 isLoggingOn = true, 3 isProductionOn = false, 4 databaseName = &amp;#34;mig&amp;#34;, 5 databaseVersion = 1, 6 logTag = MigrationDBv1.LTAG, 7 domainPackageNames = {&amp;#34;net.akaish.kittyormdemo.sqlite.migrations.migv1&amp;#34;} 8) 9@KITTY_DATABASE_REGISTRY( 10 domainModels = {net.akaish.kittyormdemo.sqlite.migrations.migv1.MigOneModel.class} 11) 12public class MigrationDBv1 extends KittyDatabase { 13 14 public static final String LTAG = &amp;#34;MIGv1&amp;#34;; 15 16 /** 17* KittyORM main database class that represents bootstrap and holder for all related with database 18* components.</description>
     </item>
     
   </channel>

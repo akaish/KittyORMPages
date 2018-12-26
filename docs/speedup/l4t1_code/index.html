@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2018-12-26T00:23:02 MSK">
+<meta name="revised" content="2018-12-27T01:25:47 MSK">
 <title>Source code :: KittyORM Pages</title>
 <link rel="shortcut icon" href="/KittyORMPages/images/favicon.png" type="image/x-icon" />
 <link href="/KittyORMPages/css/font-awesome.min.css" rel="stylesheet">
@@ -530,7 +530,11 @@
 <ol>
 <li>
 <details>
-<summary>Click to view static registry initialization via annotations example: </summary>
+<summary>
+
+<span class="fa fa-code"  style="font-size:large" aria-hidden="true"></span>
+
+Click to view static registry initialization via annotations example: </summary>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>@KITTY_DATABASE<span style="font-weight:bold">(</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>        databaseName <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;basic_database&#34;</span><span style="font-weight:bold">,</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>        domainPackageNames <span style="font-weight:bold">=</span> <span style="font-weight:bold">{</span><span style="color:#b84">&#34;net.akaish.kittyormdemo.sqlite.basicdb&#34;</span><span style="font-weight:bold">},</span>
@@ -563,7 +567,11 @@
 </details></li>
 <li>
 <details>
-<summary>Click to view static registry initialization via overloading <code>getStaticRegistry()</code> method example: </summary>
+<summary>
+
+<span class="fa fa-code"  style="font-size:large" aria-hidden="true"></span>
+
+Click to view static registry initialization via overloading <code>getStaticRegistry()</code> method example: </summary>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>@KITTY_DATABASE<span style="font-weight:bold">(</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>        databaseName <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;basic_database&#34;</span><span style="font-weight:bold">,</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>        logTag <span style="font-weight:bold">=</span> LOG_TAG<span style="font-weight:bold">,</span>
@@ -608,7 +616,11 @@
 <ol>
 <li>
 <details>
-<summary>Click to view KittyDatabase implementation static initialization at <code>Application</code> implementation example: </summary>
+<summary>
+
+<span class="fa fa-code"  style="font-size:large" aria-hidden="true"></span>
+
+Click to view KittyDatabase implementation static initialization at <code>Application</code> implementation example: </summary>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="color:#458;font-weight:bold">AwesomeApplication</span> <span style="font-weight:bold">extends</span> Application <span style="font-weight:bold">{</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>	<span style="font-weight:bold">private</span> <span style="font-weight:bold">static</span> AwesomeKittyDatabaseImplementation database<span style="font-weight:bold">;</span>
@@ -631,7 +643,11 @@
 <ol>
 <li>
 <details>
-<summary>Click to view <code>INDEX</code> declaration with KittyORM example: </summary>
+<summary>
+
+<span class="fa fa-code"  style="font-size:large" aria-hidden="true"></span>
+
+Click to view <code>INDEX</code> declaration with KittyORM example: </summary>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>@KITTY_TABLE<span style="font-weight:bold">(</span>tableName <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;cai&#34;</span><span style="font-weight:bold">)</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>@INDEX<span style="font-weight:bold">(</span>indexColumns <span style="font-weight:bold">=</span> <span style="font-weight:bold">{</span><span style="color:#b84">&#34;creation_date&#34;</span><span style="font-weight:bold">})</span> <span style="color:#998;font-style:italic">// Index declaration example №1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#998;font-style:italic"></span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="color:#458;font-weight:bold">IndexesAndConstraintsModel</span> <span style="font-weight:bold">extends</span> KittyModel <span style="font-weight:bold">{</span>
@@ -654,7 +670,11 @@
 </details></li>
 <li>
 <details>
-<summary>Click to view bulk insert operation in transaction mode with KittyORM example: </summary>
+<summary>
+
+<span class="fa fa-code"  style="font-size:large" aria-hidden="true"></span>
+
+Click to view bulk insert operation in transaction mode with KittyORM example: </summary>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">insertIntoDB</span><span style="font-weight:bold">()</span> <span style="font-weight:bold">{</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>    <span style="color:#998;font-style:italic">// Getting mapper instance and filling model collection with random models
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#998;font-style:italic"></span>    RNDRandomModelFactory rndFactory <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> RNDRandomModelFactory<span style="font-weight:bold">(</span>Lesson2Tab5Random<span style="font-weight:bold">.</span><span style="color:#008080">this</span><span style="font-weight:bold">.</span><span style="color:#008080">getContext</span><span style="font-weight:bold">());</span>
@@ -678,7 +698,11 @@
 <ol>
 <li>
 <details>
-<summary>Click to view logging settings example: </summary>
+<summary>
+
+<span class="fa fa-code"  style="font-size:large" aria-hidden="true"></span>
+
+Click to view logging settings example: </summary>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>@KITTY_DATABASE<span style="font-weight:bold">(</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>        isLoggingOn <span style="font-weight:bold">=</span> <span style="font-weight:bold">false</span><span style="font-weight:bold">,</span> <span style="color:#998;font-style:italic">// By default false, bootstrap and error logging
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#998;font-style:italic"></span>        isProductionOn <span style="font-weight:bold">=</span> <span style="font-weight:bold">true</span><span style="font-weight:bold">,</span> <span style="color:#998;font-style:italic">// By default true, when false - query logging
@@ -700,7 +724,11 @@
 <ol>
 <li>
 <details>
-<summary>Click to view example of KittyORM in <code>AsyncTask</code>: </summary>
+<summary>
+
+<span class="fa fa-code"  style="font-size:large" aria-hidden="true"></span>
+
+Click to view example of KittyORM in <code>AsyncTask</code>: </summary>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1</span>    <span style="font-weight:bold">static</span> <span style="font-weight:bold">final</span> <span style="color:#458;font-weight:bold">int</span> INSERT_AMOUNT <span style="font-weight:bold">=</span> 25<span style="font-weight:bold">;</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3</span>    <span style="font-weight:bold">static</span> <span style="font-weight:bold">final</span> String ERR_INSERT_RND <span style="font-weight:bold">=</span> <span style="color:#b84">&#34;Lesson5tab1InsertRNDDataError, see exception details!&#34;</span><span style="font-weight:bold">;</span>
@@ -860,7 +888,7 @@
 
     
     <div class="github-link">
-      <a href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/speedup/l4t1_code.en.md" target="blank"><i class="fa fa-code-fork"></i>
+      <a href="https://github.com/akaish/KittyORMPages/tree/master/content/speedup/l4t1_code.en.md" target="blank"><i class="fa fa-code-fork"></i>
         Improve this page</a>
     </div>
     
