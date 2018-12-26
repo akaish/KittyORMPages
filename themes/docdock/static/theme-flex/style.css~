@@ -583,7 +583,6 @@ footer {
     footer .footline .author {
       order: 3; }
     footer .footline .github-link {
-    	display: none;
       order: 4; }
     footer .footline .date {
       order: 3; }
