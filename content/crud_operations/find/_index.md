@@ -29,6 +29,8 @@ builder.addField(AbstractRandomModel.RND_ANIMAL_CNAME)
        .addSQLOperator(SQLiteOperator.EQUAL)
        .addValue(Animals.TIGER.name());
 List<RandomModel> hundredOfTigers = mapper.findWhere(builder.build(), parameters);
+// Getting model with condition (fetching 100 existing tigers with SQLite string condition)
+hundredOfTigers = mapper.findWhere(parameters, "#?randomAnimal = ?", Animals.TIGER.name());
 {{< /highlight >}}
 
 **Already implemented find methods in KittyORM:**
@@ -36,7 +38,9 @@ List<RandomModel> hundredOfTigers = mapper.findWhere(builder.build(), parameters
 Method name | Method description
 --- | --- 
 `findWhere(SQLiteCondition where, QueryParameters qParams)` | Returns list of models associated with records in backed database table that suits provided clause and query parameters.
+`findWhere(QueryParameters qParams, String where, Object... conditionValues)` | Returns list of models associated with records in backed database table that suits provided clause and query parameters.
 `findWhere(SQLiteCondition where)` | Returns list of models associated with records in backed database table that suits provided clause.
+`findWhere(String where, Object... conditionValues)` | Returns list of models associated with records in backed database table that suits provided clause.
 `findAll(QueryParameters qParams)`  | Returns list of all models associated with records in backed database table with usage of passed qParams.
 `findAll()` | Returns list of all models associated with records in backed database table.
 `findByRowID(Long rowid)` | Returns model filled with data from database or null if no record with provided rowid found.
@@ -66,7 +70,7 @@ builder.addField(AbstractRandomModel.RND_ANIMAL_CNAME)
        .addValue(Animals.DOG.name());
 long dogsCount = mapper.countWhere(builder.build());
 // Sum all dog's random_int
-long dogsRndIntSum = mapper.sum("random_int", builder.build());
+long dogsRndIntSum = mapper.sum("random_int", "#?randomAnimal = ?", Animals.DOG.name());
 {{< /highlight >}}
 
 ### Implementing extended CRUD controller
@@ -116,27 +120,18 @@ public class RandomMapper extends KittyMapper {
 
     protected SQLiteCondition getAnimalCondition(Animals animal) {
         return new SQLiteConditionBuilder()
-                .addField(RND_ANIMAL_CNAME)
-                .addSQLOperator(SQLiteOperator.EQUAL)
+                .addColumn(RND_ANIMAL_CNAME)
+                .addSQLOperator("=")
                 .addObjectValue(animal)
                 .build();
     }
 
     public long deleteByRandomIntegerRange(int start, int end) {
-        SQLiteCondition condition = new SQLiteConditionBuilder()
-                .addField("random_int")
-                .addSQLOperator(GREATER_OR_EQUAL)
-                .addValue(start)
-                .addSQLOperator(AND)
-                .addField("random_int")
-                .addSQLOperator(LESS_OR_EQUAL)
-                .addValue(end)
-                .build();
-        return deleteByWhere(condition);
+        return deleteWhere("#?randomInt >= ? AND #?randomInt <= ?", start, end);
     }
 
     public long deleteByAnimal(Animals animal) {
-        return deleteByWhere(getAnimalCondition(animal));
+        return deleteWhere(getAnimalCondition(animal));
     }
 
     public List<RandomModel> findByAnimal(Animals animal, long offset, long limit, boolean groupingOn) {
@@ -152,11 +147,11 @@ public class RandomMapper extends KittyMapper {
 
     public List<RandomModel> findByIdRange(long fromId, long toId, boolean inclusive, Long offset, Long limit) {
         SQLiteCondition condition = new SQLiteConditionBuilder()
-                .addField("id")
+                .addColumn("id")
                 .addSQLOperator(inclusive ? GREATER_OR_EQUAL : GREATER_THAN)
                 .addValue(fromId)
                 .addSQLOperator(AND)
-                .addField("id")
+                .addColumn("id")
                 .addSQLOperator(inclusive ? LESS_OR_EQUAL : LESS_THAN)
                 .addValue(toId)
                 .build();

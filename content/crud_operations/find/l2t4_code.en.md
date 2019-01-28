@@ -26,6 +26,8 @@ builder.addField(AbstractRandomModel.RND_ANIMAL_CNAME)
        .addSQLOperator(SQLiteOperator.EQUAL)
        .addValue(Animals.TIGER.name());
 List<RandomModel> hundredOfTigers = mapper.findWhere(builder.build(), parameters);
+// Getting model with condition (fetching 100 existing tigers with SQLite string condition)
+hundredOfTigers = mapper.findWhere(parameters, "#?randomAnimal = ?", Animals.TIGER.name());
 {{< /highlight >}}
 
 
@@ -44,7 +46,7 @@ builder.addField(AbstractRandomModel.RND_ANIMAL_CNAME)
        .addValue(Animals.DOG.name());
 long dogsCount = mapper.countWhere(builder.build());
 // Sum all dog's random_int
-long dogsRndIntSum = mapper.sum("random_int", builder.build());
+long dogsRndIntSum = mapper.sum("random_int", "#?randomAnimal = ?", Animals.DOG.name());
 {{< /highlight >}}
 
 ##### KittyORM extended CRUD controller registry definition example
@@ -78,7 +80,7 @@ public class RandomModel extends AbstractRandomModel {
 {{< /highlight >}}
 
 
-##### KittyORM `basic_datase` implementation sources
+##### KittyORM `basic_database` implementation sources
 
 1. 
 <details> 
@@ -202,6 +204,32 @@ public class RandomModel extends AbstractRandomModel {
 <details> 
   <summary>{{< icon name="fa-code" size="large" >}}Click to view `RandomMapper.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
+package net.akaish.kittyormdemo.sqlite.basicdb;
+
+import net.akaish.kitty.orm.KittyMapper;
+import net.akaish.kitty.orm.KittyModel;
+import net.akaish.kitty.orm.configuration.conf.KittyTableConfiguration;
+import net.akaish.kitty.orm.query.QueryParameters;
+import net.akaish.kitty.orm.query.conditions.SQLiteCondition;
+import net.akaish.kitty.orm.query.conditions.SQLiteConditionBuilder;
+import net.akaish.kitty.orm.query.conditions.SQLiteOperator;
+import net.akaish.kitty.orm.util.KittyConstants;
+import net.akaish.kittyormdemo.sqlite.misc.Animals;
+
+import static net.akaish.kitty.orm.query.conditions.SQLiteOperator.AND;
+import static net.akaish.kitty.orm.query.conditions.SQLiteOperator.LESS_OR_EQUAL;
+import static net.akaish.kitty.orm.query.conditions.SQLiteOperator.LESS_THAN;
+import static net.akaish.kitty.orm.query.conditions.SQLiteOperator.GREATER_OR_EQUAL;
+import static net.akaish.kitty.orm.query.conditions.SQLiteOperator.GREATER_THAN;
+import static net.akaish.kittyormdemo.sqlite.basicdb.AbstractRandomModel.RND_ANIMAL_CNAME;
+
+import java.util.List;
+
+
+/**
+ * Created by akaish on 09.08.18.
+ * @author akaish (Denis Bogomolov)
+ */
 public class RandomMapper extends KittyMapper {
 
     public <M extends KittyModel> RandomMapper(KittyTableConfiguration tableConfiguration,
@@ -212,27 +240,18 @@ public class RandomMapper extends KittyMapper {
 
     protected SQLiteCondition getAnimalCondition(Animals animal) {
         return new SQLiteConditionBuilder()
-                .addField(RND_ANIMAL_CNAME)
-                .addSQLOperator(SQLiteOperator.EQUAL)
+                .addColumn(RND_ANIMAL_CNAME)
+                .addSQLOperator("=")
                 .addObjectValue(animal)
                 .build();
     }
 
     public long deleteByRandomIntegerRange(int start, int end) {
-        SQLiteCondition condition = new SQLiteConditionBuilder()
-                .addField("random_int")
-                .addSQLOperator(GREATER_OR_EQUAL)
-                .addValue(start)
-                .addSQLOperator(AND)
-                .addField("random_int")
-                .addSQLOperator(LESS_OR_EQUAL)
-                .addValue(end)
-                .build();
-        return deleteByWhere(condition);
+        return deleteWhere("#?randomInt >= ? AND #?randomInt <= ?", start, end);
     }
 
     public long deleteByAnimal(Animals animal) {
-        return deleteByWhere(getAnimalCondition(animal));
+        return deleteWhere(getAnimalCondition(animal));
     }
 
     public List<RandomModel> findByAnimal(Animals animal, long offset, long limit, boolean groupingOn) {
@@ -248,11 +267,11 @@ public class RandomMapper extends KittyMapper {
 
     public List<RandomModel> findByIdRange(long fromId, long toId, boolean inclusive, Long offset, Long limit) {
         SQLiteCondition condition = new SQLiteConditionBuilder()
-                .addField("id")
+                .addColumn("id")
                 .addSQLOperator(inclusive ? GREATER_OR_EQUAL : GREATER_THAN)
                 .addValue(fromId)
                 .addSQLOperator(AND)
-                .addField("id")
+                .addColumn("id")
                 .addSQLOperator(inclusive ? LESS_OR_EQUAL : LESS_THAN)
                 .addValue(toId)
                 .build();
@@ -266,6 +285,7 @@ public class RandomMapper extends KittyMapper {
         qparam.setLimit(limit).setOffset(offset).setGroupByColumns(KittyConstants.ROWID);
         return findAll(qparam);
     }
+
 }
 {{< /highlight >}} 
 </details>
@@ -609,6 +629,46 @@ public class RNDRandomModelFactory {
 <details> 
   <summary>{{< icon name="fa-code" size="large" >}}Click to view `Lesson2Tab4Find.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
+package net.akaish.kittyormdemo.lessons.two;
+
+import android.app.ProgressDialog;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import net.akaish.kitty.orm.enums.AscDesc;
+import net.akaish.kitty.orm.query.QueryParameters;
+import net.akaish.kitty.orm.query.conditions.SQLiteCondition;
+import net.akaish.kitty.orm.query.conditions.SQLiteConditionBuilder;
+import net.akaish.kitty.orm.query.conditions.SQLiteOperator;
+import net.akaish.kittyormdemo.KittyTutorialActivity;
+import net.akaish.kittyormdemo.R;
+import net.akaish.kittyormdemo.lessons.LessonsUriConstants;
+import net.akaish.kittyormdemo.lessons.adapters.BasicRandomModelAdapter;
+import net.akaish.kittyormdemo.sqlite.basicdb.AbstractRandomModel;
+import net.akaish.kittyormdemo.sqlite.basicdb.RandomMapper;
+import net.akaish.kittyormdemo.sqlite.basicdb.RandomModel;
+import net.akaish.kittyormdemo.sqlite.misc.Animals;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+import static java.text.MessageFormat.format;
+
+/**
+ * Created by akaish on 03.08.18.
+ * @author akaish (Denis Bogomolov)
+ */
 public class Lesson2Tab4Find extends Lesson2BaseFragment {
 
     // Pagination start
@@ -740,7 +800,7 @@ public class Lesson2Tab4Find extends Lesson2BaseFragment {
             return;
         }
         SQLiteConditionBuilder builder = new SQLiteConditionBuilder();
-        builder.addField("id").addSQLOperator(SQLiteOperator.EQUAL).addValue(idToFind);
+        builder.addColumn("id").addSQLOperator(SQLiteOperator.EQUAL).addValue(idToFind);
         setPaginationResults(builder.build());
     }
 
@@ -776,11 +836,11 @@ public class Lesson2Tab4Find extends Lesson2BaseFragment {
             return;
         }
         SQLiteConditionBuilder builder = new SQLiteConditionBuilder();
-        builder.addField("random_int")
+        builder.addColumn("random_int")
                 .addSQLOperator(SQLiteOperator.GREATER_OR_EQUAL)
                 .addValue(rangeStartInt)
                 .addSQLOperator(SQLiteOperator.AND)
-                .addField("random_int")
+                .addColumn("random_int")
                 .addSQLOperator(SQLiteOperator.LESS_OR_EQUAL)
                 .addValue(rangeEndInt);
         setPaginationResults(builder.build());
@@ -798,7 +858,7 @@ public class Lesson2Tab4Find extends Lesson2BaseFragment {
         }
         Animals animal = Animals.valueOf(animalStr);
         SQLiteConditionBuilder builder = new SQLiteConditionBuilder();
-        builder.addField(AbstractRandomModel.RND_ANIMAL_CNAME)
+        builder.addColumn(AbstractRandomModel.RND_ANIMAL_CNAME)
                 .addSQLOperator(SQLiteOperator.EQUAL)
                 .addValue(animal.name());
         setPaginationResults(builder.build());
@@ -1130,6 +1190,5 @@ public class Lesson2Tab4Find extends Lesson2BaseFragment {
         }
     }
 }
-
 {{< /highlight >}} 
 </details>

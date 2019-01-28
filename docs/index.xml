@@ -162,7 +162,7 @@
       <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://akaish.github.io/KittyORMPages/crud_operations/save/l2t1_code/</guid>
-      <description>KittyORM insertion example 1// Initializing database instance 2BasicDatabase db = new BasicDatabase(getContext()); 3// Getting mapper instance 4RandomMapper mapper = (RandomMapper) db.getMapper(RandomModel.class); 5// Initializing model 6RandomModel toInsert = new RandomModel(); 7// Setting model fields 8toInsert.randomInt = 10; 9... 10// Saving model with save method 11mapper.save(toInsert); 12// Saving model with direct insert call 13mapper.insert(toInsert); KittyORM basic_datase implementation sources     Click to view BasicDatabase.class:  1@KITTY_DATABASE( 2 databaseName = &amp;#34;basic_database&amp;#34;, 3 domainPackageNames = {&amp;#34;net.</description>
+      <description>KittyORM insertion example 1// Initializing database instance 2BasicDatabase db = new BasicDatabase(getContext()); 3// Getting mapper instance 4RandomMapper mapper = (RandomMapper) db.getMapper(RandomModel.class); 5// Initializing model 6RandomModel toInsert = new RandomModel(); 7// Setting model fields 8toInsert.randomInt = 10; 9... 10// Saving model with save method 11mapper.save(toInsert); 12// Saving model with direct insert call 13mapper.insert(toInsert); KittyORM basic_database implementation sources     Click to view BasicDatabase.class:  1@KITTY_DATABASE( 2 databaseName = &amp;#34;basic_database&amp;#34;, 3 domainPackageNames = {&amp;#34;net.</description>
     </item>
     
     <item>
