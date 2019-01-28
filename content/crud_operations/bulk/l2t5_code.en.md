@@ -60,7 +60,7 @@ startTransaction(TRANSACTION_MODES.NON_EXCLUSIVE_MODE);
 // Running some write database operations
 mapper.insert(toSave);
 SQLiteConditionBuilder builder = new SQLiteConditionBuilder();
-builder.addField(AbstractRandomModel.RND_ANIMAL_CNAME)
+builder.addColumn(AbstractRandomModel.RND_ANIMAL_CNAME)
        .addSQLOperator(SQLiteOperator.EQUAL)
        .addValue(Animals.DOG.name());
 mapper.deleteWhere();
@@ -68,7 +68,7 @@ mapper.deleteWhere();
 finishTransaction();
 {{< /highlight >}}
 
-##### KittyORM `basic_datase` implementation sources
+##### KittyORM `basic_database` implementation sources
 
 1. 
 <details> 
@@ -192,6 +192,32 @@ public class RandomModel extends AbstractRandomModel {
 <details> 
   <summary>{{< icon name="fa-code" size="large" >}}Click to view `RandomMapper.class`: </summary>
 {{< highlight java "linenos=inline, linenostart=1">}}
+package net.akaish.kittyormdemo.sqlite.basicdb;
+
+import net.akaish.kitty.orm.KittyMapper;
+import net.akaish.kitty.orm.KittyModel;
+import net.akaish.kitty.orm.configuration.conf.KittyTableConfiguration;
+import net.akaish.kitty.orm.query.QueryParameters;
+import net.akaish.kitty.orm.query.conditions.SQLiteCondition;
+import net.akaish.kitty.orm.query.conditions.SQLiteConditionBuilder;
+import net.akaish.kitty.orm.query.conditions.SQLiteOperator;
+import net.akaish.kitty.orm.util.KittyConstants;
+import net.akaish.kittyormdemo.sqlite.misc.Animals;
+
+import static net.akaish.kitty.orm.query.conditions.SQLiteOperator.AND;
+import static net.akaish.kitty.orm.query.conditions.SQLiteOperator.LESS_OR_EQUAL;
+import static net.akaish.kitty.orm.query.conditions.SQLiteOperator.LESS_THAN;
+import static net.akaish.kitty.orm.query.conditions.SQLiteOperator.GREATER_OR_EQUAL;
+import static net.akaish.kitty.orm.query.conditions.SQLiteOperator.GREATER_THAN;
+import static net.akaish.kittyormdemo.sqlite.basicdb.AbstractRandomModel.RND_ANIMAL_CNAME;
+
+import java.util.List;
+
+
+/**
+ * Created by akaish on 09.08.18.
+ * @author akaish (Denis Bogomolov)
+ */
 public class RandomMapper extends KittyMapper {
 
     public <M extends KittyModel> RandomMapper(KittyTableConfiguration tableConfiguration,
@@ -202,27 +228,18 @@ public class RandomMapper extends KittyMapper {
 
     protected SQLiteCondition getAnimalCondition(Animals animal) {
         return new SQLiteConditionBuilder()
-                .addField(RND_ANIMAL_CNAME)
-                .addSQLOperator(SQLiteOperator.EQUAL)
+                .addColumn(RND_ANIMAL_CNAME)
+                .addSQLOperator("=")
                 .addObjectValue(animal)
                 .build();
     }
 
     public long deleteByRandomIntegerRange(int start, int end) {
-        SQLiteCondition condition = new SQLiteConditionBuilder()
-                .addField("random_int")
-                .addSQLOperator(GREATER_OR_EQUAL)
-                .addValue(start)
-                .addSQLOperator(AND)
-                .addField("random_int")
-                .addSQLOperator(LESS_OR_EQUAL)
-                .addValue(end)
-                .build();
-        return deleteByWhere(condition);
+        return deleteWhere("#?randomInt >= ? AND #?randomInt <= ?", start, end);
     }
 
     public long deleteByAnimal(Animals animal) {
-        return deleteByWhere(getAnimalCondition(animal));
+        return deleteWhere(getAnimalCondition(animal));
     }
 
     public List<RandomModel> findByAnimal(Animals animal, long offset, long limit, boolean groupingOn) {
@@ -238,11 +255,11 @@ public class RandomMapper extends KittyMapper {
 
     public List<RandomModel> findByIdRange(long fromId, long toId, boolean inclusive, Long offset, Long limit) {
         SQLiteCondition condition = new SQLiteConditionBuilder()
-                .addField("id")
+                .addColumn("id")
                 .addSQLOperator(inclusive ? GREATER_OR_EQUAL : GREATER_THAN)
                 .addValue(fromId)
                 .addSQLOperator(AND)
-                .addField("id")
+                .addColumn("id")
                 .addSQLOperator(inclusive ? LESS_OR_EQUAL : LESS_THAN)
                 .addValue(toId)
                 .build();
@@ -256,6 +273,7 @@ public class RandomMapper extends KittyMapper {
         qparam.setLimit(limit).setOffset(offset).setGroupByColumns(KittyConstants.ROWID);
         return findAll(qparam);
     }
+
 }
 {{< /highlight >}} 
 </details>
@@ -538,6 +556,7 @@ public class IndexesAndConstraintsModel extends KittyModel {
 }
 {{< /highlight >}} 
 </details>
+
 
 
 ##### Fragment and utility code used in this tutorial

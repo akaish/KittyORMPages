@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-01-28T08:42:35 MSK">
+<meta name="revised" content="2019-01-28T08:59:33 MSK">
 <title>KittyORM and bulk operations :: KittyORM Pages</title>
 <link rel="shortcut icon" href="/KittyORMPages/images/favicon.png" type="image/x-icon" />
 <link href="/KittyORMPages/css/font-awesome.min.css" rel="stylesheet">
@@ -612,7 +612,7 @@
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span style="color:#998;font-style:italic">// Running some write database operations
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span style="color:#998;font-style:italic"></span>mapper<span style="font-weight:bold">.</span><span style="color:#008080">insert</span><span style="font-weight:bold">(</span>toSave<span style="font-weight:bold">);</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>SQLiteConditionBuilder builder <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> SQLiteConditionBuilder<span style="font-weight:bold">();</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>builder<span style="font-weight:bold">.</span><span style="color:#008080">addField</span><span style="font-weight:bold">(</span>AbstractRandomModel<span style="font-weight:bold">.</span><span style="color:#008080">RND_ANIMAL_CNAME</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>builder<span style="font-weight:bold">.</span><span style="color:#008080">addColumn</span><span style="font-weight:bold">(</span>AbstractRandomModel<span style="font-weight:bold">.</span><span style="color:#008080">RND_ANIMAL_CNAME</span><span style="font-weight:bold">)</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>       <span style="font-weight:bold">.</span><span style="color:#008080">addSQLOperator</span><span style="font-weight:bold">(</span>SQLiteOperator<span style="font-weight:bold">.</span><span style="color:#008080">EQUAL</span><span style="font-weight:bold">)</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>       <span style="font-weight:bold">.</span><span style="color:#008080">addValue</span><span style="font-weight:bold">(</span>Animals<span style="font-weight:bold">.</span><span style="color:#008080">DOG</span><span style="font-weight:bold">.</span><span style="color:#008080">name</span><span style="font-weight:bold">());</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>mapper<span style="font-weight:bold">.</span><span style="color:#008080">deleteWhere</span><span style="font-weight:bold">();</span>
