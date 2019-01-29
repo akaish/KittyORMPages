@@ -166,7 +166,7 @@ marinas = mapper.findWhere(builder.build());
 marinas = mapper.findWhere("first_name = ?", "Marina");
 
 // find with condition (pass POJO field name as parameter, in #?fieldName form)
-marinas = mapper.findWhere("#?firstName; = ?", "Marina");
+marinas = mapper.findWhere("#?firstName = ?", "Marina");
 
 List<SimpleExampleModel> randModels = new LinkedList<>();
 for(int i = 0; i < 10; i++)
