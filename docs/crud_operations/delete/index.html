@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-01-29T05:12:18 MSK">
+<meta name="revised" content="2019-01-29T07:48:22 MSK">
 <title>Deleting entities :: KittyORM Pages</title>
 <link rel="shortcut icon" href="/KittyORMPages/images/favicon.png" type="image/x-icon" />
 <link href="/KittyORMPages/css/font-awesome.min.css" rel="stylesheet">
@@ -572,11 +572,11 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#998;font-style:italic"></span>RandomMapper mapper <span style="font-weight:bold">=</span> <span style="font-weight:bold">(</span>RandomMapper<span style="font-weight:bold">)</span> db<span style="font-weight:bold">.</span><span style="color:#008080">getMapper</span><span style="font-weight:bold">(</span>RandomModel<span style="font-weight:bold">.</span><span style="color:#008080">class</span><span style="font-weight:bold">);</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#998;font-style:italic">// Creating clause for deletion
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#998;font-style:italic"></span>SQLiteCondition condition <span style="font-weight:bold">=</span> <span style="font-weight:bold">new</span> SQLiteConditionBuilder<span style="font-weight:bold">()</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>                <span style="font-weight:bold">.</span><span style="color:#008080">addField</span><span style="font-weight:bold">(</span><span style="color:#b84">&#34;random_int&#34;</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>                <span style="font-weight:bold">.</span><span style="color:#008080">addColumn</span><span style="font-weight:bold">(</span><span style="color:#b84">&#34;random_int&#34;</span><span style="font-weight:bold">)</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>                <span style="font-weight:bold">.</span><span style="color:#008080">addSQLOperator</span><span style="font-weight:bold">(</span>GREATER_OR_EQUAL<span style="font-weight:bold">)</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>                <span style="font-weight:bold">.</span><span style="color:#008080">addValue</span><span style="font-weight:bold">(</span>0<span style="font-weight:bold">)</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>                <span style="font-weight:bold">.</span><span style="color:#008080">addSQLOperator</span><span style="font-weight:bold">(</span>AND<span style="font-weight:bold">)</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>                <span style="font-weight:bold">.</span><span style="color:#008080">addField</span><span style="font-weight:bold">(</span><span style="color:#b84">&#34;random_int&#34;</span><span style="font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>                <span style="font-weight:bold">.</span><span style="color:#008080">addColumn</span><span style="font-weight:bold">(</span><span style="color:#b84">&#34;random_int&#34;</span><span style="font-weight:bold">)</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#998;font-style:italic">// Just as tip, you can pass SQLite operator as string, not only as
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span style="color:#998;font-style:italic">// SQLiteOperator enum element
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span style="color:#998;font-style:italic"></span>                <span style="font-weight:bold">.</span><span style="color:#008080">addSQLOperator</span><span style="font-weight:bold">(</span><span style="color:#b84">&#34;&lt;=&#34;</span><span style="font-weight:bold">)</span> 
