@@ -190,7 +190,7 @@ mapper.save(randModels);
 mapper.delete(alex);
 
 // deleting from database with condition
-mapper.deleteByWhere("first_name = ?", "Alex");
+mapper.deleteWhere("first_name = ?", "Alex");
 {{< /highlight >}}
 
 * Updating some models:
