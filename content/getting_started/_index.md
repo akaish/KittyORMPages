@@ -9,7 +9,7 @@ layout: "lesson"
 First step is to add KittyORM via Gradle to your app `build.gradle`:
 {{< highlight gradle "linenos=inline, linenostart=1">}}
 dependencies {
-    compile 'net.akaish.kitty.orm:kitty-orm:0.1.2'
+    implementation 'net.akaish.kitty.orm:kitty-orm:$latest_version'
 }
 {{< /highlight >}} 
 
